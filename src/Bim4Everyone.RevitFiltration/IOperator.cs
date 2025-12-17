@@ -8,7 +8,7 @@ namespace Bim4Everyone.RevitFiltration;
 internal interface IOperator {
     internal FilterRule Create(ElementId paramId);
     internal FilterRule Create(ElementId paramId, int value);
-    internal FilterRule Create(ElementId paramId, double value);
+    internal FilterRule Create(ElementId paramId, double value, double epsilon);
     internal FilterRule Create(ElementId paramId, string value);
     internal FilterRule Create(ElementId paramId, ElementId value);
 }
