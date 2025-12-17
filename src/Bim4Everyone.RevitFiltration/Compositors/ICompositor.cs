@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
 using Autodesk.Revit.DB;
 
-namespace Bim4Everyone.RevitFiltration;
+namespace Bim4Everyone.RevitFiltration.Compositors;
 
 /// <summary>
 ///     Создает правило для "И" и "Или".

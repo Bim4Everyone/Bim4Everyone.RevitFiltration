@@ -1,6 +1,8 @@
 using Autodesk.Revit.DB;
 
-namespace Bim4Everyone.RevitFiltration;
+using Bim4Everyone.RevitFiltration.Operators;
+
+namespace Bim4Everyone.RevitFiltration.OperatorTokens;
 
 /// <summary>
 ///     Отвечает за вызов правильной перегрузки метода <see cref="IOperator.Create" />.

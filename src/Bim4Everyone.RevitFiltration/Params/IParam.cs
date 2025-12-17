@@ -1,6 +1,6 @@
 using Autodesk.Revit.DB;
 
-namespace Bim4Everyone.RevitFiltration;
+namespace Bim4Everyone.RevitFiltration.Params;
 
 /// <summary>
 ///     Предоставляет метод для получения id параметра из документа.

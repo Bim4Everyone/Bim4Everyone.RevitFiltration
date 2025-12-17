@@ -1,6 +1,9 @@
 using Autodesk.Revit.DB;
 
-namespace Bim4Everyone.RevitFiltration;
+using Bim4Everyone.RevitFiltration.OperatorTokens;
+using Bim4Everyone.RevitFiltration.Params;
+
+namespace Bim4Everyone.RevitFiltration.Filtration;
 
 /// <summary>
 ///     Отвечает за создание правила по фильтрации параметра, например "Высота больше 5000".

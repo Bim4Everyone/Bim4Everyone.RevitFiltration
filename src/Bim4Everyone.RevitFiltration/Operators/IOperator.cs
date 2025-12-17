@@ -1,6 +1,6 @@
 using Autodesk.Revit.DB;
 
-namespace Bim4Everyone.RevitFiltration;
+namespace Bim4Everyone.RevitFiltration.Operators;
 
 /// <summary>
 ///     Создает правило фильтрации элементов в Revit (больше, больше или равно, меньше, содержит, без значения и т.д.).

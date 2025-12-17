@@ -1,5 +1,7 @@
 using Autodesk.Revit.DB;
 
+using Bim4Everyone.RevitFiltration.Compositors;
+
 namespace Bim4Everyone.RevitFiltration;
 
 /// <summary>
