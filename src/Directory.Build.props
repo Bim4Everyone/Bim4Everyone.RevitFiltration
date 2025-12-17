@@ -1,10 +1,15 @@
 <Project>
     <PropertyGroup>
         <Platforms>x64</Platforms>
-        <NoWarn>1701;1702;MSB3246;MSB3277</NoWarn>
+        <OutputType>Library</OutputType>
+        <NoWarn>1701;1702;MSB3246</NoWarn>
+        <TargetFramework>net48</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>12</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion>
-
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
         <Configurations>D2020;D2021;D2022;D2023;D2024;Debug;Release</Configurations>
     </PropertyGroup>
@@ -12,14 +17,14 @@
     <PropertyGroup Condition="'$(Configuration.StartsWith(`D`))'">
         <Optimization>false</Optimization>
         <DebugSymbols>true</DebugSymbols>
-        <OutputPath>bin\x64\Debug</OutputPath>
+        <OutputPath>bin\x64\Debug\$(RevitVersion)</OutputPath>
         <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration.StartsWith(`R`))'">
         <Optimize>true</Optimize>
         <DebugSymbols>false</DebugSymbols>
-        <OutputPath>bin\x64\Release</OutputPath>
+        <OutputPath>bin\x64\Release\$(RevitVersion)</OutputPath>
         <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
     </PropertyGroup>
 
@@ -36,7 +41,10 @@
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
-        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*" />
+        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
 
         <Reference Include="dosymep.Bim4Everyone">
             <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\$(RevitVersion)\dosymep.Bim4Everyone.dll</HintPath>

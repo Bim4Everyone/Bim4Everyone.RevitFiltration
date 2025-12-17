@@ -1,13 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Nullable>enable</Nullable>
-        <LangVersion>12</LangVersion>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <TargetFramework>net48</TargetFramework>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    </PropertyGroup>
-
-    <PropertyGroup>
         <Title>Bim4Everyone.RevitFiltration</Title>
         <PackageId>Bim4Everyone.RevitFiltration</PackageId>
         <Description>Данный пакет содержит базовые интерфейсы сервисов для фильтрации элементов в Autodesk Revit.</Description>
