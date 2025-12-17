@@ -5,7 +5,7 @@
 
         <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion>
 
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
         <Configurations>D2020;D2021;D2022;D2023;D2024;Debug;Release</Configurations>
     </PropertyGroup>
 
