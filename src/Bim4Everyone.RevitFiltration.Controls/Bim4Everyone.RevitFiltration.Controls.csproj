@@ -30,4 +30,8 @@
         <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39"/>
         <PackageReference Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
+    </ItemGroup>
 </Project>
