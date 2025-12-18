@@ -22,8 +22,14 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39"/>
-        <PackageReference Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0"/>
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
