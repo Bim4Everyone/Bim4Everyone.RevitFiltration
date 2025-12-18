@@ -5,29 +5,38 @@ using Bim4Everyone.RevitFiltration.Operators;
 using Bim4Everyone.RevitFiltration.OperatorTokens;
 using Bim4Everyone.RevitFiltration.Params;
 
+using pyRevitLabs.Json;
+
 namespace Bim4Everyone.RevitFiltration.Filtration;
 
 internal class Set : ILogicalFilter {
-    private readonly List<ILogicalFilter> _innerFilters;
-    private readonly List<Rule> _innerRules;
-    private readonly IOptions _options;
-
+    [JsonConstructor]
     public Set(ICompositor compositor, IOptions options) {
         Compositor = compositor ?? throw new ArgumentNullException(nameof(compositor));
-        _options = options ?? throw new ArgumentNullException(nameof(options));
-        _innerRules = [];
-        _innerFilters = [];
+        Options = options ?? throw new ArgumentNullException(nameof(options));
+        InnerRules = [];
+        InnerFilters = [];
     }
 
+    [JsonProperty]
+    public IOptions Options { get; }
+
+    [JsonProperty]
+    public List<ILogicalFilter> InnerFilters { get; }
+
+    [JsonProperty]
+    public List<Rule> InnerRules { get; }
+
+    [JsonProperty]
     public ICompositor Compositor { get; }
 
     public ElementFilter Build(Document document, IOptions options) {
         List<ElementFilter> filters = [];
         filters.AddRange(
-            _innerRules
+            InnerRules
                 .Select(r => new ElementParameterFilter(r.CreateFilterRule(document), false)));
         filters.AddRange(
-            _innerFilters
+            InnerFilters
                 .Select(s => s.Build(document, options)));
         return Compositor.Create(filters);
     }
@@ -44,7 +53,7 @@ internal class Set : ILogicalFilter {
                 nameof(innerFilter));
         }
 
-        _innerFilters.Add(innerFilter);
+        InnerFilters.Add(innerFilter);
         return this;
     }
 
@@ -53,7 +62,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -65,10 +74,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -77,7 +86,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -89,7 +98,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -97,7 +106,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -105,15 +114,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -121,7 +130,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new GreaterOrEqualOperator(), paramValue)));
@@ -133,7 +142,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new GreaterOperator(), paramValue)));
@@ -145,10 +154,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new GreaterOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -157,7 +166,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new GreaterOperator(), paramValue)));
@@ -169,7 +178,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new GreaterOperator(), paramValue)));
@@ -177,7 +186,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new GreaterOperator(), paramValue)));
@@ -185,15 +194,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new GreaterOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new GreaterOperator(), paramValue)));
@@ -201,7 +210,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new GreaterOperator(), paramValue)));
@@ -213,7 +222,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -225,10 +234,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -237,7 +246,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -249,7 +258,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -257,7 +266,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -265,15 +274,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -281,7 +290,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new LessOrEqualOperator(), paramValue)));
@@ -293,7 +302,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new LessOperator(), paramValue)));
@@ -305,10 +314,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new LessOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new LessOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -317,7 +326,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new LessOperator(), paramValue)));
@@ -329,7 +338,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new LessOperator(), paramValue)));
@@ -337,7 +346,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new LessOperator(), paramValue)));
@@ -345,15 +354,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new LessOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new LessOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new LessOperator(), paramValue)));
@@ -361,7 +370,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new LessOperator(), paramValue)));
@@ -373,7 +382,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new EqualsOperator(), paramValue)));
@@ -385,10 +394,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new EqualsOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new EqualsOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -397,7 +406,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new EqualsOperator(), paramValue)));
@@ -409,7 +418,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new EqualsOperator(), paramValue)));
@@ -417,7 +426,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new EqualsOperator(), paramValue)));
@@ -425,15 +434,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new EqualsOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new EqualsOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new EqualsOperator(), paramValue)));
@@ -441,7 +450,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new EqualsOperator(), paramValue)));
@@ -453,7 +462,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new IntOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -465,10 +474,10 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
@@ -477,7 +486,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -489,7 +498,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new ElementIdOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -497,7 +506,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, int paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new IntOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -505,15 +514,15 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, double paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, _options.Tolerance)));
+                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, Options.Tolerance)));
         return this;
     }
 
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -521,7 +530,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, ElementId paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new ElementIdOperatorToken(new NotEqualsOperator(), paramValue)));
@@ -533,7 +542,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new EmptyOperatorToken(new HasNoValueOperator())));
@@ -541,7 +550,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddHasNoValueRule(BuiltInParameter paramId) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new EmptyOperatorToken(new HasNoValueOperator())));
@@ -553,7 +562,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new EmptyOperatorToken(new HasValueOperator())));
@@ -561,7 +570,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddHasValueRule(BuiltInParameter paramId) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new EmptyOperatorToken(new HasValueOperator())));
@@ -573,7 +582,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new BeginsWithOperator(), paramValue)));
@@ -581,7 +590,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddBeginsWithRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new BeginsWithOperator(), paramValue)));
@@ -593,7 +602,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new NotBeginsWithOperator(), paramValue)));
@@ -601,7 +610,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotBeginsWithRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new NotBeginsWithOperator(), paramValue)));
@@ -613,7 +622,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new EndsWithOperator(), paramValue)));
@@ -621,7 +630,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddEndsWithRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new EndsWithOperator(), paramValue)));
@@ -633,7 +642,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new NotEndsWithOperator(), paramValue)));
@@ -641,7 +650,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotEndsWithRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new NotEndsWithOperator(), paramValue)));
@@ -653,7 +662,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new ContainsOperator(), paramValue)));
@@ -661,7 +670,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddContainsRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new ContainsOperator(), paramValue)));
@@ -673,7 +682,7 @@ internal class Set : ILogicalFilter {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
         }
 
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
                 new StringOperatorToken(new NotContainsOperator(), paramValue)));
@@ -681,7 +690,7 @@ internal class Set : ILogicalFilter {
     }
 
     public ILogicalFilter AddNotContainsRule(BuiltInParameter paramId, string paramValue) {
-        _innerRules.Add(
+        InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
                 new StringOperatorToken(new NotContainsOperator(), paramValue)));
@@ -693,15 +702,15 @@ internal class Set : ILogicalFilter {
             return true;
         }
 
-        if(parentSet._innerFilters.Count == 0) {
+        if(parentSet.InnerFilters.Count == 0) {
             return false;
         }
 
-        if(parentSet._innerFilters.Any(s => ReferenceEquals(s, innerSet))) {
+        if(parentSet.InnerFilters.Any(s => ReferenceEquals(s, innerSet))) {
             return true;
         }
 
-        foreach(var s in _innerFilters) {
+        foreach(var s in InnerFilters) {
             if(s is Set set
                && IsSetInside(innerSet, set)) {
                 return true;
