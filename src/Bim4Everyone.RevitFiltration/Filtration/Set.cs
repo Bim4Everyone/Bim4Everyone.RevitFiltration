@@ -30,14 +30,14 @@ internal class Set : ILogicalFilter {
     [JsonProperty]
     public ICompositor Compositor { get; }
 
-    public ElementFilter Build(Document document, IOptions options) {
+    public ElementFilter Build(Document document) {
         List<ElementFilter> filters = [];
         filters.AddRange(
             InnerRules
                 .Select(r => new ElementParameterFilter(r.CreateFilterRule(document), false)));
         filters.AddRange(
             InnerFilters
-                .Select(s => s.Build(document, options)));
+                .Select(s => s.Build(document)));
         return Compositor.Create(filters);
     }
 
