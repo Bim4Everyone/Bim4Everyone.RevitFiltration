@@ -7,14 +7,12 @@ public interface ILogicalFilterFactory {
     /// <summary>
     ///     Создает фильтр с условием "И".
     /// </summary>
-    /// <param name="options">Настройки генерации правил фильтрации параметров.</param>
     /// <returns>Ссылка на созданный фильтр.</returns>
-    ILogicalFilter CreateAndFilter(IOptions options);
+    ILogicalFilter CreateAndFilter();
 
     /// <summary>
     ///     Создает фильтр с условием "Или".
     /// </summary>
-    /// <param name="options">Настройки генерации правил фильтрации параметров.</param>
     /// <returns>Ссылка на созданный фильтр.</returns>
-    ILogicalFilter CreateOrFilter(IOptions options);
+    ILogicalFilter CreateOrFilter();
 }

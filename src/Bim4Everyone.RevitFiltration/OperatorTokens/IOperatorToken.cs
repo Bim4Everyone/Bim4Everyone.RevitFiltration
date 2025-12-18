@@ -9,5 +9,5 @@ namespace Bim4Everyone.RevitFiltration.OperatorTokens;
 /// </summary>
 internal interface IOperatorToken {
     internal IOperator Operator { get; }
-    internal FilterRule Create(ElementId paramId);
+    internal FilterRule Create(ElementId paramId, IOptions options);
 }

@@ -11,5 +11,5 @@ namespace Bim4Everyone.RevitFiltration.Filtration;
 internal interface IFilterRule {
     internal IParam Param { get; }
     internal IOperatorToken OperatorToken { get; }
-    internal FilterRule CreateFilterRule(Document document);
+    internal FilterRule CreateFilterRule(Document document, IOptions options);
 }

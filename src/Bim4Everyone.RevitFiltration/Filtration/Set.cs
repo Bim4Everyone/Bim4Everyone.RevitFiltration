@@ -11,15 +11,11 @@ namespace Bim4Everyone.RevitFiltration.Filtration;
 
 internal class Set : ILogicalFilter {
     [JsonConstructor]
-    public Set(ICompositor compositor, IOptions options) {
+    public Set(ICompositor compositor) {
         Compositor = compositor ?? throw new ArgumentNullException(nameof(compositor));
-        Options = options ?? throw new ArgumentNullException(nameof(options));
         InnerRules = [];
         InnerFilters = [];
     }
-
-    [JsonProperty]
-    public IOptions Options { get; }
 
     [JsonProperty]
     public List<ILogicalFilter> InnerFilters { get; }
@@ -30,14 +26,22 @@ internal class Set : ILogicalFilter {
     [JsonProperty]
     public ICompositor Compositor { get; }
 
-    public ElementFilter Build(Document document) {
+    public ElementFilter Build(Document document, IOptions options) {
+        if(document == null) {
+            throw new ArgumentNullException(nameof(document));
+        }
+
+        if(options == null) {
+            throw new ArgumentNullException(nameof(options));
+        }
+
         List<ElementFilter> filters = [];
         filters.AddRange(
             InnerRules
-                .Select(r => new ElementParameterFilter(r.CreateFilterRule(document), false)));
+                .Select(r => new ElementParameterFilter(r.CreateFilterRule(document, options), false)));
         filters.AddRange(
             InnerFilters
-                .Select(s => s.Build(document)));
+                .Select(s => s.Build(document, options)));
         return Compositor.Create(filters);
     }
 
@@ -77,7 +81,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue)));
         return this;
     }
 
@@ -117,7 +121,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOrEqualOperator(), paramValue)));
         return this;
     }
 
@@ -157,7 +161,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new GreaterOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOperator(), paramValue)));
         return this;
     }
 
@@ -197,7 +201,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new GreaterOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new GreaterOperator(), paramValue)));
         return this;
     }
 
@@ -237,7 +241,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue)));
         return this;
     }
 
@@ -277,7 +281,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new LessOrEqualOperator(), paramValue)));
         return this;
     }
 
@@ -317,7 +321,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new LessOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new LessOperator(), paramValue)));
         return this;
     }
 
@@ -357,7 +361,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new LessOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new LessOperator(), paramValue)));
         return this;
     }
 
@@ -397,7 +401,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new EqualsOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new EqualsOperator(), paramValue)));
         return this;
     }
 
@@ -437,7 +441,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new EqualsOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new EqualsOperator(), paramValue)));
         return this;
     }
 
@@ -477,7 +481,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new NamedParam(paramName),
-                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new NotEqualsOperator(), paramValue)));
         return this;
     }
 
@@ -517,7 +521,7 @@ internal class Set : ILogicalFilter {
         InnerRules.Add(
             new Rule(
                 new BuiltInParam(paramId),
-                new DoubleOperatorToken(new NotEqualsOperator(), paramValue, Options.Tolerance)));
+                new DoubleOperatorToken(new NotEqualsOperator(), paramValue)));
         return this;
     }
 

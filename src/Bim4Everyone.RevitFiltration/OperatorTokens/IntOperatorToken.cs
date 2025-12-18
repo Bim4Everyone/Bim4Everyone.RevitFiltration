@@ -19,7 +19,7 @@ internal class IntOperatorToken : IOperatorToken {
     [JsonProperty]
     public IOperator Operator { get; }
 
-    public FilterRule Create(ElementId paramId) {
+    public FilterRule Create(ElementId paramId, IOptions options) {
         return Operator.Create(paramId, Value);
     }
 }

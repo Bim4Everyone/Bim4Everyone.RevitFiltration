@@ -20,7 +20,7 @@ internal class Rule : IFilterRule {
     [JsonProperty]
     public IOperatorToken OperatorToken { get; }
 
-    public FilterRule CreateFilterRule(Document document) {
-        return OperatorToken.Create(Param.GetId(document));
+    public FilterRule CreateFilterRule(Document document, IOptions options) {
+        return OperatorToken.Create(Param.GetId(document), options);
     }
 }
