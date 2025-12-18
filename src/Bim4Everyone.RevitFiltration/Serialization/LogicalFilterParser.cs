@@ -10,7 +10,8 @@ internal class LogicalFilterParser : ILogicalFilterParser {
     public LogicalFilterParser() {
         _settings = new JsonSerializerSettings {
             TypeNameHandling = TypeNameHandling.Objects,
-            SerializationBinder = new JsonSerializationBinder()
+            SerializationBinder = new JsonSerializationBinder(),
+            Converters = [new ElementIdConverter()]
         };
     }
 

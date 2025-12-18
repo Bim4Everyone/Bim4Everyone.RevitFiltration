@@ -1,5 +1,6 @@
 using System.Reflection;
 
+using pyRevitLabs.Json;
 using pyRevitLabs.Json.Serialization;
 
 namespace Bim4Everyone.RevitFiltration.Serialization;
@@ -7,7 +8,7 @@ namespace Bim4Everyone.RevitFiltration.Serialization;
 internal class JsonSerializationBinder : ISerializationBinder {
     private readonly DefaultSerializationBinder _defaultBinder = new();
 
-    public void BindToName(Type serializedType, out string assemblyName, out string typeName) {
+    public void BindToName(Type serializedType, out string? assemblyName, out string? typeName) {
         if(serializedType.Assembly.GetName().Name.Equals(GetCurrentAssemblyName())) {
             assemblyName = GetCurrentAssemblyName();
             typeName = serializedType.FullName;
@@ -19,6 +20,7 @@ internal class JsonSerializationBinder : ISerializationBinder {
     public Type BindToType(string? assemblyName, string typeName) {
         return assemblyName?.Equals(GetCurrentAssemblyName()) ?? false
             ? Assembly.GetExecutingAssembly().GetType(typeName)
+              ?? throw new JsonSerializationException($"Тип не найден: {typeName}")
             : _defaultBinder.BindToType(assemblyName, typeName);
     }
 
