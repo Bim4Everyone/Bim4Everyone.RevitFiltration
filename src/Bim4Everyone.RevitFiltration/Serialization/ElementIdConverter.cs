@@ -26,7 +26,7 @@ internal class ElementIdConverter : JsonConverter<ElementId> {
 #if REVIT_2023_OR_LESS
         return new ElementId(Convert.ToInt32(reader.Value));
 #else
-            return new ElementId(Convert.ToInt64(reader.Value));
+        return new ElementId(Convert.ToInt64(reader.Value));
 #endif
     }
 }
