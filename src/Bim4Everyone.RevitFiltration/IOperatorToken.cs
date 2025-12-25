@@ -7,5 +7,6 @@ namespace Bim4Everyone.RevitFiltration;
 /// </summary>
 internal interface IOperatorToken {
     internal IOperator Operator { get; }
+    internal string? DisplayExpectedValue { get; }
     internal FilterRule Create(ElementId paramId);
 }

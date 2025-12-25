@@ -1,0 +1,23 @@
+using Bim4Everyone.RevitFiltration.Controls.Models.Params;
+using Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
+
+using dosymep.Revit;
+
+using pyRevitLabs.Json;
+
+namespace Bim4Everyone.RevitFiltration.Controls.Models.Value;
+
+internal class DoubleParamValue : ParamValue<double> {
+    [JsonConstructor]
+    public DoubleParamValue(double value, string displayValue)
+        : base(value, displayValue) {
+    }
+
+    public override void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamModel paramModel) {
+        if(paramModel.Id.IsSystemId()) {
+            visitor.AddInnerRule(logicalFilter, paramModel.Id.AsBuiltInParameter(), TValue);
+        } else {
+            visitor.AddInnerRule(logicalFilter, paramModel.Name, TValue);
+        }
+    }
+}

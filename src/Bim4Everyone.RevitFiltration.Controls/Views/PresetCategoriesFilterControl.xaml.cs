@@ -6,15 +6,15 @@ namespace Bim4Everyone.RevitFiltration.Controls.Views;
 ///     Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в
 ///     <see cref="ILogicalFilterProvider" />
 /// </summary>
-public partial class LogicalFilterSelectedCategoriesControl {
+public partial class PresetCategoriesFilterControl {
     public static readonly DependencyProperty LogicalFilterProviderProperty
         = DependencyProperty.Register(
             nameof(LogicalFilterProvider),
             typeof(ILogicalFilterProvider),
-            typeof(LogicalFilterSelectedCategoriesControl),
+            typeof(PresetCategoriesFilterControl),
             new PropertyMetadata(null));
 
-    public LogicalFilterSelectedCategoriesControl() {
+    public PresetCategoriesFilterControl() {
         InitializeComponent();
     }
 

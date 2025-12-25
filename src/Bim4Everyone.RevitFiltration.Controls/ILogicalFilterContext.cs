@@ -1,6 +1,6 @@
-using System.Collections.Generic;
-
 using Autodesk.Revit.DB;
+
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 
 namespace Bim4Everyone.RevitFiltration.Controls;
 
@@ -17,4 +17,6 @@ public interface ILogicalFilterContext {
     ///     Выбранные пользователем категории элементов для фильтрации.
     /// </summary>
     ICollection<BuiltInCategory> SelectedCategories { get; }
+
+    internal Set Set { get; }
 }

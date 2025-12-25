@@ -5,15 +5,15 @@ namespace Bim4Everyone.RevitFiltration.Controls.Views;
 /// <summary>
 ///     Контрол только с фильтром по параметрам для всех доступных категорий из <see cref="ILogicalFilterProvider" />
 /// </summary>
-public partial class LogicalFilterReadonlyCategoriesControl {
+public partial class DynamicCategoriesFilterControl {
     public static readonly DependencyProperty LogicalFilterProviderProperty
         = DependencyProperty.Register(
             nameof(LogicalFilterProvider),
             typeof(ILogicalFilterProvider),
-            typeof(LogicalFilterReadonlyCategoriesControl),
+            typeof(DynamicCategoriesFilterControl),
             new PropertyMetadata(null));
 
-    public LogicalFilterReadonlyCategoriesControl() {
+    public DynamicCategoriesFilterControl() {
         InitializeComponent();
     }
 
