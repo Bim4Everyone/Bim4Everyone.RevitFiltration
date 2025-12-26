@@ -9,8 +9,6 @@ using Bim4Everyone.RevitFiltration.Controls.Models;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 
-using dosymep.Revit;
-
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class DynamicCategoriesFilterViewModel : BaseViewModel {
@@ -224,7 +222,6 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
 
         _logicalFilterProvider.SetFilter(
             new LogicalFilterContext(GetFilter()) { Factory = _logicalFilterProvider.GetLogicalFilterFactory() });
-        _logicalFilterProvider.SetErrors([]);
     }
 
     private void CategoriesFilterPropertyChanged(object sender, PropertyChangedEventArgs e) {
