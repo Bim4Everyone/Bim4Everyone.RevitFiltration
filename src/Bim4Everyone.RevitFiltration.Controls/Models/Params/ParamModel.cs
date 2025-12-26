@@ -6,6 +6,8 @@ using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 using Bim4Everyone.RevitFiltration.Controls.Models.Value;
 using Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
 
+using dosymep.Revit;
+
 using pyRevitLabs.Json;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Params;
@@ -17,7 +19,7 @@ internal class ParamModel : IEquatable<ParamModel> {
 #if REVIT_2020_OR_LESS
         UnitType = parameter.Definition.UnitType;
 #else
-        UnitType = parameter.GetUnitTypeId();
+        UnitTypeName = parameter.GetUnitTypeId().GetSpecTypeIdName();
 #endif
         StorageType = parameter.StorageType;
     }
@@ -32,10 +34,10 @@ internal class ParamModel : IEquatable<ParamModel> {
     }
 #else
     [JsonConstructor]
-    public ParamModel(string name, ElementId id, ForgeTypeId unitType, StorageType storageType) {
+    public ParamModel(string name, ElementId id, string unitTypeName, StorageType storageType) {
         Name = name;
         Id = id;
-        UnitType = unitType;
+        UnitTypeName = unitTypeName;
         StorageType = storageType;
     }
 #endif
@@ -47,8 +49,11 @@ internal class ParamModel : IEquatable<ParamModel> {
     [JsonProperty]
     public UnitType UnitType { get; }
 #else
+    [JsonIgnore]
+    public ForgeTypeId UnitType => ForgeTypeIdExtensions.GetSpecIdByName(UnitTypeName);
+
     [JsonProperty]
-    public ForgeTypeId UnitType { get; }
+    public string UnitTypeName { get; }
 #endif
 
     [JsonProperty]

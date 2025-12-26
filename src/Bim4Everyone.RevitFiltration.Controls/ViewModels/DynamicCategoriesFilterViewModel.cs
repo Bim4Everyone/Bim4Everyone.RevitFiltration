@@ -6,6 +6,7 @@ using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models;
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 
 using dosymep.Revit;
@@ -89,9 +90,9 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         Categories.Filter += CategoriesFilterHandler;
         var factory = provider.GetLogicalFilterFactory();
         if(provider.CanGetFilter(out _)) {
-            var filter = provider.GetFilter();
-            CategoriesInfo = InitializeCategoriesInfo(dataProvider, filter.SelectedCategories);
-            RootSet = new SetViewModel(CategoriesInfo, factory, filter.Set);
+            var context = provider.GetFilter();
+            CategoriesInfo = InitializeCategoriesInfo(dataProvider, context.SelectedCategories);
+            RootSet = new SetViewModel(CategoriesInfo, factory, context.Filter.RootSet);
             foreach(var c in AllCategories.Intersect(CategoriesInfo.SelectedCategories)) {
                 c.IsSelected = true;
             }
@@ -178,6 +179,18 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         UpdateLogicalFilterContext();
     }
 
+    public Filter GetFilter() {
+        if(RootSet == null
+           || CategoriesInfo == null) {
+            throw new InvalidOperationException();
+        }
+
+        return new Filter {
+            RootSet = RootSet.CreateSet(),
+            Categories = CategoriesInfo.SelectedCategories.Select(c => c.Category.GetBuiltInCategory()).ToArray()
+        };
+    }
+
     private void UpdateLogicalFilterContext() {
         if(_logicalFilterProvider == null) {
             return;
@@ -187,7 +200,8 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
                              .Select(c => c.Category.GetBuiltInCategory())
                              .ToArray()
                          ?? [];
-        if(categories.Length == 0) {
+        if(CategoriesInfo == null
+           || categories.Length == 0) {
             _logicalFilterProvider.SetErrors([new ErrorContext("Необходимо выбрать категории")]);
             return;
         }
@@ -208,10 +222,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         }
 
         _logicalFilterProvider.SetFilter(
-            new LogicalFilterContext(
-                categories,
-                _logicalFilterProvider.GetLogicalFilterFactory(),
-                RootSet.CreateSet()));
+            new LogicalFilterContext(GetFilter()) { Factory = _logicalFilterProvider.GetLogicalFilterFactory() });
         _logicalFilterProvider.SetErrors([]);
     }
 

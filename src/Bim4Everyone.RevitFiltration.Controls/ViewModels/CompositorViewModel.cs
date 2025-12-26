@@ -8,6 +8,8 @@ internal class CompositorViewModel : BaseViewModel {
         Name = CompositorKind.ToString(); // TODO
     }
 
+    public bool IsAndCompositor => CompositorKind == CompositorKind.And;
+
     public CompositorKind CompositorKind { get; }
 
     public string Name { get; }

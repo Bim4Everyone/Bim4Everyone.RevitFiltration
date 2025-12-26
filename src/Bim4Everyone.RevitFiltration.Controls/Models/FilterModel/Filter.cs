@@ -16,6 +16,6 @@ internal class Filter {
             throw new InvalidOperationException();
         }
 
-        return new LogicalFilterContext(Categories, factory, RootSet);
+        return new LogicalFilterContext(this) { Factory = factory };
     }
 }

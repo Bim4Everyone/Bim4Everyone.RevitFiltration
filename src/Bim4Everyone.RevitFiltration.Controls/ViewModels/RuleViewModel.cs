@@ -30,7 +30,9 @@ internal class RuleViewModel : BaseViewModel {
     private bool _isValueEditable;
     private OperatorViewModel? _selectedOperator;
     private ParamViewModel? _selectedParameter;
+    private ParamValueViewModel? _selectedValue;
     private string _stringValue;
+    private ObservableCollection<ParamValueViewModel>? _values;
 
     public RuleViewModel(CategoriesInfoViewModel categoriesInfo, Rule? rule = null) {
         CategoriesInfo = categoriesInfo ?? throw new ArgumentNullException(nameof(categoriesInfo));
@@ -57,6 +59,11 @@ internal class RuleViewModel : BaseViewModel {
         set => RaiseAndSetIfChanged(ref _stringValue, value);
     }
 
+    public ParamValueViewModel? SelectedValue {
+        get => _selectedValue;
+        set => RaiseAndSetIfChanged(ref _selectedValue, value);
+    }
+
     public OperatorViewModel? SelectedOperator {
         get => _selectedOperator;
         set => RaiseAndSetIfChanged(ref _selectedOperator, value);
@@ -65,6 +72,11 @@ internal class RuleViewModel : BaseViewModel {
     public ParamViewModel? SelectedParameter {
         get => _selectedParameter;
         set => RaiseAndSetIfChanged(ref _selectedParameter, value);
+    }
+
+    public ObservableCollection<ParamValueViewModel>? Values {
+        get => _values;
+        set => RaiseAndSetIfChanged(ref _values, value);
     }
 
     public CategoriesInfoViewModel CategoriesInfo { get; }
@@ -78,7 +90,9 @@ internal class RuleViewModel : BaseViewModel {
         return new Rule {
             OperatorKind = SelectedOperator.Operator,
             Param = SelectedParameter.ParamModel,
-            Value = SelectedParameter.ParamModel.GetParamValueFromString(StringValue)
+            Value = SelectedValue == null || SelectedValue.DisplayValue != StringValue
+                ? SelectedParameter.ParamModel.GetParamValueFromString(StringValue)
+                : SelectedValue.ParamValue
         };
     }
 
@@ -86,7 +100,8 @@ internal class RuleViewModel : BaseViewModel {
         return SelectedParameter == null
                || SelectedOperator == null
                || (SelectedOperator.Operator is not OperatorKind.HasNoValue and not OperatorKind.HasValue
-                   && string.IsNullOrWhiteSpace(StringValue));
+                   && string.IsNullOrWhiteSpace(StringValue)
+                   && SelectedValue == null);
     }
 
     public string GetErrorText() {
@@ -107,6 +122,7 @@ internal class RuleViewModel : BaseViewModel {
         SelectedParameter = null;
         SelectedOperator = null;
         StringValue = string.Empty;
+        SelectedValue = null;
     }
 
     private void RuleViewModelChangedHandler(object sender, PropertyChangedEventArgs e) {
@@ -130,6 +146,8 @@ internal class RuleViewModel : BaseViewModel {
             if(SelectedOperator == null
                || !AvailableOperators.Contains(SelectedOperator)) {
                 SelectedOperator = AvailableOperators.First();
+            } else {
+                UpdateParamValues();
             }
         }
     }
@@ -137,11 +155,26 @@ internal class RuleViewModel : BaseViewModel {
     private void OnSelectedOperatorChanged() {
         if(SelectedParameter != null
            && SelectedOperator != null) {
+            UpdateParamValues();
             IsValueEditable = SelectedOperator.Operator != OperatorKind.HasValue
                               && SelectedOperator.Operator != OperatorKind.HasNoValue;
             if(!IsValueEditable) {
                 StringValue = string.Empty;
             }
         }
+    }
+
+    private void UpdateParamValues() {
+        if(SelectedParameter == null
+           || SelectedOperator == null) {
+            return;
+        }
+
+        Values = [
+            ..CategoriesInfo.GetValues(
+                CategoriesInfo.SelectedCategories,
+                SelectedParameter,
+                SelectedOperator.Operator)
+        ];
     }
 }

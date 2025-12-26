@@ -9,14 +9,14 @@ namespace Bim4Everyone.RevitFiltration.Controls;
 /// </summary>
 public interface ILogicalFilterContext {
     /// <summary>
-    ///     Правила фильтрации значений параметров.
-    /// </summary>
-    ILogicalFilter Filter { get; }
-
-    /// <summary>
     ///     Выбранные пользователем категории элементов для фильтрации.
     /// </summary>
     ICollection<BuiltInCategory> SelectedCategories { get; }
 
-    internal Set Set { get; }
+    internal Filter Filter { get; }
+
+    /// <summary>
+    ///     Правила фильтрации значений параметров.
+    /// </summary>
+    ILogicalFilter GetFilter();
 }

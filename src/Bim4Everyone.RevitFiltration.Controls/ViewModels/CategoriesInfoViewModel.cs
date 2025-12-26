@@ -30,6 +30,13 @@ internal class CategoriesInfoViewModel : BaseViewModel {
 
     public ReadOnlyObservableCollection<ParamViewModel> AvailableParams { get; }
 
+    public ICollection<ParamValueViewModel> GetValues(
+        ICollection<CategoryViewModel> categories,
+        ParamViewModel param,
+        OperatorKind @operator) {
+        return []; // TODO
+    }
+
     public void SetSelectedCategories(ICollection<Category> categories) {
         if(categories == null) {
             throw new ArgumentNullException(nameof(categories));

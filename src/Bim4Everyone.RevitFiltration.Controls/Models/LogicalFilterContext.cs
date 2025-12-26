@@ -2,27 +2,30 @@ using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 
+using pyRevitLabs.Json;
+
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
 
 internal class LogicalFilterContext : ILogicalFilterContext {
-    public LogicalFilterContext(
-        ICollection<BuiltInCategory> selectedCategories,
-        ILogicalFilterFactory factory,
-        Set set) {
-        if(selectedCategories == null) {
-            throw new ArgumentNullException(nameof(selectedCategories));
-        }
-
-        if(selectedCategories.Count == 0) {
-            throw new ArgumentOutOfRangeException(nameof(selectedCategories));
-        }
-
-        SelectedCategories = selectedCategories;
-        Set = set ?? throw new ArgumentNullException(nameof(set));
-        Filter = set.Generate(factory);
+    [JsonConstructor]
+    public LogicalFilterContext(Filter filter) {
+        Filter = filter ?? throw new ArgumentNullException(nameof(filter));
     }
 
-    public ILogicalFilter Filter { get; }
-    public ICollection<BuiltInCategory> SelectedCategories { get; }
-    public Set Set { get; }
+    [JsonIgnore]
+    internal ILogicalFilterFactory Factory { get; set; }
+
+    [JsonProperty]
+    public Filter Filter { get; }
+
+    [JsonIgnore]
+    public ICollection<BuiltInCategory> SelectedCategories => Filter.Categories;
+
+    public ILogicalFilter GetFilter() {
+        if(Factory is null) {
+            throw new InvalidOperationException();
+        }
+
+        return Filter.RootSet.Generate(Factory);
+    }
 }

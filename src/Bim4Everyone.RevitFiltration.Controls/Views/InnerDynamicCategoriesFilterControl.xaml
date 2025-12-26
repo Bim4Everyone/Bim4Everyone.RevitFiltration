@@ -4,9 +4,63 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:vms="clr-namespace:Bim4Everyone.RevitFiltration.Controls.ViewModels"
+    xmlns:local="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="300"
-    x:ClassModifier="internal">
-    <Grid />
+    x:ClassModifier="internal"
+    d:DataContext="{d:DesignInstance vms:DynamicCategoriesFilterViewModel, IsDesignTimeCreatable=False}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="../Resources/CustomStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="1*"
+                MinWidth="200" />
+            <ColumnDefinition
+                Width="Auto" />
+            <ColumnDefinition
+                Width="2*"
+                MinWidth="200" />
+        </Grid.ColumnDefinitions>
+
+        <Border
+            Grid.Row="0"
+            Style="{StaticResource CustomBorder}">
+            <DockPanel
+                LastChildFill="True">
+                <Label
+                    DockPanel.Dock="Top"
+                    Content="Категории" />
+                <local:CategoriesView
+                    DataContext="{Binding }" />
+            </DockPanel>
+        </Border>
+
+        <GridSplitter
+            Grid.Column="1"
+            Style="{StaticResource CustomGridSplitter}" />
+
+        <Border
+            Grid.Column="2"
+            Style="{StaticResource CustomBorder}">
+            <DockPanel
+                LastChildFill="True">
+                <Label
+                    DockPanel.Dock="Top"
+                    Content="Критерии фильтрации" />
+                <ScrollViewer>
+                    <local:SetView
+                        DataContext="{Binding RootSet}" />
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+    </Grid>
 </UserControl>
