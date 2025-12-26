@@ -1,4 +1,5 @@
 using Bim4Everyone.RevitFiltration.Controls.Core;
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 

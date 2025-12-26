@@ -1,5 +1,6 @@
 using Autodesk.Revit.DB;
 
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Utils;

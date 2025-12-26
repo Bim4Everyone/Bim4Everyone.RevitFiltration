@@ -2,6 +2,7 @@ using System.Globalization;
 
 using Autodesk.Revit.DB;
 
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 using Bim4Everyone.RevitFiltration.Controls.Models.Value;
 using Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
@@ -13,13 +14,18 @@ using pyRevitLabs.Json;
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Params;
 
 internal class ParamModel : IEquatable<ParamModel> {
-    public ParamModel(Parameter parameter) {
-        Name = parameter.Definition.Name;
-        Id = parameter.Id;
+    public ParamModel(IParam parameter) {
+        if(parameter == null) {
+            throw new ArgumentNullException(nameof(parameter));
+        }
+
+        Name = parameter.Name;
+        Id = parameter.Id ?? throw new ArgumentException($"{nameof(IParam.Id)} is null");
 #if REVIT_2020_OR_LESS
-        UnitType = parameter.Definition.UnitType;
+        UnitType = parameter.UnitType;
 #else
-        UnitTypeName = parameter.GetUnitTypeId().GetSpecTypeIdName();
+        UnitTypeName = parameter.UnitType?.GetSpecTypeIdName()
+                       ?? throw new ArgumentException($"{nameof(IParam.UnitType)} is null");
 #endif
         StorageType = parameter.StorageType;
     }

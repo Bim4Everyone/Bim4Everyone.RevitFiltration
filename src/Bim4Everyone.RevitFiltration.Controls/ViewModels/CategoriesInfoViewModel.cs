@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
