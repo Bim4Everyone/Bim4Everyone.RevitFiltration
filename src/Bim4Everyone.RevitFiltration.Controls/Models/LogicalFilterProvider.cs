@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 using Autodesk.Revit.DB;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
@@ -13,7 +16,7 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         ILogicalFilterFactory factory) {
         _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
-        _errors = [];
+        _errors = [new ErrorContext("Ничего не выбрано")];
         _filterContext = null;
     }
 
@@ -53,15 +56,22 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
     }
 
     public void SetErrors(IErrorContext[] errors) {
-        _errors.Clear();
-        if(errors.Length > 0) {
-            _errors.AddRange(errors);
-            _filterContext = null;
+        if(errors == null) {
+            throw new ArgumentNullException(nameof(errors));
         }
+
+        if(errors.Length == 0) {
+            throw new ArgumentException(nameof(errors));
+        }
+
+        _errors.Clear();
+        _errors.AddRange(errors);
+        _filterContext = null;
     }
 
-    public void SetFilter(ILogicalFilterContext? filter) {
-        _filterContext = filter;
+    public void SetFilter(ILogicalFilterContext filter) {
+        _filterContext = filter ?? throw new ArgumentNullException(nameof(filter));
+        _errors.Clear();
     }
 
     public ICollection<Category> GetAvailableCategories() {

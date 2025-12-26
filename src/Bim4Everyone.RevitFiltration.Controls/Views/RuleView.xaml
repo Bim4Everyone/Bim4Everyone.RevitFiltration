@@ -52,7 +52,6 @@
         <ComboBox
             Grid.Column="2"
             Margin="3"
-            DisplayMemberPath="DisplayValue"
             ScrollViewer.VerticalScrollBarVisibility="Visible"
             Text="{Binding StringValue}"
             ItemsSource="{Binding Values}"

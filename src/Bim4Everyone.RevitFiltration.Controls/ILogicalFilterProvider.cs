@@ -34,5 +34,5 @@ public interface ILogicalFilterProvider {
     /// <summary>
     ///     Назначает контекст фильтра, который пользователь сделал в UI.
     /// </summary>
-    internal void SetFilter(ILogicalFilterContext? filter);
+    internal void SetFilter(ILogicalFilterContext filter);
 }

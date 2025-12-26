@@ -216,8 +216,9 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
             return;
         }
 
-        if(!string.IsNullOrWhiteSpace(RootSet.GetErrorText())) {
-            _logicalFilterProvider.SetErrors([new ErrorContext("В критериях фильтрации заполнены не все поля")]);
+        string error = RootSet.GetErrorText();
+        if(!string.IsNullOrWhiteSpace(error)) {
+            _logicalFilterProvider.SetErrors([new ErrorContext(error)]);
             return;
         }
 

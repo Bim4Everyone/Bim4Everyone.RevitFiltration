@@ -1,3 +1,5 @@
+using System.Globalization;
+
 using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
@@ -53,7 +55,7 @@ internal abstract class ParamValue : IComparable<ParamValue>, IEquatable<ParamVa
         return paramModel.StorageType switch {
             StorageType.Integer => new IntParamValue(int.Parse(value), displayValue),
             StorageType.String => new StringParamValue(value, displayValue),
-            StorageType.Double => new DoubleParamValue(double.Parse(value), displayValue),
+            StorageType.Double => new DoubleParamValue(double.Parse(value, CultureInfo.InvariantCulture), displayValue),
             StorageType.ElementId => new ElementIdParamValue(value, displayValue),
             _ => throw new InvalidOperationException()
         };
