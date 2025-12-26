@@ -85,7 +85,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         }
 
         var dataProvider = provider.GetDataProvider();
-        AllCategories = [..dataProvider.GetCategories().Select(c => new CategoryViewModel(c))];
+        AllCategories = [..dataProvider.GetCategories().OrderBy(c => c.Name).Select(c => new CategoryViewModel(c))];
         Categories = new CollectionViewSource { Source = AllCategories };
         Categories.Filter += CategoriesFilterHandler;
         var factory = provider.GetLogicalFilterFactory();

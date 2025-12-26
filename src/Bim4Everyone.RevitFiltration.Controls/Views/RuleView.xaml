@@ -33,7 +33,6 @@
 
         <ComboBox
             Grid.Column="0"
-            Width="200"
             Margin="3"
             IsEditable="False"
             DisplayMemberPath="Name"
@@ -43,7 +42,6 @@
         <ComboBox
             Grid.Column="1"
             Margin="3"
-            Width="100"
             IsEditable="False"
             DisplayMemberPath="Name"
             ItemsSource="{Binding AvailableOperators}"
