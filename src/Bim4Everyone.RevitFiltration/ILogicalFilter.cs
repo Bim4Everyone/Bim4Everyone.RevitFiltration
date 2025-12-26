@@ -8,10 +8,6 @@ namespace Bim4Everyone.RevitFiltration;
 public interface ILogicalFilter {
     internal ICompositor Compositor { get; }
 
-    internal ICollection<ILogicalFilter> GetInnerFilters();
-
-    internal ICollection<IFilterRule> GetInnerRules();
-
     /// <summary>
     ///     Создает фильтр по элементам в Autodesk Revit с заданными настройками.
     /// </summary>
