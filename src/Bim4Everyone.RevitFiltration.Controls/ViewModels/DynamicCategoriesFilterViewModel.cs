@@ -9,6 +9,8 @@ using Bim4Everyone.RevitFiltration.Controls.Models;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 
+using dosymep.Revit;
+
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class DynamicCategoriesFilterViewModel : BaseViewModel {
