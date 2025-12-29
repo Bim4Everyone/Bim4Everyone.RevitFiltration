@@ -33,16 +33,6 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         private set => RaiseAndSetIfChanged(ref _rootSet, value);
     }
 
-    public CategoriesInfoViewModel? CategoriesInfo {
-        get => _categoriesInfo;
-        private set => RaiseAndSetIfChanged(ref _categoriesInfo, value);
-    }
-
-    public ObservableCollection<CategoryViewModel>? AllCategories {
-        get => _allCategories;
-        private set => RaiseAndSetIfChanged(ref _allCategories, value);
-    }
-
     public CollectionViewSource? Categories {
         get => _categories;
         private set => RaiseAndSetIfChanged(ref _categories, value);
@@ -72,6 +62,16 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
     public bool HideUnselectedCategories {
         get => _hideUnselectedCategories;
         set => RaiseAndSetIfChanged(ref _hideUnselectedCategories, value);
+    }
+
+    private CategoriesInfoViewModel? CategoriesInfo {
+        get => _categoriesInfo;
+        set => RaiseAndSetIfChanged(ref _categoriesInfo, value);
+    }
+
+    private ObservableCollection<CategoryViewModel>? AllCategories {
+        get => _allCategories;
+        set => RaiseAndSetIfChanged(ref _allCategories, value);
     }
 
     public void LoadProvider(ILogicalFilterProvider? provider) {

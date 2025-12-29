@@ -10,6 +10,7 @@
     d:DesignHeight="300"
     d:DesignWidth="300"
     x:ClassModifier="internal"
+    x:Name="_this"
     d:DataContext="{d:DesignInstance vms:DynamicCategoriesFilterViewModel, IsDesignTimeCreatable=False}">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -51,16 +52,14 @@
         <Border
             Grid.Column="2"
             Style="{StaticResource CustomBorder}">
-            <DockPanel
-                LastChildFill="True">
-                <Label
-                    DockPanel.Dock="Top"
-                    Content="Критерии фильтрации" />
-                <ScrollViewer>
+            <ScrollViewer>
+                <StackPanel>
+                    <Label
+                        Content="Критерии фильтрации" />
                     <local:SetView
                         DataContext="{Binding RootSet}" />
-                </ScrollViewer>
-            </DockPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Border>
     </Grid>
 </UserControl>

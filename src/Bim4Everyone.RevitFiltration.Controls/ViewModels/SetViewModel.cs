@@ -34,8 +34,8 @@ internal class SetViewModel : BaseViewModel {
             innerRule.PropertyChanged += OnInnerRuleChanged;
         }
 
-        AddRuleCommand = RelayCommand.Create(AddRule);
-        AddSetCommand = RelayCommand.Create(AddSet);
+        AddRuleCommand = RelayCommand.Create(AddRule, CanAddItems);
+        AddSetCommand = RelayCommand.Create(AddSet, CanAddItems);
         RemoveRuleCommand = RelayCommand.Create<RuleViewModel>(RemoveRule, CanRemoveRule);
         RemoveSetCommand = RelayCommand.Create<SetViewModel>(RemoveSet, CanRemoveSet);
     }
@@ -106,6 +106,10 @@ internal class SetViewModel : BaseViewModel {
         vm.PropertyChanged += OnInnerSetChanged;
         InnerSets.Add(vm);
         NotifyInnerSetsChanges();
+    }
+
+    private bool CanAddItems() {
+        return CategoriesInfo.SelectedCategories.Count > 0;
     }
 
     private void RemoveSet(SetViewModel vm) {

@@ -52,6 +52,7 @@
             Margin="3"
             ScrollViewer.VerticalScrollBarVisibility="Visible"
             Text="{Binding StringValue}"
+            IsEnabled="{Binding IsValueEditable}"
             ItemsSource="{Binding Values}"
             SelectedItem="{Binding SelectedValue, UpdateSourceTrigger=PropertyChanged}">
             <ComboBox.ItemsPanel>
