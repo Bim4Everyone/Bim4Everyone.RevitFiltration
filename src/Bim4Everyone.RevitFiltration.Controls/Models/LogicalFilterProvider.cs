@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
+using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 
-using Autodesk.Revit.DB;
+using dosymep.Revit;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
 
@@ -74,15 +73,33 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         _errors.Clear();
     }
 
-    public ICollection<Category> GetAvailableCategories() {
-        return _dataProvider.GetCategories();
-    }
-
-    public IDataProvider GetParamsProvider() {
-        return _dataProvider;
-    }
-
     private void Load(ILogicalFilterContext filterContext) {
-        throw new NotImplementedException();
+        if(filterContext == null) {
+            throw new ArgumentNullException(nameof(filterContext));
+        }
+
+        var filter = filterContext.Filter;
+        var availableCategories = _dataProvider.GetCategories()
+            .ToDictionary(c => c.GetBuiltInCategory(), c => c);
+        if(filter.Categories.Any(c => !availableCategories.ContainsKey(c))) {
+            SetErrors([new ErrorContext("Ничего не выбрано")]);
+            return;
+        }
+
+        var availableParamNames = _dataProvider.GetParams(
+                filter.Categories.Select(c => availableCategories[c]).ToArray())
+            .Select(p => p.Name)
+            .ToHashSet();
+        if(ContainsNotAvailableParams(filter.RootSet, availableParamNames)) {
+            SetErrors([new ErrorContext("Ничего не выбрано")]);
+        }
+    }
+
+    private bool ContainsNotAvailableParams(Set set, ICollection<string> paramNames) {
+        if(set.InnerRules.Any(r => !paramNames.Contains(r.Param.Name))) {
+            return true;
+        }
+
+        return set.InnerSets.Any(innerSet => ContainsNotAvailableParams(innerSet, paramNames));
     }
 }

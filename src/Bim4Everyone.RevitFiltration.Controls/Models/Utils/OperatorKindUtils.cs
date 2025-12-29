@@ -44,10 +44,7 @@ internal class OperatorKindUtils {
         }
 
         if(storageType == StorageType.ElementId) {
-            return [
-                // TODO добавить остальные
-                OperatorKind.Equals, OperatorKind.NotEquals, OperatorKind.HasValue, OperatorKind.HasNoValue
-            ];
+            return [OperatorKind.Equals, OperatorKind.NotEquals, OperatorKind.HasValue, OperatorKind.HasNoValue];
         }
 
         return [

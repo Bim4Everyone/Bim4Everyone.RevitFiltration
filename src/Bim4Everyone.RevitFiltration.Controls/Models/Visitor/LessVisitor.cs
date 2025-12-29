@@ -4,34 +4,34 @@ namespace Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
 
 internal class LessVisitor : IVisitor {
     public void AddInnerRule(ILogicalFilter logicalFilter, string paramName, string paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramName, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, string paramName, double paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramName, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, string paramName, int paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramName, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, string paramName, ElementId paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramName, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, BuiltInParameter paramId, string paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramId, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, BuiltInParameter paramId, double paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramId, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, BuiltInParameter paramId, int paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramId, paramValue);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, BuiltInParameter paramId, ElementId paramValue) {
-        throw new NotImplementedException();
+        logicalFilter.AddLessRule(paramId, paramValue);
     }
 }
