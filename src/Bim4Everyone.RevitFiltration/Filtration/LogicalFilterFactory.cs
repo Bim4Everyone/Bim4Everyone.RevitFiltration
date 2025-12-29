@@ -4,10 +4,10 @@ namespace Bim4Everyone.RevitFiltration.Filtration;
 
 internal class LogicalFilterFactory : ILogicalFilterFactory {
     public ILogicalFilter CreateAndFilter() {
-        return new Set(new AndCompositor());
+        return new LogicalFilter(new AndCompositor());
     }
 
     public ILogicalFilter CreateOrFilter() {
-        return new Set(new OrCompositor());
+        return new LogicalFilter(new OrCompositor());
     }
 }

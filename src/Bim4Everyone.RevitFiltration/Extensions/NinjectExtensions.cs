@@ -15,7 +15,7 @@ public static class NinjectExtensions {
     /// <param name="kernel">Ninject контейнер.</param>
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
     /// <exception cref="System.ArgumentNullException">kernel is null.</exception>
-    public static IKernel UseDefaultParser(this IKernel kernel) {
+    public static IKernel UseLogicalFilterParser(this IKernel kernel) {
         if(kernel == null) {
             throw new ArgumentNullException(nameof(kernel));
         }
@@ -32,7 +32,7 @@ public static class NinjectExtensions {
     /// <param name="kernel">Ninject контейнер.</param>
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
     /// <exception cref="System.ArgumentNullException">kernel is null.</exception>
-    public static IKernel UseDefaultFactory(this IKernel kernel) {
+    public static IKernel UseLogicalFilterFactory(this IKernel kernel) {
         if(kernel == null) {
             throw new ArgumentNullException(nameof(kernel));
         }

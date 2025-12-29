@@ -22,7 +22,7 @@ internal class LogicalFilterParser : ILogicalFilterParser {
         }
 
         try {
-            filter = JsonConvert.DeserializeObject<Set>(content, _settings);
+            filter = JsonConvert.DeserializeObject<LogicalFilter>(content, _settings);
             return true;
         } catch(JsonSerializationException) {
             filter = null;

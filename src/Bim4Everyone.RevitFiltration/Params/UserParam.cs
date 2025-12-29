@@ -6,9 +6,9 @@ using pyRevitLabs.Json;
 
 namespace Bim4Everyone.RevitFiltration.Params;
 
-internal class NamedParam : IParam {
+internal class UserParam : IParam {
     [JsonConstructor]
-    public NamedParam(string name) {
+    public UserParam(string name) {
         Name = name;
     }
 
