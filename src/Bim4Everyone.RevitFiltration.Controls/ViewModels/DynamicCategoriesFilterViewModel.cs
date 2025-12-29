@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
+using System.Windows.Input;
 
 using Autodesk.Revit.DB;
 
@@ -173,6 +174,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
             ?? []);
         RootSet?.Renew();
         UpdateLogicalFilterContext();
+        CommandManager.InvalidateRequerySuggested();
     }
 
     private void RootSetChanged(object sender, PropertyChangedEventArgs e) {

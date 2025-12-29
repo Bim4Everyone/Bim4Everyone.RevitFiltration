@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
@@ -28,6 +29,7 @@ internal class RuleViewModel : BaseViewModel {
         );
 
     private bool _isValueEditable;
+    private bool _paramValuesAlreadyUpdated;
     private OperatorViewModel? _selectedOperator;
     private ParamViewModel? _selectedParameter;
     private ParamValueViewModel? _selectedValue;
@@ -45,7 +47,11 @@ internal class RuleViewModel : BaseViewModel {
             SelectedParameter = CategoriesInfo.AvailableParams.First();
             StringValue = string.Empty;
         }
+
+        UpdateParamValuesCommand = RelayCommand.Create(UpdateParamValues, CanUpdateParamValues);
     }
+
+    public ICommand UpdateParamValuesCommand { get; }
 
     public ObservableCollection<OperatorViewModel> AvailableOperators { get; } = [];
 
@@ -76,7 +82,7 @@ internal class RuleViewModel : BaseViewModel {
 
     public ObservableCollection<ParamValueViewModel>? Values {
         get => _values;
-        set => RaiseAndSetIfChanged(ref _values, value);
+        private set => RaiseAndSetIfChanged(ref _values, value);
     }
 
     public CategoriesInfoViewModel CategoriesInfo { get; }
@@ -143,24 +149,22 @@ internal class RuleViewModel : BaseViewModel {
                 AvailableOperators.Add(op);
             }
 
-            if(SelectedOperator == null
-               || !AvailableOperators.Contains(SelectedOperator)) {
-                SelectedOperator = AvailableOperators.First();
-            } else {
-                UpdateParamValues();
-            }
+            SelectedOperator = AvailableOperators.First();
+            _paramValuesAlreadyUpdated = false;
         }
     }
 
     private void OnSelectedOperatorChanged() {
         if(SelectedParameter != null
            && SelectedOperator != null) {
-            UpdateParamValues();
             IsValueEditable = SelectedOperator.Operator != OperatorKind.HasValue
                               && SelectedOperator.Operator != OperatorKind.HasNoValue;
             if(!IsValueEditable) {
+                SelectedValue = null;
                 StringValue = string.Empty;
             }
+
+            _paramValuesAlreadyUpdated = false;
         }
     }
 
@@ -176,5 +180,10 @@ internal class RuleViewModel : BaseViewModel {
                 SelectedParameter,
                 SelectedOperator.Operator)
         ];
+        _paramValuesAlreadyUpdated = true;
+    }
+
+    private bool CanUpdateParamValues() {
+        return SelectedParameter != null && SelectedOperator != null && !_paramValuesAlreadyUpdated;
     }
 }

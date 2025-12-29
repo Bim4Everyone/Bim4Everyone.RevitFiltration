@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vms="clr-namespace:Bim4Everyone.RevitFiltration.Controls.ViewModels"
     mc:Ignorable="d"
@@ -36,6 +37,7 @@
             Margin="3"
             IsEditable="False"
             DisplayMemberPath="Name"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
             ItemsSource="{Binding CategoriesInfo.AvailableParams}"
             SelectedValue="{Binding SelectedParameter, UpdateSourceTrigger=PropertyChanged}" />
 
@@ -44,17 +46,27 @@
             Margin="3"
             IsEditable="False"
             DisplayMemberPath="Name"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
             ItemsSource="{Binding AvailableOperators}"
             SelectedValue="{Binding SelectedOperator, UpdateSourceTrigger=PropertyChanged}" />
 
         <ComboBox
             Grid.Column="2"
             Margin="3"
-            ScrollViewer.VerticalScrollBarVisibility="Visible"
-            Text="{Binding StringValue}"
+            IsEditable="{Binding IsValueEditable}"
             IsEnabled="{Binding IsValueEditable}"
+            DisplayMemberPath="DisplayValue"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            Text="{Binding StringValue, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Values}"
             SelectedItem="{Binding SelectedValue, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger
+                    EventName="DropDownOpened">
+                    <i:InvokeCommandAction
+                        Command="{Binding UpdateParamValuesCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel
@@ -62,35 +74,6 @@
                         VirtualizingStackPanel.VirtualizationMode="Recycling" />
                 </ItemsPanelTemplate>
             </ComboBox.ItemsPanel>
-            <ComboBox.ItemTemplate>
-                <DataTemplate
-                    DataType="{x:Type vms:ParamValueViewModel}">
-                    <TextBlock
-                        Text="{Binding ParamValue.DisplayValue}" />
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-            <ComboBox.Style>
-                <Style
-                    BasedOn="{StaticResource DefaultComboBoxStyle}"
-                    TargetType="{x:Type ComboBox}">
-                    <Style.Triggers>
-                        <DataTrigger
-                            Value="True"
-                            Binding="{Binding IsValueEditable}">
-                            <Setter
-                                Property="IsEditable"
-                                Value="True" />
-                        </DataTrigger>
-                        <DataTrigger
-                            Binding="{Binding IsValueEditable}"
-                            Value="False">
-                            <Setter
-                                Property="IsEditable"
-                                Value="False" />
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </ComboBox.Style>
         </ComboBox>
 
         <ui:Button

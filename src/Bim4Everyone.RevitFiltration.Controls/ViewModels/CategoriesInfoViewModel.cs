@@ -5,20 +5,23 @@ using Autodesk.Revit.DB;
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
+using Bim4Everyone.RevitFiltration.Controls.Models.Value;
+
+using dosymep.Revit;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class CategoriesInfoViewModel : BaseViewModel {
     private readonly ObservableCollection<ParamViewModel> _availableParams;
-    private readonly IParamsProvider _paramsProvider;
+    private readonly IDataProvider _dataProvider;
     private readonly ObservableCollection<CategoryViewModel> _selectedCategories;
 
-    public CategoriesInfoViewModel(IParamsProvider paramsProvider, ICollection<Category> selectedCategories) {
+    public CategoriesInfoViewModel(IDataProvider dataProvider, ICollection<Category> selectedCategories) {
         if(selectedCategories == null) {
             throw new ArgumentNullException(nameof(selectedCategories));
         }
 
-        _paramsProvider = paramsProvider ?? throw new ArgumentNullException(nameof(paramsProvider));
+        _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         _selectedCategories = [];
         _availableParams = [];
         SelectedCategories = new ReadOnlyObservableCollection<CategoryViewModel>(_selectedCategories);
@@ -35,7 +38,19 @@ internal class CategoriesInfoViewModel : BaseViewModel {
         ICollection<CategoryViewModel> categories,
         ParamViewModel param,
         OperatorKind @operator) {
-        return []; // TODO
+        if(@operator is OperatorKind.HasValue or OperatorKind.HasNoValue) {
+            return [];
+        }
+
+        var builtInCategories = categories.Select(c => c.Category.GetBuiltInCategory())
+            .ToHashSet();
+
+        return _dataProvider.GetDocuments()
+            .SelectMany(d => GetValues(d, builtInCategories, param))
+            .Distinct()
+            .OrderBy(v => v)
+            .Select(v => new ParamValueViewModel(v))
+            .ToArray();
     }
 
     public void SetSelectedCategories(ICollection<Category> categories) {
@@ -53,7 +68,7 @@ internal class CategoriesInfoViewModel : BaseViewModel {
 
     private void SetParams(ICollection<Category> categories) {
         _availableParams.Clear();
-        var @params = _paramsProvider.GetParams(categories)
+        var @params = _dataProvider.GetParams(categories)
             .Select(p => new ParamViewModel(new ParamModel(p)))
             .Distinct()
             .OrderBy(p => p.Name)
@@ -61,5 +76,17 @@ internal class CategoriesInfoViewModel : BaseViewModel {
         foreach(var param in @params) {
             _availableParams.Add(param);
         }
+    }
+
+    private ICollection<ParamValue> GetValues(
+        Document doc,
+        ICollection<BuiltInCategory> categories,
+        ParamViewModel param) {
+        return new FilteredElementCollector(doc)
+            .WhereElementIsNotElementType()
+            .WherePasses(new ElementMulticategoryFilter(categories))
+            .Where(e => e.IsExistsParamValue(param.Name))
+            .Select(e => param.ParamModel.GetParamValueFromString(e.GetParam(param.Name).AsValueString()))
+            .ToArray();
     }
 }
