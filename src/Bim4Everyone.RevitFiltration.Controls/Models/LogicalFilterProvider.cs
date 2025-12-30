@@ -92,7 +92,10 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
             .ToHashSet();
         if(ContainsNotAvailableParams(filter.RootSet, availableParamNames)) {
             SetErrors([new ErrorContext("Ничего не выбрано")]);
+            return;
         }
+
+        SetFilter(filterContext);
     }
 
     private bool ContainsNotAvailableParams(Set set, ICollection<string> paramNames) {
