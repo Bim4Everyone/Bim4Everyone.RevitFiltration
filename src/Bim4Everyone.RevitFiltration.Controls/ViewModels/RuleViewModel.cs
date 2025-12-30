@@ -39,14 +39,21 @@ internal class RuleViewModel : BaseViewModel {
     public RuleViewModel(CategoriesInfoViewModel categoriesInfo, Rule? rule = null) {
         CategoriesInfo = categoriesInfo ?? throw new ArgumentNullException(nameof(categoriesInfo));
 
-        PropertyChanged += RuleViewModelChangedHandler;
         if(rule != null) {
             SelectedParameter = new ParamViewModel(rule.Param);
+            SelectedOperator = new OperatorViewModel(rule.OperatorKind);
+            AvailableOperators = [..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => _allOperators[o])];
             StringValue = rule.Value.DisplayValue ?? string.Empty;
         } else {
             SelectedParameter = CategoriesInfo.AvailableParams.First();
+            AvailableOperators = [..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => _allOperators[o])];
+            SelectedOperator = AvailableOperators.First();
             StringValue = string.Empty;
         }
+
+        OnSelectedOperatorChanged();
+
+        PropertyChanged += RuleViewModelChangedHandler;
 
         UpdateParamValuesCommand = RelayCommand.Create(UpdateParamValues, CanUpdateParamValues);
     }
@@ -163,8 +170,6 @@ internal class RuleViewModel : BaseViewModel {
                 SelectedValue = null;
                 StringValue = string.Empty;
             }
-
-            _paramValuesAlreadyUpdated = false;
         }
     }
 
