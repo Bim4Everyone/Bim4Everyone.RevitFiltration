@@ -26,6 +26,7 @@ internal class LogicalFilter : ILogicalFilter {
     [JsonProperty]
     public ICompositor Compositor { get; }
 
+    /// <inheritdoc />
     public ElementFilter Build(Document document, IOptions options) {
         if(document == null) {
             throw new ArgumentNullException(nameof(document));
@@ -45,6 +46,7 @@ internal class LogicalFilter : ILogicalFilter {
         return Compositor.Create(filters);
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddFilter(ILogicalFilter innerFilter) {
         if(innerFilter == null) {
             throw new ArgumentNullException(nameof(innerFilter));
@@ -61,6 +63,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -73,6 +76,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -85,6 +89,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -97,6 +102,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -109,6 +115,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -117,6 +124,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -125,6 +133,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -133,6 +142,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -141,6 +151,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -153,6 +164,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -165,6 +177,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -177,6 +190,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -189,6 +203,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -197,6 +212,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -205,6 +221,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -213,6 +230,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddGreaterRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -221,6 +239,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -233,6 +252,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -245,6 +265,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -257,6 +278,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -269,6 +291,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -277,6 +300,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -285,6 +309,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -293,6 +318,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -301,6 +327,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -313,6 +340,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -325,6 +353,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -337,6 +366,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -349,6 +379,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -357,6 +388,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -365,6 +397,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -373,6 +406,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddLessRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -381,6 +415,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -393,6 +428,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -405,6 +441,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -417,6 +454,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -429,6 +467,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -437,6 +476,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -445,6 +485,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -453,6 +494,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEqualsRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -461,6 +503,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(string paramName, int paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -473,6 +516,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(string paramName, double paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -485,6 +529,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -497,6 +542,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(string paramName, ElementId paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -509,6 +555,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, int paramValue) {
         InnerRules.Add(
             new Rule(
@@ -517,6 +564,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, double paramValue) {
         InnerRules.Add(
             new Rule(
@@ -525,6 +573,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -533,6 +582,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, ElementId paramValue) {
         InnerRules.Add(
             new Rule(
@@ -541,6 +591,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddHasNoValueRule(string paramName) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -553,6 +604,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddHasNoValueRule(BuiltInParameter paramId) {
         InnerRules.Add(
             new Rule(
@@ -561,6 +613,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddHasValueRule(string paramName) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -573,6 +626,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddHasValueRule(BuiltInParameter paramId) {
         InnerRules.Add(
             new Rule(
@@ -581,6 +635,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddBeginsWithRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -593,6 +648,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddBeginsWithRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -601,6 +657,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotBeginsWithRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -613,6 +670,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotBeginsWithRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -621,6 +679,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEndsWithRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -633,6 +692,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddEndsWithRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -641,6 +701,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEndsWithRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -653,6 +714,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotEndsWithRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -661,6 +723,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddContainsRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -673,6 +736,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddContainsRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -681,6 +745,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotContainsRule(string paramName, string paramValue) {
         if(string.IsNullOrWhiteSpace(paramName)) {
             throw new ArgumentException("Название параметра пустая строка или null.", nameof(paramName));
@@ -693,6 +758,7 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <inheritdoc />
     public ILogicalFilter AddNotContainsRule(BuiltInParameter paramId, string paramValue) {
         InnerRules.Add(
             new Rule(
@@ -701,6 +767,16 @@ internal class LogicalFilter : ILogicalFilter {
         return this;
     }
 
+    /// <summary>
+    ///     Проверяет является ли <paramref name="innerLogicalFilter" />
+    ///     вложенным в <paramref name="parentLogicalFilter" />.
+    /// </summary>
+    /// <param name="innerLogicalFilter">Вложенный фильтр</param>
+    /// <param name="parentLogicalFilter">Родительский фильтр</param>
+    /// <returns>
+    ///     True если <see cref="InnerFilters" /> содержит <paramref name="innerLogicalFilter" />
+    ///     или если <paramref name="innerLogicalFilter" /> является <paramref name="parentLogicalFilter" />.
+    /// </returns>
     private bool IsFilterInside(LogicalFilter innerLogicalFilter, LogicalFilter parentLogicalFilter) {
         if(ReferenceEquals(parentLogicalFilter, innerLogicalFilter)) {
             return true;

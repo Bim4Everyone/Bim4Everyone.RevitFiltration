@@ -4,6 +4,7 @@ using pyRevitLabs.Json;
 
 namespace Bim4Everyone.RevitFiltration.Serialization;
 
+/// <inheritdoc />
 internal class LogicalFilterParser : ILogicalFilterParser {
     private readonly JsonSerializerSettings _settings;
 
@@ -15,6 +16,7 @@ internal class LogicalFilterParser : ILogicalFilterParser {
         };
     }
 
+    /// <inheritdoc />
     public bool TryParse(string content, out ILogicalFilter? filter) {
         if(string.IsNullOrWhiteSpace(content)) {
             filter = null;
@@ -30,6 +32,7 @@ internal class LogicalFilterParser : ILogicalFilterParser {
         }
     }
 
+    /// <inheritdoc />
     public string Serialize(ILogicalFilter filter) {
         if(filter == null) {
             throw new ArgumentNullException(nameof(filter));
