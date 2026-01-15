@@ -1,12 +1,13 @@
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
+using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class CompositorViewModel : BaseViewModel, IEquatable<CompositorViewModel> {
     public CompositorViewModel(CompositorKind compositor) {
         CompositorKind = compositor;
-        Name = CompositorKind.ToString(); // TODO
+        Name = CompositorKind.GetDescription();
     }
 
     public bool IsAndCompositor => CompositorKind == CompositorKind.And;
