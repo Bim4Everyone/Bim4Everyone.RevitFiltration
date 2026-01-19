@@ -9,8 +9,8 @@ namespace Bim4Everyone.RevitFiltration.Controls.Models.Value;
 
 internal class ElementIdParamValue : ParamValue<string> {
     [JsonConstructor]
-    public ElementIdParamValue(string value, string displayValue)
-        : base(value, displayValue) {
+    public ElementIdParamValue(string tValue, string displayValue)
+        : base(tValue, displayValue) {
     }
 
     public override void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamModel paramModel) {

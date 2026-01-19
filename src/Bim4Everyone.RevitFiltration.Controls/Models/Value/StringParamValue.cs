@@ -6,8 +6,8 @@ using dosymep.Revit;
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Value;
 
 internal class StringParamValue : ParamValue<string> {
-    public StringParamValue(string value, string displayValue)
-        : base(value, displayValue) {
+    public StringParamValue(string tValue, string displayValue)
+        : base(tValue, displayValue) {
     }
 
     public override void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamModel paramModel) {

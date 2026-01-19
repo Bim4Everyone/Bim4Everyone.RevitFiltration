@@ -1,12 +1,15 @@
+using pyRevitLabs.Json;
+
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Value;
 
 internal abstract class ParamValue<T> : ParamValue, IEquatable<ParamValue<T>>, IComparable<ParamValue<T>>
     where T : IComparable {
-    protected ParamValue(T value, string displayValue)
+    protected ParamValue(T tValue, string displayValue)
         : base(displayValue) {
-        TValue = value;
+        TValue = tValue ?? throw new ArgumentNullException(nameof(tValue));
     }
 
+    [JsonProperty]
     public T TValue { get; }
 
     public override object Value => TValue;
