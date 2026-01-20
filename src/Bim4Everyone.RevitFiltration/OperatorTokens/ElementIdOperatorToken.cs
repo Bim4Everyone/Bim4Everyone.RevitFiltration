@@ -32,7 +32,7 @@ internal class ElementIdOperatorToken : IOperatorToken {
     public IOperator Operator { get; }
 
     /// <inheritdoc />
-    public FilterRule Create(ElementId paramId, IOptions options) {
+    public FilterRule Create(ElementId paramId, Document document, IOptions options) {
         return Operator.Create(paramId, Value);
     }
 }

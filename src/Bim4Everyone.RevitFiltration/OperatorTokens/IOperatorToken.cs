@@ -17,7 +17,8 @@ internal interface IOperatorToken {
     ///     Создаёт правило на основе параметра и настроек точности.
     /// </summary>
     /// <param name="paramId">Параметр для проверки.</param>
+    /// <param name="document">Документ, для которого создается правило.</param>
     /// <param name="options">Настройки точности проверки.</param>
     /// <returns>Возвращает объект FilterRule из Revit.</returns>
-    internal FilterRule Create(ElementId paramId, IOptions options);
+    internal FilterRule Create(ElementId paramId, Document document, IOptions options);
 }
