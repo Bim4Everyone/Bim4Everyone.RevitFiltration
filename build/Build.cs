@@ -35,6 +35,15 @@ class Build : NukeBuild, IHazSolution {
 
     IEnumerable<RevitVersion> BuildRevitVersions;
 
+    AbsolutePath RevitFiltrationProject =>
+        RootDirectory / "src" / "Bim4Everyone.RevitFiltration" / "Bim4Everyone.RevitFiltration.csproj";
+
+    AbsolutePath RevitFiltrationControlsProject =>
+        RootDirectory
+        / "src"
+        / "Bim4Everyone.RevitFiltration.Controls"
+        / "Bim4Everyone.RevitFiltration.Controls.csproj";
+
     Target Clean =>
         _ => _
             .Before(Restore)
@@ -50,26 +59,29 @@ class Build : NukeBuild, IHazSolution {
         _ => _
             .DependsOn(Clean)
             .Executes(() => {
-                DotNetRestore(s => s
-                    .SetProjectFile(((IHazSolution) this).Solution));
+                DotNetRestore(s => s.SetProjectFile(RevitFiltrationProject));
+                DotNetRestore(s => s.SetProjectFile(RevitFiltrationControlsProject));
             });
 
     Target Compile =>
         _ => _
             .DependsOn(Restore)
             .Executes(() => {
-                DotNetBuild(s => s
-                    .EnableForce()
-                    .DisableNoRestore()
-                    .SetConfiguration(Configuration)
-                    .SetProjectFile(((IHazSolution) this).Solution)
-                    .CombineWith(
-                        BuildRevitVersions,
-                        (settings, version) => {
-                            return settings
-                                .SetOutputDirectory(Output / version)
-                                .SetProperty("RevitVersion", (int) version);
-                        }));
+                var projects = new[] { RevitFiltrationProject, RevitFiltrationControlsProject };
+                foreach(var project in projects) {
+                    DotNetBuild(s => s
+                        .EnableForce()
+                        .DisableNoRestore()
+                        .SetConfiguration(Configuration)
+                        .SetProjectFile(project)
+                        .CombineWith(
+                            BuildRevitVersions,
+                            (settings, version) => {
+                                return settings
+                                    .SetOutputDirectory(Output / version)
+                                    .SetProperty("RevitVersion", (int) version);
+                            }));
+                }
             });
 
     protected override void OnBuildInitialized() {
