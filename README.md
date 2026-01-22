@@ -6,6 +6,13 @@ RevitFiltration.Controls предоставляет пользователю в�
 
 ## Bim4Everyone.RevitFiltration
 
+### Необходимые зависимости
+
+- pyRevitLabs.Json
+- Ninject
+- dosymep.Revit
+- dosymep.Bim4Everyone
+
 ### Подключение к плагину
 
 1. Подключить ссылку на Bim4Everyone.RevitFiltration.dll в .csproj:
