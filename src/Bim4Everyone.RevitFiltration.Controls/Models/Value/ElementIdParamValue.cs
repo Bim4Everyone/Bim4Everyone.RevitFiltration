@@ -14,7 +14,6 @@ internal class ElementIdParamValue : ParamValue<string> {
     }
 
     public override void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamModel paramModel) {
-        // TODO проверить, что создание правила по строке, а не по ElementId работает
         if(paramModel.Id.IsSystemId()) {
             visitor.AddInnerRule(logicalFilter, paramModel.Id.AsBuiltInParameter(), TValue);
         } else {

@@ -44,12 +44,12 @@ internal abstract class ParamValue : IComparable<ParamValue>, IEquatable<ParamVa
             throw new ArgumentNullException(nameof(paramModel));
         }
 
-        if(value == null) {
-            throw new ArgumentNullException(nameof(value));
+        if(string.IsNullOrWhiteSpace(value)) {
+            throw new ArgumentException(nameof(value));
         }
 
-        if(displayValue == null) {
-            throw new ArgumentNullException(nameof(displayValue));
+        if(string.IsNullOrWhiteSpace(displayValue)) {
+            throw new ArgumentException(nameof(displayValue));
         }
 
         return paramModel.StorageType switch {

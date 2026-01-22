@@ -4,6 +4,7 @@ using System.Windows.Input;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
+using Bim4Everyone.RevitFiltration.Controls.Models.Value;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
@@ -29,7 +30,12 @@ internal class RuleViewModel : BaseViewModel {
         );
 
     private bool _isValueEditable;
+
+    /// <summary>
+    ///     Флаг, показывающий, обновлен ли список существующих значений выбранного параметра
+    /// </summary>
     private bool _paramValuesAlreadyUpdated;
+
     private OperatorViewModel? _selectedOperator;
     private ParamViewModel? _selectedParameter;
     private ParamValueViewModel? _selectedValue;
@@ -58,6 +64,9 @@ internal class RuleViewModel : BaseViewModel {
         UpdateParamValuesCommand = RelayCommand.Create(UpdateParamValues, CanUpdateParamValues);
     }
 
+    /// <summary>
+    ///     Обновляет список существующих значений параметра для выбора в выпадающем списке
+    /// </summary>
     public ICommand UpdateParamValuesCommand { get; }
 
     public ObservableCollection<OperatorViewModel> AvailableOperators { get; } = [];
@@ -94,18 +103,29 @@ internal class RuleViewModel : BaseViewModel {
 
     public CategoriesInfoViewModel CategoriesInfo { get; }
 
+    /// <summary>
+    ///     Возвращает модель правила фильтрации для UI.
+    ///     Перед вызовом этого метода надо проверить, что в текущем правиле нет ошибок и оно не пустое.
+    /// </summary>
     public Rule CreateRule() {
-        if(SelectedParameter is null
-           || SelectedOperator is null) {
+        if(!string.IsNullOrWhiteSpace(GetErrorText())) {
             throw new InvalidOperationException();
+        }
+
+        ParamValue value;
+        if(SelectedOperator!.Operator is OperatorKind.HasValue or OperatorKind.HasNoValue) {
+            value = new StringParamValue(string.Empty, string.Empty);
+        } else if(SelectedValue == null
+                  || SelectedValue.DisplayValue != StringValue) {
+            value = SelectedParameter!.ParamModel.GetParamValueFromString(StringValue);
+        } else {
+            value = SelectedValue.ParamValue;
         }
 
         return new Rule {
             OperatorKind = SelectedOperator.Operator,
-            Param = SelectedParameter.ParamModel,
-            Value = SelectedValue == null || SelectedValue.DisplayValue != StringValue
-                ? SelectedParameter.ParamModel.GetParamValueFromString(StringValue)
-                : SelectedValue.ParamValue
+            Param = SelectedParameter!.ParamModel,
+            Value = value
         };
     }
 
@@ -140,11 +160,15 @@ internal class RuleViewModel : BaseViewModel {
 
     private void RuleViewModelChangedHandler(object sender, PropertyChangedEventArgs e) {
         if(e.PropertyName == nameof(SelectedParameter)) {
+            PropertyChanged -= RuleViewModelChangedHandler;
             OnSelectedParamChanged();
+            PropertyChanged += RuleViewModelChangedHandler;
         }
 
         if(e.PropertyName == nameof(SelectedOperator)) {
+            PropertyChanged -= RuleViewModelChangedHandler;
             OnSelectedOperatorChanged();
+            PropertyChanged += RuleViewModelChangedHandler;
         }
     }
 
@@ -157,6 +181,7 @@ internal class RuleViewModel : BaseViewModel {
             }
 
             SelectedOperator = AvailableOperators.First();
+            OnSelectedOperatorChanged();
             _paramValuesAlreadyUpdated = false;
         }
     }
@@ -167,7 +192,6 @@ internal class RuleViewModel : BaseViewModel {
             IsValueEditable = SelectedOperator.Operator != OperatorKind.HasValue
                               && SelectedOperator.Operator != OperatorKind.HasNoValue;
             if(!IsValueEditable) {
-                SelectedValue = null;
                 StringValue = string.Empty;
             }
         }

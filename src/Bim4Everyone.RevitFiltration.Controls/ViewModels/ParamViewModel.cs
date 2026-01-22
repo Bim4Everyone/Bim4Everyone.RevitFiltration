@@ -34,8 +34,12 @@ internal class ParamViewModel : BaseViewModel, IEquatable<ParamViewModel> {
             StorageType.Double => double.TryParse(strValue, out _)
                 ? string.Empty
                 : $"Значение параметра {Name} должно быть числом",
-            StorageType.String => string.Empty,
-            StorageType.ElementId => string.Empty,
+            StorageType.String => string.IsNullOrWhiteSpace(strValue)
+                ? $"Значение параметра {Name} не указано"
+                : string.Empty,
+            StorageType.ElementId => string.IsNullOrWhiteSpace(strValue)
+                ? $"Значение параметра {Name} не указано"
+                : string.Empty,
             _ => throw new NotSupportedException()
         };
     }
