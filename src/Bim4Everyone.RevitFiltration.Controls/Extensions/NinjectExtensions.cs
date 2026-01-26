@@ -17,7 +17,7 @@ public static class NinjectExtensions {
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
     /// <exception cref="System.ArgumentNullException">kernel is null.</exception>
     /// <exception cref="System.InvalidOperationException">В kernel не зарегистрирован ILogicalFilterFactory.</exception>
-    public static IKernel UseDefaultProviderFactory(this IKernel kernel) {
+    public static IKernel UseLogicalFilterProviderFactory(this IKernel kernel) {
         if(kernel == null) {
             throw new ArgumentNullException(nameof(kernel));
         }
@@ -41,7 +41,7 @@ public static class NinjectExtensions {
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
     /// <exception cref="System.ArgumentNullException">kernel is null.</exception>
     /// <exception cref="System.InvalidOperationException">В kernel не зарегистрирован ILogicalFilterFactory.</exception>
-    public static IKernel UseDefaultContextParser(this IKernel kernel) {
+    public static IKernel UseFilterContextParser(this IKernel kernel) {
         if(kernel == null) {
             throw new ArgumentNullException(nameof(kernel));
         }
