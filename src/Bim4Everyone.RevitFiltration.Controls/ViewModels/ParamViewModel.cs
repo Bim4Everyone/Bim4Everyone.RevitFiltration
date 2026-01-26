@@ -27,6 +27,13 @@ internal class ParamViewModel : BaseViewModel, IEquatable<ParamViewModel> {
     }
 
     public string GetErrorText(string strValue) {
+        if(ParamModel.Id == nameof(BuiltInParameter.ELEM_PARTITION_PARAM)) {
+            // для параметра "Рабочий набор" StorageType - Integer, но значение используется строковое
+            return string.IsNullOrWhiteSpace(strValue)
+                ? $"Значение параметра {Name} не указано"
+                : string.Empty;
+        }
+
         return ParamModel.StorageType switch {
             StorageType.Integer => int.TryParse(strValue, out _)
                 ? string.Empty

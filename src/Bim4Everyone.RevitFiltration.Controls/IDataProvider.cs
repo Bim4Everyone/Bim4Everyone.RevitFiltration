@@ -1,5 +1,7 @@
 using Autodesk.Revit.DB;
 
+using dosymep.Bim4Everyone;
+
 namespace Bim4Everyone.RevitFiltration.Controls;
 
 /// <summary>
@@ -11,7 +13,7 @@ public interface IDataProvider {
     /// </summary>
     /// <param name="categories">Заданные категории.</param>
     /// <returns>Коллекция доступных параметров.</returns>
-    ICollection<IParam> GetParams(ICollection<Category> categories);
+    ICollection<RevitParam> GetParams(ICollection<Category> categories);
 
     /// <summary>
     ///     Возвращает категории, доступные для фильтрации.

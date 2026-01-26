@@ -39,11 +39,7 @@ internal abstract class ParamValue : IComparable<ParamValue>, IEquatable<ParamVa
 
     public abstract void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamModel paramModel);
 
-    public static ParamValue GetParamValue(ParamModel paramModel, string value, string displayValue) {
-        if(paramModel == null) {
-            throw new ArgumentNullException(nameof(paramModel));
-        }
-
+    public static ParamValue GetParamValue(StorageType storageType, string value, string displayValue) {
         if(string.IsNullOrWhiteSpace(value)) {
             throw new ArgumentException(nameof(value));
         }
@@ -52,7 +48,7 @@ internal abstract class ParamValue : IComparable<ParamValue>, IEquatable<ParamVa
             throw new ArgumentException(nameof(displayValue));
         }
 
-        return paramModel.StorageType switch {
+        return storageType switch {
             StorageType.Integer => new IntParamValue(int.Parse(value), displayValue),
             StorageType.String => new StringParamValue(value, displayValue),
             StorageType.Double => new DoubleParamValue(double.Parse(value, CultureInfo.InvariantCulture), displayValue),
