@@ -21,6 +21,7 @@ internal class SetViewModel : BaseViewModel {
         CategoriesInfo =
             categoriesInfo ?? throw new ArgumentNullException(nameof(categoriesInfo));
         _localization = localization ?? throw new ArgumentNullException(nameof(localization));
+        _localization.LocalizationChanged += OnLocalizationChanged;
         _logicalFilterFactory = logicalFilterFactory ?? throw new ArgumentNullException(nameof(logicalFilterFactory));
         AvailableCompositors = new ReadOnlyCollection<CompositorViewModel>(
             [
@@ -67,6 +68,10 @@ internal class SetViewModel : BaseViewModel {
     public ICommand RemoveSetCommand { get; }
 
     public ICommand RemoveRuleCommand { get; }
+
+    public string AddRuleCommandName => _localization.GetLocalizedString("B4E.Filtration.Ui.AddRuleCommandName");
+
+    public string AddSetCommandName => _localization.GetLocalizedString("B4E.Filtration.Ui.AddSetCommandName");
 
     public CompositorViewModel SelectedCompositor {
         get => _selectedCompositor;
@@ -157,5 +162,10 @@ internal class SetViewModel : BaseViewModel {
     public string GetErrorText() {
         return InnerRules.FirstOrDefault(item => !string.IsNullOrWhiteSpace(item.GetErrorText()))?.GetErrorText()
                ?? string.Empty;
+    }
+
+    private void OnLocalizationChanged(object sender, EventArgs e) {
+        OnPropertyChanged(nameof(AddRuleCommandName));
+        OnPropertyChanged(nameof(AddSetCommandName));
     }
 }

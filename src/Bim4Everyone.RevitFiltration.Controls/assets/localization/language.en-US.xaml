@@ -22,6 +22,21 @@
         x:Key="B4E.Filtration.Validation.ParamValueMustBeDouble">Parameter value {0} must be a number</system:String>
 
     <system:String
+        x:Key="B4E.Filtration.Ui.CategoriesHeader">Categories</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.RootSetHeader">Filter criteria</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddRuleCommandName">Add rule</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddSetCommandName">Add set</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.SearchTextLabel">Search</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.HideUnselectedCategoriesLabel">Hide unselected categories</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.NameHeader">Name</system:String>
+
+    <system:String
         x:Key="CompositorKind.And">And</system:String>
     <system:String
         x:Key="CompositorKind.Or">Or</system:String>

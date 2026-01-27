@@ -22,6 +22,21 @@
         x:Key="B4E.Filtration.Validation.ParamValueMustBeDouble">Значение параметра {0} должно быть числом</system:String>
 
     <system:String
+        x:Key="B4E.Filtration.Ui.CategoriesHeader">Категории</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.RootSetHeader">Критерии фильтрации</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddRuleCommandName">Добавить правило</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddSetCommandName">Добавить набор</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.SearchTextLabel">Поиск</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.HideUnselectedCategoriesLabel">Скрыть неотмеченные категории</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.NameHeader">Название</system:String>
+
+    <system:String
         x:Key="CompositorKind.And">И</system:String>
     <system:String
         x:Key="CompositorKind.Or">Или</system:String>

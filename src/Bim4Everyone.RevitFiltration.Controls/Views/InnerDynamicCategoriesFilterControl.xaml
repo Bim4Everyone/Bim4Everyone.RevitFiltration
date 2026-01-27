@@ -39,7 +39,7 @@
                 LastChildFill="True">
                 <Label
                     DockPanel.Dock="Top"
-                    Content="Категории" />
+                    Content="{Binding CategoriesHeader}" />
                 <local:CategoriesView
                     DataContext="{Binding }" />
             </DockPanel>
@@ -55,7 +55,7 @@
             <ScrollViewer>
                 <StackPanel>
                     <Label
-                        Content="Критерии фильтрации" />
+                        Content="{Binding RootSetHeader}" />
                     <local:SetView
                         DataContext="{Binding RootSet}" />
                 </StackPanel>

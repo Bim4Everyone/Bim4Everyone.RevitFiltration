@@ -92,12 +92,12 @@
                 <ui:Button
                     DockPanel.Dock="Right"
                     Margin="3"
-                    Content="Добавить правило"
+                    Content="{Binding AddRuleCommandName}"
                     Command="{Binding AddRuleCommand}" />
                 <ui:Button
                     DockPanel.Dock="Right"
                     Margin="3"
-                    Content="Добавить набор"
+                    Content="{Binding AddSetCommandName}"
                     Command="{Binding AddSetCommand}" />
                 <ComboBox
                     DockPanel.Dock="Left"

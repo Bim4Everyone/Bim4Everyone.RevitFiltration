@@ -99,8 +99,9 @@ internal class RuleViewModel : BaseViewModel {
     ///     Перед вызовом этого метода надо проверить, что в текущем правиле нет ошибок и оно не пустое.
     /// </summary>
     public Rule CreateRule() {
-        if(!string.IsNullOrWhiteSpace(GetErrorText())) {
-            throw new InvalidOperationException();
+        string error = GetErrorText();
+        if(!string.IsNullOrWhiteSpace(error)) {
+            throw new InvalidOperationException(error);
         }
 
         ParamValue value;

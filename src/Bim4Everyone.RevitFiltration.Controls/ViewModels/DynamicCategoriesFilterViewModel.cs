@@ -29,6 +29,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
     public DynamicCategoriesFilterViewModel() {
         _delay = new Delay(250, SelectedCategoriesChanged);
         LocalizationProvider = new LocalizationProvider();
+        LocalizationProvider.LocalizationChanged += OnLocalizationChanged;
     }
 
     public ILocalizationProvider LocalizationProvider { get; }
@@ -78,6 +79,17 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         get => _allCategories;
         set => RaiseAndSetIfChanged(ref _allCategories, value);
     }
+
+    public string CategoriesHeader => LocalizationProvider.GetLocalizedString("B4E.Filtration.Ui.CategoriesHeader");
+
+    public string RootSetHeader => LocalizationProvider.GetLocalizedString("B4E.Filtration.Ui.RootSetHeader");
+
+    public string SearchTextLabel => LocalizationProvider.GetLocalizedString("B4E.Filtration.Ui.SearchTextLabel");
+
+    public string HideUnselectedCategoriesLabel =>
+        LocalizationProvider.GetLocalizedString("B4E.Filtration.Ui.HideUnselectedCategoriesLabel");
+
+    public string NameHeader => LocalizationProvider.GetLocalizedString("B4E.Filtration.Ui.NameHeader");
 
     public void LoadProvider(ILogicalFilterProvider? provider) {
         _logicalFilterProvider = provider;
@@ -247,5 +259,13 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
            || e.PropertyName == nameof(HideUnselectedCategories)) {
             Categories?.View.Refresh();
         }
+    }
+
+    private void OnLocalizationChanged(object sender, EventArgs e) {
+        OnPropertyChanged(nameof(CategoriesHeader));
+        OnPropertyChanged(nameof(RootSetHeader));
+        OnPropertyChanged(nameof(SearchTextLabel));
+        OnPropertyChanged(nameof(HideUnselectedCategoriesLabel));
+        OnPropertyChanged(nameof(NameHeader));
     }
 }

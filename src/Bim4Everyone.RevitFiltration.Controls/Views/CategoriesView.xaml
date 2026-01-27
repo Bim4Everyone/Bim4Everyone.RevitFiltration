@@ -31,7 +31,7 @@
         <ui:ToggleSwitch
             Grid.Row="1"
             IsChecked="{Binding HideUnselectedCategories, UpdateSourceTrigger=PropertyChanged}"
-            Content="Скрыть неотмеченные категории" />
+            Content="{Binding HideUnselectedCategoriesLabel}" />
 
         <DockPanel
             Grid.Row="2"
@@ -40,7 +40,7 @@
                 Margin="0 8"
                 DockPanel.Dock="Top"
                 Text="{Binding CategoriesFilter, UpdateSourceTrigger=PropertyChanged}"
-                PlaceholderText="Поиск" />
+                PlaceholderText="{Binding SearchTextLabel}" />
             <ui:DataGrid
                 SelectionMode="Single"
                 AutoGenerateColumns="False"
@@ -67,7 +67,7 @@
                         Width="Auto"
                         IsReadOnly="True"
                         Binding="{Binding Name}"
-                        Header="Название" />
+                        Header="{Binding NameHeader}" />
                 </ui:DataGrid.Columns>
             </ui:DataGrid>
         </DockPanel>

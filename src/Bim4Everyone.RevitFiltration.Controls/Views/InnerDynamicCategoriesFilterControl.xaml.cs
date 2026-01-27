@@ -69,7 +69,7 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
         if(uc.DataContext is DynamicCategoriesFilterViewModel vm) {
             var languageService = (ILanguageService) e.NewValue;
             if(languageService != null) {
-                vm.LocalizationProvider.InnerLocalization.SetLocalization(languageService.HostLanguage);
+                vm.LocalizationProvider.SetInnerLocalization(languageService.HostLanguage);
             }
         }
     }
