@@ -97,13 +97,17 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         if(provider.CanGetFilter(out _)) {
             var context = provider.GetFilter();
             CategoriesInfo = InitializeCategoriesInfo(dataProvider, context.SelectedCategories);
-            RootSet = new SetViewModel(CategoriesInfo, factory, context.Filter.RootSet);
+            RootSet = new SetViewModel(LocalizationProvider, CategoriesInfo, factory, context.Filter.RootSet);
             foreach(var c in AllCategories.Intersect(CategoriesInfo.SelectedCategories)) {
                 c.IsSelected = true;
             }
         } else {
             CategoriesInfo = InitializeCategoriesInfo(dataProvider);
-            RootSet = new SetViewModel(CategoriesInfo, factory);
+            RootSet = new SetViewModel(LocalizationProvider, CategoriesInfo, factory);
+            provider.SetErrors(
+            [
+                new ErrorContext(LocalizationProvider.GetLocalizedString("B4E.Filtration.Validation.NothingSelected"))
+            ]);
         }
 
         foreach(var category in AllCategories) {
@@ -160,10 +164,11 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         ICollection<BuiltInCategory>? selectedCategories = null) {
         if(selectedCategories == null
            || selectedCategories.Count == 0) {
-            return new CategoriesInfoViewModel(provider, []);
+            return new CategoriesInfoViewModel(LocalizationProvider, provider, []);
         }
 
         return new CategoriesInfoViewModel(
+            LocalizationProvider,
             provider,
             provider.GetCategories()
                 .Where(c => selectedCategories.Contains(c.GetBuiltInCategory()))
@@ -208,17 +213,22 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
                          ?? [];
         if(CategoriesInfo == null
            || categories.Length == 0) {
-            _logicalFilterProvider.SetErrors([new ErrorContext("Необходимо выбрать категории")]);
+            _logicalFilterProvider.SetErrors(
+            [
+                new ErrorContext(LocalizationProvider.GetLocalizedString("B4E.Filtration.Validation.SelectCategories"))
+            ]);
             return;
         }
 
         if(RootSet == null) {
-            _logicalFilterProvider.SetErrors([new ErrorContext("Критерии фильтрации отсутствуют")]);
+            _logicalFilterProvider.SetErrors(
+                [new ErrorContext(LocalizationProvider.GetLocalizedString("B4E.Filtration.Validation.RootSetNull"))]);
             return;
         }
 
         if(RootSet.IsEmpty()) {
-            _logicalFilterProvider.SetErrors([new ErrorContext("Критерии фильтрации пустые")]);
+            _logicalFilterProvider.SetErrors(
+                [new ErrorContext(LocalizationProvider.GetLocalizedString("B4E.Filtration.Validation.RootSetEmpty"))]);
             return;
         }
 

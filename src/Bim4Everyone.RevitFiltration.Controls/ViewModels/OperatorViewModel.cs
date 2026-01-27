@@ -1,13 +1,16 @@
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
-using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class OperatorViewModel : BaseViewModel, IEquatable<OperatorViewModel> {
-    public OperatorViewModel(OperatorKind @operator) {
+    private readonly ILocalizationProvider _localization;
+
+    public OperatorViewModel(ILocalizationProvider localization, OperatorKind @operator) {
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         Operator = @operator;
-        Name = @operator.GetDescription();
+        Name = _localization.GetLocalizedString($"{nameof(OperatorKind)}.{@operator}");
     }
 
     public OperatorKind Operator { get; }

@@ -1,13 +1,16 @@
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
-using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class CompositorViewModel : BaseViewModel, IEquatable<CompositorViewModel> {
-    public CompositorViewModel(CompositorKind compositor) {
+    private readonly ILocalizationProvider _localization;
+
+    public CompositorViewModel(ILocalizationProvider localization, CompositorKind compositor) {
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         CompositorKind = compositor;
-        Name = CompositorKind.GetDescription();
+        Name = localization.GetLocalizedString($"{nameof(CompositorKind)}.{compositor}");
     }
 
     public bool IsAndCompositor => CompositorKind == CompositorKind.And;

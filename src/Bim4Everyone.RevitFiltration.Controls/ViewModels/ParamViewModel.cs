@@ -2,11 +2,15 @@ using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class ParamViewModel : BaseViewModel, IEquatable<ParamViewModel> {
-    public ParamViewModel(ParamModel paramModel) {
+    private readonly ILocalizationProvider _localization;
+
+    public ParamViewModel(ILocalizationProvider localization, ParamModel paramModel) {
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         ParamModel = paramModel ?? throw new ArgumentNullException(nameof(paramModel));
     }
 
@@ -30,22 +34,22 @@ internal class ParamViewModel : BaseViewModel, IEquatable<ParamViewModel> {
         if(ParamModel.Id == nameof(BuiltInParameter.ELEM_PARTITION_PARAM)) {
             // для параметра "Рабочий набор" StorageType - Integer, но значение используется строковое
             return string.IsNullOrWhiteSpace(strValue)
-                ? $"Значение параметра {Name} не указано"
+                ? _localization.GetLocalizedString("B4E.Filtration.Validation.ParamValueNotSet", Name)
                 : string.Empty;
         }
 
         return ParamModel.StorageType switch {
             StorageType.Integer => int.TryParse(strValue, out _)
                 ? string.Empty
-                : $"Значение параметра {Name} должно быть целым числом",
+                : _localization.GetLocalizedString("B4E.Filtration.Validation.ParamValueMustBeInt", Name),
             StorageType.Double => double.TryParse(strValue, out _)
                 ? string.Empty
-                : $"Значение параметра {Name} должно быть числом",
+                : _localization.GetLocalizedString("B4E.Filtration.Validation.ParamValueMustBeDouble", Name),
             StorageType.String => string.IsNullOrWhiteSpace(strValue)
-                ? $"Значение параметра {Name} не указано"
+                ? _localization.GetLocalizedString("B4E.Filtration.Validation.ParamValueNotSet", Name)
                 : string.Empty,
             StorageType.ElementId => string.IsNullOrWhiteSpace(strValue)
-                ? $"Значение параметра {Name} не указано"
+                ? _localization.GetLocalizedString("B4E.Filtration.Validation.ParamValueNotSet", Name)
                 : string.Empty,
             _ => throw new NotSupportedException()
         };

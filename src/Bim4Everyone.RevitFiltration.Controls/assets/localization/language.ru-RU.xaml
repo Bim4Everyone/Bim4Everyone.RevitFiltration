@@ -3,5 +3,55 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String
-        x:Key="B4E.Filtration.Ok">OK</system:String>
+        x:Key="B4E.Filtration.Validation.NothingSelected">Ничего не выбрано</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.SelectCategories">Необходимо выбрать категории</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.RootSetNull">Критерии фильтрации отсутствуют</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.RootSetEmpty">Критерии фильтрации пустые</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamNotSet">Не выбран параметр у правила</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.OperatorNotSet">Не выбран оператор у правила</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueNotSet">Значение параметра {0} не указано</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueMustBeInt">Значение параметра {0} должно быть целым числом</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueMustBeDouble">Значение параметра {0} должно быть числом</system:String>
+
+    <system:String
+        x:Key="CompositorKind.And">И</system:String>
+    <system:String
+        x:Key="CompositorKind.Or">Или</system:String>
+
+    <system:String
+        x:Key="OperatorKind.Equals">Равно</system:String>
+    <system:String
+        x:Key="OperatorKind.NotEquals">Не равно</system:String>
+    <system:String
+        x:Key="OperatorKind.HasValue">Имеет значение</system:String>
+    <system:String
+        x:Key="OperatorKind.HasNoValue">Без значения</system:String>
+    <system:String
+        x:Key="OperatorKind.Greater">Больше</system:String>
+    <system:String
+        x:Key="OperatorKind.GreaterOrEqual">Больше или равно</system:String>
+    <system:String
+        x:Key="OperatorKind.Less">Меньше</system:String>
+    <system:String
+        x:Key="OperatorKind.LessOrEqual">Меньше или равно</system:String>
+    <system:String
+        x:Key="OperatorKind.BeginsWith">Начинается с</system:String>
+    <system:String
+        x:Key="OperatorKind.NotBeginsWith">Не начинается с</system:String>
+    <system:String
+        x:Key="OperatorKind.Contains">Содержит</system:String>
+    <system:String
+        x:Key="OperatorKind.NotContains">Не содержит</system:String>
+    <system:String
+        x:Key="OperatorKind.EndsWith">Заканчивается на</system:String>
+    <system:String
+        x:Key="OperatorKind.NotEndsWith">Не заканчивается на</system:String>
 </ResourceDictionary>

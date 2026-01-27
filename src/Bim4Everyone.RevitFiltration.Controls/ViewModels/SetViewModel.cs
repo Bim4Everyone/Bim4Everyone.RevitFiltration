@@ -4,24 +4,36 @@ using System.Windows.Input;
 
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class SetViewModel : BaseViewModel {
+    private readonly ILocalizationProvider _localization;
     private readonly ILogicalFilterFactory _logicalFilterFactory;
     private CompositorViewModel _selectedCompositor;
 
     public SetViewModel(
+        ILocalizationProvider localization,
         CategoriesInfoViewModel categoriesInfo,
         ILogicalFilterFactory logicalFilterFactory,
         Set? set = null) {
         CategoriesInfo =
             categoriesInfo ?? throw new ArgumentNullException(nameof(categoriesInfo));
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         _logicalFilterFactory = logicalFilterFactory ?? throw new ArgumentNullException(nameof(logicalFilterFactory));
+        AvailableCompositors = new ReadOnlyCollection<CompositorViewModel>(
+            [
+                new CompositorViewModel(_localization, CompositorKind.And),
+                new CompositorViewModel(_localization, CompositorKind.Or)
+            ]
+        );
         if(set != null) {
             SelectedCompositor = AvailableCompositors.First(c => c.CompositorKind == set.CompositorKind);
-            InnerSets = [..set.InnerSets.Select(s => new SetViewModel(CategoriesInfo, _logicalFilterFactory, s))];
-            InnerRules = [..set.InnerRules.Select(r => new RuleViewModel(CategoriesInfo, r))];
+            InnerSets = [
+                ..set.InnerSets.Select(s => new SetViewModel(_localization, CategoriesInfo, _logicalFilterFactory, s))
+            ];
+            InnerRules = [..set.InnerRules.Select(r => new RuleViewModel(_localization, CategoriesInfo, r))];
         } else {
             SelectedCompositor = AvailableCompositors.First();
         }
@@ -40,10 +52,7 @@ internal class SetViewModel : BaseViewModel {
         RemoveSetCommand = RelayCommand.Create<SetViewModel>(RemoveSet, CanRemoveSet);
     }
 
-    public IReadOnlyCollection<CompositorViewModel> AvailableCompositors { get; } =
-        new ReadOnlyCollection<CompositorViewModel>(
-            [new CompositorViewModel(CompositorKind.And), new CompositorViewModel(CompositorKind.Or)]
-        );
+    public IReadOnlyCollection<CompositorViewModel> AvailableCompositors { get; }
 
     public ObservableCollection<SetViewModel> InnerSets { get; } = [];
 
@@ -95,14 +104,14 @@ internal class SetViewModel : BaseViewModel {
     }
 
     private void AddRule() {
-        var vm = new RuleViewModel(CategoriesInfo);
+        var vm = new RuleViewModel(_localization, CategoriesInfo);
         vm.PropertyChanged += OnInnerRuleChanged;
         InnerRules.Add(vm);
         NotifyInnerRulesChanges();
     }
 
     private void AddSet() {
-        var vm = new SetViewModel(CategoriesInfo, _logicalFilterFactory);
+        var vm = new SetViewModel(_localization, CategoriesInfo, _logicalFilterFactory);
         vm.PropertyChanged += OnInnerSetChanged;
         InnerSets.Add(vm);
         NotifyInnerSetsChanges();

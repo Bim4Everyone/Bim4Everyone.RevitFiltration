@@ -22,6 +22,13 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
             typeof(InnerDynamicCategoriesFilterControl),
             new PropertyMetadata(null, OnLocalizationServiceChanged));
 
+    public static readonly DependencyProperty LanguageServiceProperty =
+        DependencyProperty.Register(
+            nameof(LanguageService),
+            typeof(ILanguageService),
+            typeof(InnerDynamicCategoriesFilterControl),
+            new PropertyMetadata(null, OnLanguageServiceChanged));
+
     public InnerDynamicCategoriesFilterControl() {
         InitializeComponent();
     }
@@ -34,6 +41,11 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
     public ILocalizationService LocalizationService {
         get => (ILocalizationService) GetValue(LocalizationServiceProperty);
         set => SetValue(LocalizationServiceProperty, value);
+    }
+
+    public ILanguageService LanguageService {
+        get => (ILanguageService) GetValue(LanguageServiceProperty);
+        set => SetValue(LanguageServiceProperty, value);
     }
 
     private static void OnLogicalFilterProviderChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
@@ -49,6 +61,16 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
         if(uc.DataContext is DynamicCategoriesFilterViewModel vm) {
             var localizationService = (ILocalizationService) e.NewValue;
             vm.LocalizationProvider.OutsourceLocalization = localizationService;
+        }
+    }
+
+    private static void OnLanguageServiceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+        var uc = (InnerDynamicCategoriesFilterControl) d;
+        if(uc.DataContext is DynamicCategoriesFilterViewModel vm) {
+            var languageService = (ILanguageService) e.NewValue;
+            if(languageService != null) {
+                vm.LocalizationProvider.InnerLocalization.SetLocalization(languageService.HostLanguage);
+            }
         }
     }
 }

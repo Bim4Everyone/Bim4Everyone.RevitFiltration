@@ -5,29 +5,12 @@ using System.Windows.Input;
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Value;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class RuleViewModel : BaseViewModel {
-    private static readonly IReadOnlyDictionary<OperatorKind, OperatorViewModel> _allOperators =
-        new ReadOnlyDictionary<OperatorKind, OperatorViewModel>(
-            new Dictionary<OperatorKind, OperatorViewModel> {
-                { OperatorKind.Equals, new OperatorViewModel(OperatorKind.Equals) },
-                { OperatorKind.NotEquals, new OperatorViewModel(OperatorKind.NotEquals) },
-                { OperatorKind.HasValue, new OperatorViewModel(OperatorKind.HasValue) },
-                { OperatorKind.HasNoValue, new OperatorViewModel(OperatorKind.HasNoValue) },
-                { OperatorKind.Greater, new OperatorViewModel(OperatorKind.Greater) },
-                { OperatorKind.GreaterOrEqual, new OperatorViewModel(OperatorKind.GreaterOrEqual) },
-                { OperatorKind.Less, new OperatorViewModel(OperatorKind.Less) },
-                { OperatorKind.LessOrEqual, new OperatorViewModel(OperatorKind.LessOrEqual) },
-                { OperatorKind.BeginsWith, new OperatorViewModel(OperatorKind.BeginsWith) },
-                { OperatorKind.NotBeginsWith, new OperatorViewModel(OperatorKind.NotBeginsWith) },
-                { OperatorKind.Contains, new OperatorViewModel(OperatorKind.Contains) },
-                { OperatorKind.NotContains, new OperatorViewModel(OperatorKind.NotContains) },
-                { OperatorKind.EndsWith, new OperatorViewModel(OperatorKind.EndsWith) },
-                { OperatorKind.NotEndsWith, new OperatorViewModel(OperatorKind.NotEndsWith) }
-            }
-        );
+    private readonly ILocalizationProvider _localization;
 
     private bool _isValueEditable;
 
@@ -42,17 +25,25 @@ internal class RuleViewModel : BaseViewModel {
     private string _stringValue;
     private ObservableCollection<ParamValueViewModel>? _values;
 
-    public RuleViewModel(CategoriesInfoViewModel categoriesInfo, Rule? rule = null) {
+    public RuleViewModel(
+        ILocalizationProvider localization,
+        CategoriesInfoViewModel categoriesInfo,
+        Rule? rule = null) {
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         CategoriesInfo = categoriesInfo ?? throw new ArgumentNullException(nameof(categoriesInfo));
 
         if(rule != null) {
-            SelectedParameter = new ParamViewModel(rule.Param);
-            SelectedOperator = new OperatorViewModel(rule.OperatorKind);
-            AvailableOperators = [..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => _allOperators[o])];
+            SelectedParameter = new ParamViewModel(_localization, rule.Param);
+            SelectedOperator = new OperatorViewModel(_localization, rule.OperatorKind);
+            AvailableOperators = [
+                ..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => new OperatorViewModel(_localization, o))
+            ];
             StringValue = rule.Value.DisplayValue ?? string.Empty;
         } else {
             SelectedParameter = CategoriesInfo.AvailableParams.First();
-            AvailableOperators = [..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => _allOperators[o])];
+            AvailableOperators = [
+                ..SelectedParameter.ParamModel.GetOperatorKinds().Select(o => new OperatorViewModel(_localization, o))
+            ];
             SelectedOperator = AvailableOperators.First();
             StringValue = string.Empty;
         }
@@ -69,7 +60,7 @@ internal class RuleViewModel : BaseViewModel {
     /// </summary>
     public ICommand UpdateParamValuesCommand { get; }
 
-    public ObservableCollection<OperatorViewModel> AvailableOperators { get; } = [];
+    public ObservableCollection<OperatorViewModel> AvailableOperators { get; }
 
     public bool IsValueEditable {
         get => _isValueEditable;
@@ -139,11 +130,11 @@ internal class RuleViewModel : BaseViewModel {
 
     public string GetErrorText() {
         if(SelectedParameter is null) {
-            return "Не выбран параметр у правила";
+            return _localization.GetLocalizedString("B4E.Filtration.Validation.ParamNotSet");
         }
 
         if(SelectedOperator is null) {
-            return "Не выбран оператор у правила";
+            return _localization.GetLocalizedString("B4E.Filtration.Validation.OperatorNotSet");
         }
 
         return SelectedOperator.Operator is OperatorKind.HasValue or OperatorKind.HasNoValue
@@ -175,7 +166,8 @@ internal class RuleViewModel : BaseViewModel {
     private void OnSelectedParamChanged() {
         if(SelectedParameter != null) {
             AvailableOperators.Clear();
-            var availableOperators = SelectedParameter.ParamModel.GetOperatorKinds().Select(o => _allOperators[o]);
+            var availableOperators = SelectedParameter.ParamModel.GetOperatorKinds()
+                .Select(o => new OperatorViewModel(_localization, o));
             foreach(var op in availableOperators) {
                 AvailableOperators.Add(op);
             }

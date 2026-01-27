@@ -6,6 +6,7 @@ using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
 using Bim4Everyone.RevitFiltration.Controls.Models.Value;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 using dosymep.Revit;
 
@@ -14,13 +15,18 @@ namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 internal class CategoriesInfoViewModel : BaseViewModel {
     private readonly ObservableCollection<ParamViewModel> _availableParams;
     private readonly IDataProvider _dataProvider;
+    private readonly ILocalizationProvider _localization;
     private readonly ObservableCollection<CategoryViewModel> _selectedCategories;
 
-    public CategoriesInfoViewModel(IDataProvider dataProvider, ICollection<Category> selectedCategories) {
+    public CategoriesInfoViewModel(
+        ILocalizationProvider localization,
+        IDataProvider dataProvider,
+        ICollection<Category> selectedCategories) {
         if(selectedCategories == null) {
             throw new ArgumentNullException(nameof(selectedCategories));
         }
 
+        _localization = localization ?? throw new ArgumentNullException(nameof(localization));
         _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         _selectedCategories = [];
         _availableParams = [];
@@ -69,7 +75,7 @@ internal class CategoriesInfoViewModel : BaseViewModel {
     private void SetParams(ICollection<Category> categories) {
         _availableParams.Clear();
         var @params = _dataProvider.GetParams(categories)
-            .Select(p => new ParamViewModel(new ParamModel(p)))
+            .Select(p => new ParamViewModel(_localization, new ParamModel(p)))
             .Distinct()
             .OrderBy(p => p.Name)
             .ToArray();

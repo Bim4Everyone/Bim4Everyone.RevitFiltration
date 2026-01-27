@@ -20,11 +20,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <ScrollViewer>
-        <StackPanel>
-            <Label
-                Content="Критерии фильтрации" />
-            <local:SetView
-                DataContext="{Binding RootSet}" />
-        </StackPanel>
+        <local:SetView
+            DataContext="{Binding RootSet}" />
     </ScrollViewer>
 </UserControl>

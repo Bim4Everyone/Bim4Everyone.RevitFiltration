@@ -15,7 +15,7 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         ILogicalFilterFactory factory) {
         _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
-        _errors = [new ErrorContext("Ничего не выбрано")];
+        _errors = [];
         _filterContext = null;
     }
 
@@ -82,7 +82,8 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         var availableCategories = _dataProvider.GetCategories()
             .ToDictionary(c => c.GetBuiltInCategory(), c => c);
         if(filter.Categories.Any(c => !availableCategories.ContainsKey(c))) {
-            SetErrors([new ErrorContext("Ничего не выбрано")]);
+            _errors.Clear();
+            _filterContext = null;
             return;
         }
 
@@ -91,7 +92,8 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
             .Select(p => p.Name)
             .ToHashSet();
         if(ContainsNotAvailableParams(filter.RootSet, availableParamNames)) {
-            SetErrors([new ErrorContext("Ничего не выбрано")]);
+            _errors.Clear();
+            _filterContext = null;
             return;
         }
 
