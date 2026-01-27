@@ -9,6 +9,7 @@ using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Utils;
+using Bim4Everyone.RevitFiltration.Controls.Services;
 
 using dosymep.Revit;
 
@@ -27,7 +28,10 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
 
     public DynamicCategoriesFilterViewModel() {
         _delay = new Delay(250, SelectedCategoriesChanged);
+        LocalizationProvider = new LocalizationProvider();
     }
+
+    public ILocalizationProvider LocalizationProvider { get; }
 
     public SetViewModel? RootSet {
         get => _rootSet;

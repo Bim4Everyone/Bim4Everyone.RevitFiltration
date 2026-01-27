@@ -17,6 +17,7 @@
     <Grid>
         <local:InnerDynamicCategoriesFilterControl
             DataContext="{StaticResource ViewModel}"
+            LocalizationService="{Binding LocalizationService, ElementName=_this}"
             LogicalFilterProvider="{Binding LogicalFilterProvider, ElementName=_this}" />
     </Grid>
 </UserControl>
