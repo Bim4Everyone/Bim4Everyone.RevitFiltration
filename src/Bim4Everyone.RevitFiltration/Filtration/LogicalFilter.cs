@@ -43,6 +43,10 @@ internal class LogicalFilter : ILogicalFilter {
         filters.AddRange(
             InnerFilters
                 .Select(s => s.Build(document, options)));
+        if(filters.Count == 0) {
+            return new ElementIsElementTypeFilter(true); // фильтр по всем элементам, которые не ElementType
+        }
+
         return Compositor.Create(filters);
     }
 
