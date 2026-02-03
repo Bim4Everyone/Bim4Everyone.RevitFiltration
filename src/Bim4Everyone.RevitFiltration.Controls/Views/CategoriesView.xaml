@@ -66,8 +66,12 @@
                     <DataGridTextColumn
                         Width="Auto"
                         IsReadOnly="True"
-                        Binding="{Binding Name}"
-                        Header="{Binding NameHeader}" />
+                        Binding="{Binding Name}" >
+                        <DataGridTextColumn.Header>
+                            <ui:TextBlock
+                               Text="{DynamicResource NameHeader}" /> 
+                        </DataGridTextColumn.Header>
+                    </DataGridTextColumn>
                 </ui:DataGrid.Columns>
             </ui:DataGrid>
         </DockPanel>
