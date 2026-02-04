@@ -22,7 +22,7 @@ public static class NinjectExtensions {
 
         kernel.Bind<ILogicalFilterParser>()
             .To<LogicalFilterParser>()
-            .InSingletonScope();
+            .InTransientScope();
         return kernel;
     }
 
@@ -39,7 +39,7 @@ public static class NinjectExtensions {
 
         kernel.Bind<ILogicalFilterFactory>()
             .To<LogicalFilterFactory>()
-            .InSingletonScope();
+            .InTransientScope();
         return kernel;
     }
 }
