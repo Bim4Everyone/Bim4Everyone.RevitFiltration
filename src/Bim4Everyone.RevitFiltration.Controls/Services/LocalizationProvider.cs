@@ -11,7 +11,7 @@ internal class LocalizationProvider : ILocalizationProvider {
     public LocalizationProvider() {
         InnerLocalization = new WpfLocalizationService(
             "pack://application:,,,/Bim4Everyone.RevitFiltration.Controls;component/assets/localization/language.xaml",
-            CultureInfo.InstalledUICulture);
+            CultureInfo.GetCultureInfo("ru-RU"));
     }
 
     public ILocalizationService InnerLocalization { get; }
