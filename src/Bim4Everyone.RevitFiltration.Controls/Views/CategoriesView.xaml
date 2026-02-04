@@ -7,6 +7,7 @@
     xmlns:vms="clr-namespace:Bim4Everyone.RevitFiltration.Controls.ViewModels"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     mc:Ignorable="d"
+    x:Name="_this"
     d:DesignHeight="300"
     d:DesignWidth="300"
     x:ClassModifier="internal"
@@ -66,11 +67,13 @@
                     <DataGridTextColumn
                         Width="Auto"
                         IsReadOnly="True"
-                        Binding="{Binding Name}" >
-                        <DataGridTextColumn.Header>
-                            <ui:TextBlock
-                               Text="{DynamicResource NameHeader}" /> 
-                        </DataGridTextColumn.Header>
+                        Binding="{Binding Name}">
+                        <DataGridTextColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <ui:TextBlock
+                                    Text="{Binding DataContext.NameHeader, RelativeSource={RelativeSource AncestorType=ui:DataGrid}}" />
+                            </DataTemplate>
+                        </DataGridTextColumn.HeaderTemplate>
                     </DataGridTextColumn>
                 </ui:DataGrid.Columns>
             </ui:DataGrid>
