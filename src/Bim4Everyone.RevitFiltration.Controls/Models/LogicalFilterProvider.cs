@@ -87,11 +87,11 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
             return;
         }
 
-        var availableParamNames = _dataProvider.GetParams(
+        var availableParamIds = _dataProvider.GetParams(
                 filter.Categories.Select(c => availableCategories[c]).ToArray())
-            .Select(p => p.Name)
+            .Select(p => p.Id)
             .ToHashSet();
-        if(ContainsNotAvailableParams(filter.RootSet, availableParamNames)) {
+        if(ContainsNotAvailableParams(filter.RootSet, availableParamIds)) {
             _errors.Clear();
             _filterContext = null;
             return;
@@ -100,11 +100,11 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         SetFilter(filterContext);
     }
 
-    private bool ContainsNotAvailableParams(Set set, ICollection<string> paramNames) {
-        if(set.InnerRules.Any(r => !paramNames.Contains(r.Param.Name))) {
+    private bool ContainsNotAvailableParams(Set set, ICollection<string> paramIds) {
+        if(set.InnerRules.Any(r => !paramIds.Contains(r.Param.Id))) {
             return true;
         }
 
-        return set.InnerSets.Any(innerSet => ContainsNotAvailableParams(innerSet, paramNames));
+        return set.InnerSets.Any(innerSet => ContainsNotAvailableParams(innerSet, paramIds));
     }
 }
