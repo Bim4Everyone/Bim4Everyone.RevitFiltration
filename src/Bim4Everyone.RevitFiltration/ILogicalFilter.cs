@@ -1,15 +1,11 @@
 using Autodesk.Revit.DB;
 
-using Bim4Everyone.RevitFiltration.Compositors;
-
 namespace Bim4Everyone.RevitFiltration;
 
 /// <summary>
 ///     Создает правила фильтрации элементов в Autodesk Revit.
 /// </summary>
 public interface ILogicalFilter {
-    internal ICompositor Compositor { get; }
-
     /// <summary>
     ///     Создает фильтр по элементам в Autodesk Revit с заданными настройками.
     /// </summary>
