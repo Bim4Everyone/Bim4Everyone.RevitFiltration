@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -30,10 +31,17 @@ class Build : NukeBuild, IHazSolution {
     [Parameter]
     readonly AbsolutePath Output = RootDirectory / "bin";
 
+    readonly AbsolutePath PublishOutput;
+
     [Parameter("Build Revit versions.")]
     readonly RevitVersion[] RevitVersions = new RevitVersion[0];
 
     IEnumerable<RevitVersion> BuildRevitVersions;
+
+    public Build() {
+        AbsolutePath appdataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        PublishOutput = appdataFolder / "pyRevit" / "Extensions" / "BIM4Everyone.lib" / "dosymep_libs" / "libs";
+    }
 
     AbsolutePath RevitFiltrationProject =>
         RootDirectory / "src" / "Bim4Everyone.RevitFiltration" / "Bim4Everyone.RevitFiltration.csproj";
@@ -43,6 +51,12 @@ class Build : NukeBuild, IHazSolution {
         / "src"
         / "Bim4Everyone.RevitFiltration.Controls"
         / "Bim4Everyone.RevitFiltration.Controls.csproj";
+
+    AbsolutePath RevitFiltrationNinjectProject =>
+        RootDirectory
+        / "src"
+        / "Bim4Everyone.RevitFiltration.Ninject"
+        / "Bim4Everyone.RevitFiltration.Ninject.csproj";
 
     Target Clean =>
         _ => _
@@ -59,15 +73,21 @@ class Build : NukeBuild, IHazSolution {
         _ => _
             .DependsOn(Clean)
             .Executes(() => {
-                DotNetRestore(s => s.SetProjectFile(RevitFiltrationProject));
-                DotNetRestore(s => s.SetProjectFile(RevitFiltrationControlsProject));
+                var projects = new[] {
+                    RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
+                };
+                foreach(var project in projects) {
+                    DotNetRestore(s => s.SetProjectFile(project));
+                }
             });
 
     Target Compile =>
         _ => _
             .DependsOn(Restore)
             .Executes(() => {
-                var projects = new[] { RevitFiltrationProject, RevitFiltrationControlsProject };
+                var projects = new[] {
+                    RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
+                };
                 foreach(var project in projects) {
                     DotNetBuild(s => s
                         .EnableForce()
@@ -79,6 +99,30 @@ class Build : NukeBuild, IHazSolution {
                             (settings, version) => {
                                 return settings
                                     .SetOutputDirectory(Output / version)
+                                    .SetProperty("RevitVersion", (int) version);
+                            }));
+                }
+            });
+
+    Target Publish =>
+        _ => _
+            .DependsOn(Restore)
+            .OnlyWhenStatic(() => IsLocalBuild)
+            .Executes(() => {
+                var projects = new[] {
+                    RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
+                };
+                foreach(var project in projects) {
+                    DotNetBuild(s => s
+                        .EnableForce()
+                        .DisableNoRestore()
+                        .SetConfiguration(Configuration)
+                        .SetProjectFile(project)
+                        .CombineWith(
+                            BuildRevitVersions,
+                            (settings, version) => {
+                                return settings
+                                    .SetOutputDirectory(PublishOutput / version)
                                     .SetProperty("RevitVersion", (int) version);
                             }));
                 }
