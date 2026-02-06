@@ -10,7 +10,7 @@ public interface ILogicalFilterParser {
     /// <param name="content">Строка, полученная через метод <see cref="Serialize" />.</param>
     /// <param name="filter">Десериализованный фильтр.</param>
     /// <returns>True - если десериализация прошла успешно, иначе - False.</returns>
-    bool TryParse(string content, out ILogicalFilter filter);
+    bool TryParse(string content, out ILogicalFilter? filter);
 
     /// <summary>
     ///     Сериализует фильтр в строку.
