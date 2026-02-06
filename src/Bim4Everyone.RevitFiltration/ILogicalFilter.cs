@@ -6,6 +6,8 @@ namespace Bim4Everyone.RevitFiltration;
 ///     Создает правила фильтрации элементов в Autodesk Revit.
 /// </summary>
 public interface ILogicalFilter {
+    internal ICompositor Compositor { get; }
+
     /// <summary>
     ///     Создает фильтр по элементам в Autodesk Revit с заданными настройками.
     /// </summary>
