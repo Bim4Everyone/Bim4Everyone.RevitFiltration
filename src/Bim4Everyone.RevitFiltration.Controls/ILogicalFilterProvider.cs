@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-
-using Autodesk.Revit.DB;
-
 namespace Bim4Everyone.RevitFiltration.Controls;
 
 /// <summary>
@@ -24,14 +20,11 @@ public interface ILogicalFilterProvider {
     bool CanGetFilter(out IErrorContext[] errors);
 
     /// <summary>
-    ///     Возвращает доступные для выбора категории в UI.
+    ///     Возвращает провайдер данных.
     /// </summary>
-    internal ICollection<Category> GetAvailableCategories();
+    internal IDataProvider GetDataProvider();
 
-    /// <summary>
-    ///     Возвращает провайдер параметров для категорий.
-    /// </summary>
-    internal IParamsProvider GetParamsProvider();
+    internal ILogicalFilterFactory GetLogicalFilterFactory();
 
     /// <summary>
     ///     Назначает ошибки, если ввод пользователя некорректный.

@@ -1,0 +1,24 @@
+<UserControl
+    x:Class="Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:vms="clr-namespace:Bim4Everyone.RevitFiltration.Controls.ViewModels"
+    xmlns:local="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views"
+    mc:Ignorable="d"
+    x:Name="_this"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+    <UserControl.Resources>
+        <vms:DynamicCategoriesFilterViewModel
+            x:Key="ViewModel" />
+    </UserControl.Resources>
+    <Grid>
+        <local:InnerDynamicCategoriesFilterControl
+            DataContext="{StaticResource ViewModel}"
+            LanguageService="{Binding LanguageService, ElementName=_this}"
+            LocalizationService="{Binding LocalizationService, ElementName=_this}"
+            LogicalFilterProvider="{Binding LogicalFilterProvider, ElementName=_this}" />
+    </Grid>
+</UserControl>

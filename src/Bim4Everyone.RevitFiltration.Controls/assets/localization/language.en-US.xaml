@@ -1,0 +1,72 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String
+        x:Key="B4E.Filtration.Validation.NothingSelected">Nothing selected</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.SelectCategories">Categories must be selected</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.RootSetNull">Filter criteria are missing</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.RootSetEmpty">Filter criteria are empty</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamNotSet">Parameter not selected for rule</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.OperatorNotSet">Operator not selected for rule</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueNotSet">Parameter value {0} is not specified</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueMustBeInt">Parameter value {0} must be an integer</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Validation.ParamValueMustBeDouble">Parameter value {0} must be a number</system:String>
+
+    <system:String
+        x:Key="B4E.Filtration.Ui.CategoriesHeader">Categories</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.RootSetHeader">Filter criteria</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddRuleCommandName">Add rule</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.AddSetCommandName">Add set</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.SearchTextLabel">Search</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.HideUnselectedCategoriesLabel">Hide unselected categories</system:String>
+    <system:String
+        x:Key="B4E.Filtration.Ui.NameHeader">Name</system:String>
+
+    <system:String
+        x:Key="CompositorKind.And">And</system:String>
+    <system:String
+        x:Key="CompositorKind.Or">Or</system:String>
+
+    <system:String
+        x:Key="OperatorKind.Equals">Equals</system:String>
+    <system:String
+        x:Key="OperatorKind.NotEquals">Not equals</system:String>
+    <system:String
+        x:Key="OperatorKind.HasValue">Has value</system:String>
+    <system:String
+        x:Key="OperatorKind.HasNoValue">No value</system:String>
+    <system:String
+        x:Key="OperatorKind.Greater">Greater than</system:String>
+    <system:String
+        x:Key="OperatorKind.GreaterOrEqual">Greater than or equal</system:String>
+    <system:String
+        x:Key="OperatorKind.Less">Less than</system:String>
+    <system:String
+        x:Key="OperatorKind.LessOrEqual">Less than or equal</system:String>
+    <system:String
+        x:Key="OperatorKind.BeginsWith">Begins with</system:String>
+    <system:String
+        x:Key="OperatorKind.NotBeginsWith">Does not begin with</system:String>
+    <system:String
+        x:Key="OperatorKind.Contains">Contains</system:String>
+    <system:String
+        x:Key="OperatorKind.NotContains">Does not contain</system:String>
+    <system:String
+        x:Key="OperatorKind.EndsWith">Ends with</system:String>
+    <system:String
+        x:Key="OperatorKind.NotEndsWith">Does not end with</system:String>
+</ResourceDictionary>

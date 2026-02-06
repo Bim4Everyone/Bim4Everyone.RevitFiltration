@@ -1,0 +1,132 @@
+<UserControl
+    x:Class="Bim4Everyone.RevitFiltration.Controls.Views.SetView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vms="clr-namespace:Bim4Everyone.RevitFiltration.Controls.ViewModels"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    x:ClassModifier="internal"
+    d:DataContext="{d:DesignInstance vms:SetViewModel, IsDesignTimeCreatable=False}">
+    <UserControl.Resources>
+        <Style
+            TargetType="ListBoxItem">
+            <Setter
+                Property="Template">
+                <Setter.Value>
+                    <ControlTemplate
+                        TargetType="ListBoxItem">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style
+            TargetType="{x:Type Border}"
+            x:Key="CustomColoredBorder">
+            <Setter
+                Property="BorderThickness"
+                Value="4 1 1 1" />
+            <Setter
+                Property="Margin"
+                Value="2" />
+            <Setter
+                Property="CornerRadius"
+                Value="{DynamicResource ControlCornerRadius}" />
+            <Style.Triggers>
+                <DataTrigger
+                    Binding="{Binding SelectedCompositor.IsAndCompositor}"
+                    Value="True">
+                    <Setter
+                        Property="BorderBrush"
+                        Value="Green" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding SelectedCompositor.IsAndCompositor}"
+                    Value="False">
+                    <Setter
+                        Property="BorderBrush"
+                        Value="Blue" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <DataTemplate
+            DataType="{x:Type vms:RuleViewModel}">
+            <local:RuleView />
+        </DataTemplate>
+
+        <DataTemplate
+            DataType="{x:Type vms:SetViewModel}">
+            <local:SetView />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Border
+        Style="{StaticResource CustomColoredBorder}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <DockPanel
+                Grid.Row="0"
+                LastChildFill="True"
+                HorizontalAlignment="Stretch">
+                <ui:Button
+                    DockPanel.Dock="Right"
+                    Margin="3"
+                    Appearance="Danger"
+                    Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}, Mode=FindAncestor}, Path=DataContext.RemoveSetCommand}"
+                    CommandParameter="{Binding}"
+                    Content="{ui:SymbolIcon Symbol=Delete20}" />
+                <ui:Button
+                    DockPanel.Dock="Right"
+                    Margin="3"
+                    Content="{Binding AddRuleCommandName}"
+                    Command="{Binding AddRuleCommand}" />
+                <ui:Button
+                    DockPanel.Dock="Right"
+                    Margin="3"
+                    Content="{Binding AddSetCommandName}"
+                    Command="{Binding AddSetCommand}" />
+                <ComboBox
+                    DockPanel.Dock="Left"
+                    Margin="3"
+                    IsEditable="False"
+                    DisplayMemberPath="Name"
+                    HorizontalAlignment="Stretch"
+                    ItemsSource="{Binding AvailableCompositors}"
+                    SelectedValue="{Binding SelectedCompositor, UpdateSourceTrigger=PropertyChanged}" />
+            </DockPanel>
+
+            <ListBox
+                Grid.Row="1"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Focusable="False"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                ItemsSource="{Binding InnerRules}" />
+
+            <ListBox
+                Grid.Row="2"
+                BorderThickness="0"
+                BorderBrush="Transparent"
+                Focusable="False"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                ItemsSource="{Binding InnerSets}" />
+        </Grid>
+    </Border>
+
+</UserControl>

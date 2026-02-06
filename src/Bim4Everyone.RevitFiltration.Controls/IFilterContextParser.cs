@@ -8,14 +8,14 @@ public interface IFilterContextParser {
     ///     Пытается десериализовать <see cref="ILogicalFilterContext" /> из заданной строки.
     /// </summary>
     /// <param name="content">Строка, полученная через метод <see cref="Serialize" />.</param>
-    /// <param name="filter">Десериализованный контекст фильтра по категориям.</param>
+    /// <param name="context">Десериализованный контекст фильтра по категориям.</param>
     /// <returns>True - если десериализация прошла успешно, иначе - False.</returns>
-    bool TryParse(string content, out ILogicalFilterContext context);
+    bool TryParse(string content, out ILogicalFilterContext? context);
 
     /// <summary>
     ///     Сериализует контекст фильтра по категориям в строку.
     /// </summary>
-    /// <param name="filter">Контекст фильтра по категориям.</param>
+    /// <param name="context">Контекст фильтра по категориям.</param>
     /// <returns>Сериализованный контекст.</returns>
     string Serialize(ILogicalFilterContext context);
 }
