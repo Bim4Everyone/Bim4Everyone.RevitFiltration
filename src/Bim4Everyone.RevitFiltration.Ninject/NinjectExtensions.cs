@@ -8,6 +8,9 @@ using Ninject;
 
 namespace Bim4Everyone.RevitFiltration.Ninject;
 
+/// <summary>
+///     Расширения для настройки <see cref="IKernel" />.
+/// </summary>
 public static class NinjectExtensions {
     /// <summary>
     ///     Добавляет в контейнер <see cref="ILogicalFilterProviderFactory" />.
