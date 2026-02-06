@@ -11,7 +11,8 @@ namespace Bim4Everyone.RevitFiltration.Ninject;
 public static class NinjectExtensions {
     /// <summary>
     ///     Добавляет в контейнер <see cref="ILogicalFilterProviderFactory" />.
-    ///     Также необходимо зарегистрировать в контейнере <see cref="ILogicalFilterFactory" />.
+    ///     Также необходимо зарегистрировать в контейнере <see cref="ILogicalFilterFactory" /> через
+    ///     <see cref="UseLogicalFilterFactory" />.
     /// </summary>
     /// <param name="kernel">Ninject контейнер.</param>
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
@@ -35,7 +36,8 @@ public static class NinjectExtensions {
 
     /// <summary>
     ///     Добавляет в контейнер <see cref="IFilterContextParser" />.
-    ///     Также необходимо зарегистрировать в контейнере <see cref="ILogicalFilterFactory" />.
+    ///     Также необходимо зарегистрировать в контейнере <see cref="ILogicalFilterFactory" /> через
+    ///     <see cref="UseLogicalFilterFactory" />.
     /// </summary>
     /// <param name="kernel">Ninject контейнер.</param>
     /// <returns>Возвращает настроенный контейнер Ninject.</returns>
