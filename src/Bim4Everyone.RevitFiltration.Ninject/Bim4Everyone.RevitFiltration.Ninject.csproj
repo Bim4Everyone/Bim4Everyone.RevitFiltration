@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <ProjectReference Include="..\Bim4Everyone.RevitFiltration.Controls\Bim4Everyone.RevitFiltration.Controls.csproj"/>
+        <ProjectReference Include="..\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="Ninject">
+            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\Ninject.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+</Project>

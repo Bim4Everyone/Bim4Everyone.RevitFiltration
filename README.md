@@ -41,7 +41,7 @@ RevitFiltration.Controls предоставляет пользователю в�
 
 ```
 kernel.UseLogicalFilterFactory(); // сервис для создания фильтра (обязательно)
-kernel.UseLogicalFilterParser(); // сервис для сохранения и загрузки фильтра (опционально)
+kernel.UseLogicalFilterParser(); // сервис для сериализации и десериализации фильтра (опционально)
 ```
 
 3. Реализовать `IOptions` для настроек генерации фильтра.
@@ -86,26 +86,89 @@ public void SampleFilterParsing(ILogicalFilter filter, ILogicalFilterParser pars
 2. Зарегистрировать в ninject DI контейнере плагина необходимые сервисы:
 
 ```
-kernel.UseLogicalFilterFactory(); // сервис для создания фильтра (обязательно)
-kernel.UseDefaultProviderFactory(); // сервис для привязки фильтра из UI к ViewModel (обязательно)
-kernel.UseDefaultContextParser(); // сервис для сохранения и загрузки фильтра UI (опционально)
+kernel.UseLogicalFilterFactory(); // сервис для создания ILogicalFilter (обязательно)
+kernel.UseDefaultProviderFactory(); // сервис для привязки провайдера контекста фильтра из UI к ViewModel (обязательно)
+kernel.UseDefaultContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
 ```
 
-3. Реализовать `IOptions`, `IParam`, `IDataProvider`.
+3. Реализовать `IOptions`, `IDataProvider`.
+
+Пример реализации `IDtaProvider`:
+
+```
+internal class FilterDataProvider : IDataProvider {
+    private readonly Document _doc;
+
+    public FilterDataProvider(Document doc) {
+        _doc = doc;
+    }
+
+    public ICollection<RevitParam> GetParams(ICollection<Category> categories) {
+        return ParameterFilterUtilities
+            .GetFilterableParametersInCommon(_doc, [..categories.Select(c => c.Id)])
+            .Select(GetFilterableParam)
+            .Where(p => p != null)
+            .ToArray();
+    }
+
+    public ICollection<Category> GetCategories() {
+        return ParameterFilterUtilities.GetAllFilterableCategories()
+            .Select(c => Category.GetCategory(_doc, c))
+            .Where(category => category != null)
+            .Where(c => c.CategoryType == CategoryType.Model && c.IsVisibleInUI)
+            .ToArray();
+    }
+
+    public ICollection<Document> GetDocuments() {
+        return [_doc];
+    }
+
+    private RevitParam GetFilterableParam(ElementId paramId) {
+        try {
+            if(paramId.IsSystemId()) {
+                return
+                    SystemParamsConfig.Instance.CreateRevitParam(
+                        _doc,
+                        (BuiltInParameter) paramId.GetIdValue());
+            }
+            
+            var element = _doc.GetElement(paramId);
+            if(element is SharedParameterElement sharedParameterElement) {
+                    SharedParamsConfig.Instance.CreateRevitParam(
+                        _doc,
+                        sharedParameterElement.Name);
+            }
+
+            if(element is ParameterElement parameterElement) {
+                return ProjectParamsConfig.Instance.CreateRevitParam(_doc, parameterElement.Name);
+            }
+            return null;
+        } catch(Exception) {
+            return null;
+        }
+    }
+}
+```
+
 4. Настроить ViewModel окна:
 ```
 internal class YourViewModel {
-    public YourViewModel(ILogicalFilterProviderFactory filterProviderFactory, IDataProvider dataProvider) {
+    public YourViewModel(
+        ILogicalFilterProviderFactory filterProviderFactory,
+        ILanguageService languageService,
+        IDataProvider dataProvider) {
         FilterProvider = filterProviderFactory.Create(dataProvider)
     }
 
-    public ILogicalFilterProvider FilterProvider { get; }
+    public ILogicalFilterProvider FilterProvider { get; } // провайдер для получения фильтра из UI
+    public ILanguageService LanguageService { get; } // сервис для установки локализации в контроле
 }
 ```
 5. Подключить нужный контрол в xaml:
 ```
 xmlns:filtration="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views;assembly=Bim4Everyone.RevitFiltration.Controls"
 <filtration:DynamicCategoriesFilterControl
+    LanguageService="{Binding LanguageService}"
     LogicalFilterProvider="{Binding FilterProvider}" />
 ```
 
@@ -115,4 +178,10 @@ xmlns:filtration="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views;asse
 
 ```
 nuke compile
+```
+
+Компиляция проекта в `Bim4Everyone.lib\dosymep_libs\libs`
+
+```
+nuke publish
 ```
