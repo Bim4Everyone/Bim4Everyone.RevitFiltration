@@ -126,15 +126,14 @@ internal class FilterDataProvider : IDataProvider {
     private RevitParam GetFilterableParam(ElementId paramId) {
         try {
             if(paramId.IsSystemId()) {
-                return
-                    SystemParamsConfig.Instance.CreateRevitParam(
+                return SystemParamsConfig.Instance.CreateRevitParam(
                         _doc,
                         (BuiltInParameter) paramId.GetIdValue());
             }
             
             var element = _doc.GetElement(paramId);
             if(element is SharedParameterElement sharedParameterElement) {
-                    SharedParamsConfig.Instance.CreateRevitParam(
+                return SharedParamsConfig.Instance.CreateRevitParam(
                         _doc,
                         sharedParameterElement.Name);
             }
@@ -151,6 +150,7 @@ internal class FilterDataProvider : IDataProvider {
 ```
 
 4. Настроить ViewModel окна:
+
 ```
 internal class YourViewModel {
     public YourViewModel(
@@ -164,7 +164,9 @@ internal class YourViewModel {
     public ILanguageService LanguageService { get; } // сервис для установки локализации в контроле
 }
 ```
+
 5. Подключить нужный контрол в xaml:
+
 ```
 xmlns:filtration="clr-namespace:Bim4Everyone.RevitFiltration.Controls.Views;assembly=Bim4Everyone.RevitFiltration.Controls"
 <filtration:DynamicCategoriesFilterControl
