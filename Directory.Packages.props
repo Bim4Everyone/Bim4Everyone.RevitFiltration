@@ -39,10 +39,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageVersion Include="PolySharp" Version="1.14.1"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <GlobalPackageReference Include="PolyFill" Version="9.8.1"/>
     </ItemGroup>
 </Project>

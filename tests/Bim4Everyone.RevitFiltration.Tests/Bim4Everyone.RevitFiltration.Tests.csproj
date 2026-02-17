@@ -9,11 +9,4 @@
     <ItemGroup Condition="$(RevitVersion) != ''">
         <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="PolySharp">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
 </Project>
