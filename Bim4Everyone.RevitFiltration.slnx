@@ -17,12 +17,20 @@
         <File Path="CREDITS.md"/>
         <File Path="LICENSE.md"/>
         <File Path="README.md"/>
-        <File Path="src/Directory.Build.props"/>
-        <File Path="src/Directory.Build.targets"/>
+        <File Path="Directory.Build.props"/>
+        <File Path="Directory.Build.targets"/>
+        <File Path="Directory.Packages.props"/>
+    </Folder>
+    <Folder Name="/src/">
+        <Project Path="src/Bim4Everyone.RevitFiltration.Controls/Bim4Everyone.RevitFiltration.Controls.csproj"/>
+        <Project Path="src/Bim4Everyone.RevitFiltration/Bim4Everyone.RevitFiltration.csproj"/>
+        <Project Path="src/Bim4Everyone.RevitFiltration.Ninject/Bim4Everyone.RevitFiltration.Ninject.csproj"/>
+    </Folder>
+    <Folder Name="/tests/">
+        <Project Path="tests/Bim4Everyone.RevitFiltration.Tests/Bim4Everyone.RevitFiltration.Tests.csproj"/>
     </Folder>
     <Project Path="build/_build.csproj">
         <Build Project="false"/>
-        <Platform Project="x64"/>
         <BuildType Solution="D2020|*" Project="Debug"/>
         <BuildType Solution="D2021|*" Project="Debug"/>
         <BuildType Solution="D2022|*" Project="Debug"/>
@@ -30,17 +38,5 @@
         <BuildType Solution="D2024|*" Project="Debug"/>
         <BuildType Solution="Debug|*" Project="Debug"/>
         <BuildType Solution="Release|*" Project="Release"/>
-    </Project>
-    <Project Path="src/Bim4Everyone.RevitFiltration.Controls/Bim4Everyone.RevitFiltration.Controls.csproj">
-        <Platform Project="x64"/>
-    </Project>
-    <Project Path="src/Bim4Everyone.RevitFiltration/Bim4Everyone.RevitFiltration.csproj">
-        <Platform Project="x64"/>
-    </Project>
-    <Project Path="tests/Bim4Everyone.RevitFiltration.Tests/Bim4Everyone.RevitFiltration.Tests.csproj">
-        <Platform Project="x64"/>
-    </Project>
-    <Project Path="src/Bim4Everyone.RevitFiltration.Ninject/Bim4Everyone.RevitFiltration.Ninject.csproj">
-        <Platform Project="x64"/>
     </Project>
 </Solution>

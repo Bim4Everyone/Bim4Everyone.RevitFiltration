@@ -110,34 +110,14 @@
           ]
         },
         "MaxVersion": {
-          "type": "string",
+          "type": "integer",
           "description": "Max Revit version",
-          "enum": [
-            "Rv2016",
-            "Rv2017",
-            "Rv2018",
-            "Rv2019",
-            "Rv2020",
-            "Rv2021",
-            "Rv2022",
-            "Rv2023",
-            "Rv2024"
-          ]
+          "format": "int32"
         },
         "MinVersion": {
-          "type": "string",
+          "type": "integer",
           "description": "Min Revit version",
-          "enum": [
-            "Rv2016",
-            "Rv2017",
-            "Rv2018",
-            "Rv2019",
-            "Rv2020",
-            "Rv2021",
-            "Rv2022",
-            "Rv2023",
-            "Rv2024"
-          ]
+          "format": "int32"
         },
         "Output": {
           "type": "string"
@@ -146,18 +126,8 @@
           "type": "array",
           "description": "Build Revit versions",
           "items": {
-            "type": "string",
-            "enum": [
-              "Rv2016",
-              "Rv2017",
-              "Rv2018",
-              "Rv2019",
-              "Rv2020",
-              "Rv2021",
-              "Rv2022",
-              "Rv2023",
-              "Rv2024"
-            ]
+            "type": "integer",
+            "format": "int32"
           }
         },
         "Solution": {

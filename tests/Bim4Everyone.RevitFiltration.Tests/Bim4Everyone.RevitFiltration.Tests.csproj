@@ -1,23 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net4.8</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <LangVersion>12</LangVersion>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
-        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*"/>
-        <PackageReference Include="Nice3point.TUnit.Revit" Version="$(RevitVersion).*"/>
+        <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="PolySharp" Version="1.14.1">
+        <PackageReference Include="PolySharp">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>

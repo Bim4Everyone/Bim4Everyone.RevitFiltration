@@ -1,0 +1,30 @@
+name: build
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      
+      # Install the .NET Core workload
+      - name: Install .NET Core
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+      
+      # Build docs
+      - name: Run './build.cmd '
+        run: ./build.cmd compile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Upload docs site: https://github.com/marketplace/actions/upload-a-build-artifact
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: bin
+          path: bin

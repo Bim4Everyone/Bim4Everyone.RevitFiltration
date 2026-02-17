@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using dosymep.Nuke.RevitVersions;
-
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.Tooling;
@@ -20,13 +18,13 @@ class Build : NukeBuild, IHazSolution {
     ///     Max Revit version.
     /// </summary>
     [Parameter("Max Revit version.")]
-    readonly RevitVersion MaxVersion = RevitVersion.Rv2024;
+    readonly int MaxVersion = 2024;
 
     /// <summary>
     ///     Min Revit version.
     /// </summary>
     [Parameter("Min Revit version.")]
-    readonly RevitVersion MinVersion = RevitVersion.Rv2020;
+    readonly int MinVersion = 2020;
 
     [Parameter]
     readonly AbsolutePath Output = RootDirectory / "bin";
@@ -34,9 +32,9 @@ class Build : NukeBuild, IHazSolution {
     readonly AbsolutePath PublishOutput;
 
     [Parameter("Build Revit versions.")]
-    readonly RevitVersion[] RevitVersions = new RevitVersion[0];
+    readonly int[] RevitVersions = [];
 
-    IEnumerable<RevitVersion> BuildRevitVersions;
+    IEnumerable<int> BuildRevitVersions;
 
     public Build() {
         AbsolutePath appdataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -98,8 +96,8 @@ class Build : NukeBuild, IHazSolution {
                             BuildRevitVersions,
                             (settings, version) => {
                                 return settings
-                                    .SetOutputDirectory(Output / version)
-                                    .SetProperty("RevitVersion", (int) version);
+                                    .SetOutputDirectory(Output / version.ToString())
+                                    .SetProperty("RevitVersion", version);
                             }));
                 }
             });
@@ -122,8 +120,8 @@ class Build : NukeBuild, IHazSolution {
                             BuildRevitVersions,
                             (settings, version) => {
                                 return settings
-                                    .SetOutputDirectory(PublishOutput / version)
-                                    .SetProperty("RevitVersion", (int) version);
+                                    .SetOutputDirectory(PublishOutput / version.ToString())
+                                    .SetProperty("RevitVersion", version);
                             }));
                 }
             });
@@ -132,7 +130,7 @@ class Build : NukeBuild, IHazSolution {
         base.OnBuildInitialized();
         BuildRevitVersions = RevitVersions.Length > 0
             ? RevitVersions
-            : RevitVersion.GetRevitVersions(MinVersion, MaxVersion);
+            : Enumerable.Range(MinVersion, MaxVersion - MinVersion + 1);
     }
 
     /// Support plugins are available for:

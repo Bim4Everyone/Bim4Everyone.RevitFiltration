@@ -1,0 +1,48 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageVersion Include="Ninject" Version="3.3.4"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="LibGit2Sharp" Version="0.26.2"/>
+        <PackageVersion Include="LibGit2Sharp.NativeBinaries" Version="2.0.306"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="WPF-UI" Version="4.0.0"/>
+        <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39"/>
+        <PackageVersion Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="Nuke.Common" Version="10.1.0" />
+        <PackageVersion Include="Nuke.Components" Version="10.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="coverlet.collector" Version="6.0.4"/>
+        <PackageVersion Include="xunit" Version="2.9.3"/>
+        <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5"/>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(RevitVersion) != ''">
+        <PackageVersion Include="Autodesk.Revit.Sdk.Refs" Version="*"/>
+        <PackageVersion Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*"/>
+        <PackageVersion Include="Nice3point.TUnit.Revit" Version="$(RevitVersion).*"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageVersion Include="PolySharp" Version="1.14.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <GlobalPackageReference Include="PolyFill" Version="9.8.1"/>
+    </ItemGroup>
+</Project>
