@@ -66,7 +66,7 @@ internal class ParamModel : IEquatable<ParamModel> {
     [JsonProperty]
     public string Id { get; }
 
-#if REVIT2020_OR_GREATER
+#if REVIT2021_OR_GREATER
     [JsonIgnore]
     private ForgeTypeId UnitType { get; } = new();
 
