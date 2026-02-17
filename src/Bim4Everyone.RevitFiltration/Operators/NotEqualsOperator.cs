@@ -23,10 +23,10 @@ internal class NotEqualsOperator : IOperator {
 
     /// <inheritdoc />
     public FilterRule Create(ElementId paramId, string value) {
-#if REVIT_2022_OR_LESS
-        return ParameterFilterRuleFactory.CreateNotEqualsRule(paramId, value, false);
-#else
+#if REVIT2023_OR_GREATER
         return ParameterFilterRuleFactory.CreateNotEqualsRule(paramId, value);
+#else
+        return ParameterFilterRuleFactory.CreateNotEqualsRule(paramId, value, false);
 #endif
     }
 

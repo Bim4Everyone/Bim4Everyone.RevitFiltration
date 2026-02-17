@@ -23,10 +23,10 @@ internal class NotEndsWithOperator : IOperator {
 
     /// <inheritdoc />
     public FilterRule Create(ElementId paramId, string value) {
-#if REVIT_2022_OR_LESS
-        return ParameterFilterRuleFactory.CreateNotEndsWithRule(paramId, value, false);
-#else
+#if REVIT2023_OR_GREATER
         return ParameterFilterRuleFactory.CreateNotEndsWithRule(paramId, value);
+#else
+        return ParameterFilterRuleFactory.CreateNotEndsWithRule(paramId, value, false);
 #endif
     }
 

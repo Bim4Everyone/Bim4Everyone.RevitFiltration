@@ -23,10 +23,10 @@ internal class GreaterOperator : IOperator {
 
     /// <inheritdoc />
     public FilterRule Create(ElementId paramId, string value) {
-#if REVIT_2022_OR_LESS
-        return ParameterFilterRuleFactory.CreateGreaterRule(paramId, value, false);
-#else
+#if REVIT2023_OR_GREATER
         return ParameterFilterRuleFactory.CreateGreaterRule(paramId, value);
+#else
+        return ParameterFilterRuleFactory.CreateGreaterRule(paramId, value, false);
 #endif
     }
 
