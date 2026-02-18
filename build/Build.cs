@@ -9,6 +9,7 @@ using Nuke.Common.Tools.DotNet;
 using Nuke.Components;
 
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
+using static Nuke.Common.Tools.Git.GitTasks;
 
 class Build : NukeBuild, IHazSolution {
     [Parameter]
@@ -29,12 +30,20 @@ class Build : NukeBuild, IHazSolution {
     [Parameter]
     readonly AbsolutePath PublishOutput;
 
+    [Parameter]
+    readonly AbsolutePath pyRevitOutput;
+
+    [Parameter]
+    readonly AbsolutePath Bim4EveryoneOutput;
+
     [Parameter("Build Revit versions.")]
     readonly int[] RevitVersions = [2020, 2021, 2022, 2023, 2024];
 
     public Build() {
         ArtifactPath = RootDirectory / "bin";
         AbsolutePath appdataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        pyRevitOutput = appdataFolder / "pyRevit-Master";
+        Bim4EveryoneOutput = appdataFolder / "pyRevit" / "Extensions" / "BIM4Everyone.lib";
         PublishOutput = appdataFolder / "pyRevit" / "Extensions" / "BIM4Everyone.lib" / "dosymep_libs" / "libs";
     }
 
@@ -74,10 +83,19 @@ class Build : NukeBuild, IHazSolution {
                     DotNetRestore(s => s.SetProjectFile(project));
                 }
             });
+    
+    Target DownloadBim4Everyone => _ => _
+        .OnlyWhenStatic(() => IsServerBuild)
+        .Executes(() => {
+            // потому что основные пакеты лежат в библиотеке pyRevit
+            Git($"clone https://github.com/pyrevitlabs/pyRevit.git --depth 1 --branch v4.8.16.24121+2117 {pyRevitOutput}");
+            Git($"clone https://github.com/dosymep/BIM4Everyone.git --depth 1 --branch master {Bim4EveryoneOutput}");
+        });
 
     Target Compile =>
         _ => _
             .DependsOn(Restore)
+            .DependsOn(DownloadBim4Everyone)
             .Executes(() => {
                 foreach(var project in GetSrcProjectPaths()) {
                     DotNetBuild(s => s
@@ -85,6 +103,9 @@ class Build : NukeBuild, IHazSolution {
                         .DisableNoRestore()
                         .SetConfiguration(Configuration)
                         .SetProjectFile(project)
+                        .When(settings => IsServerBuild,
+                            _ => _
+                                .EnableContinuousIntegrationBuild())
                         .CombineWith(
                             RevitVersions,
                             (settings, version) => {
