@@ -44,7 +44,8 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "modern"
+      "modern",
+      "template"
     ],
     "postProcessors": [],
     "keepFileLink": false,
@@ -54,6 +55,7 @@
       "_appName" : "Bim4Everyone.RevitFiltration",
       "_appTitle" : "Bim4Everyone.RevitFiltration",
       "_appFooter" : "Copyright &copy; 2026 Bim4Everyone",
+      "_appLogoPath": "images/Bim4Everyone.png",
       "_enableSearch": true,
       "_disableContribution": true
     },
