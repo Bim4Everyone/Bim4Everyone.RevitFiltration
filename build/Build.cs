@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Nuke.Common;
@@ -11,8 +11,20 @@ using Nuke.Components;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 class Build : NukeBuild, IHazSolution {
+    [Parameter]
+    readonly AbsolutePath ArtifactPath;
+
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
+
+    [Parameter]
+    readonly AbsolutePath DocsCaches = RootDirectory / Path.Combine("docs", "api");
+
+    [Parameter]
+    readonly string DocsConfig = Path.Combine("docs", "docfx.json");
+
+    [Parameter]
+    readonly string DocsOutput = Path.Combine("docs", "_site");
 
     /// <summary>
     ///     Max Revit version.
@@ -27,16 +39,13 @@ class Build : NukeBuild, IHazSolution {
     readonly int MinVersion = 2020;
 
     [Parameter]
-    readonly AbsolutePath Output = RootDirectory / "bin";
-
     readonly AbsolutePath PublishOutput;
 
     [Parameter("Build Revit versions.")]
-    readonly int[] RevitVersions = [];
-
-    IEnumerable<int> BuildRevitVersions;
+    readonly int[] RevitVersions = [2020, 2021, 2022, 2023, 2024];
 
     public Build() {
+        ArtifactPath = RootDirectory / "bin";
         AbsolutePath appdataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         PublishOutput = appdataFolder / "pyRevit" / "Extensions" / "BIM4Everyone.lib" / "dosymep_libs" / "libs";
     }
@@ -60,7 +69,9 @@ class Build : NukeBuild, IHazSolution {
         _ => _
             .Before(Restore)
             .Executes(() => {
-                Output.CreateOrCleanDirectory();
+                ArtifactPath.CreateOrCleanDirectory();
+                (RootDirectory / DocsOutput).CreateOrCleanDirectory();
+                DocsCaches.GlobFiles("**/*.yml").DeleteFiles();
                 RootDirectory.GlobDirectories("**/bin", "**/obj")
                     .Where(item => item != RootDirectory / "build" / "bin")
                     .Where(item => item != RootDirectory / "build" / "obj")
@@ -71,10 +82,7 @@ class Build : NukeBuild, IHazSolution {
         _ => _
             .DependsOn(Clean)
             .Executes(() => {
-                var projects = new[] {
-                    RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
-                };
-                foreach(var project in projects) {
+                foreach(var project in GetSrcProjectPaths()) {
                     DotNetRestore(s => s.SetProjectFile(project));
                 }
             });
@@ -83,23 +91,34 @@ class Build : NukeBuild, IHazSolution {
         _ => _
             .DependsOn(Restore)
             .Executes(() => {
-                var projects = new[] {
-                    RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
-                };
-                foreach(var project in projects) {
+                foreach(var project in GetSrcProjectPaths()) {
                     DotNetBuild(s => s
                         .EnableForce()
                         .DisableNoRestore()
                         .SetConfiguration(Configuration)
                         .SetProjectFile(project)
                         .CombineWith(
-                            BuildRevitVersions,
+                            RevitVersions,
                             (settings, version) => {
                                 return settings
-                                    .SetOutputDirectory(Output / version.ToString())
+                                    .SetOutputDirectory(ArtifactPath / version.ToString())
                                     .SetProperty("RevitVersion", version);
                             }));
                 }
+            });
+
+    Target DocsCompile =>
+        _ => _
+            .DependsOn(Compile)
+            .Executes(() => {
+                ProcessTasks.StartProcess(
+                        "docfx",
+                        DocsConfig
+                        + (IsLocalBuild
+                            ? " --serve"
+                            : string.Empty),
+                        RootDirectory)
+                    .WaitForExit();
             });
 
     Target Publish =>
@@ -117,7 +136,7 @@ class Build : NukeBuild, IHazSolution {
                         .SetConfiguration(Configuration)
                         .SetProjectFile(project)
                         .CombineWith(
-                            BuildRevitVersions,
+                            RevitVersions,
                             (settings, version) => {
                                 return settings
                                     .SetOutputDirectory(PublishOutput / version.ToString())
@@ -126,12 +145,9 @@ class Build : NukeBuild, IHazSolution {
                 }
             });
 
-    protected override void OnBuildInitialized() {
-        base.OnBuildInitialized();
-        BuildRevitVersions = RevitVersions.Length > 0
-            ? RevitVersions
-            : Enumerable.Range(MinVersion, MaxVersion - MinVersion + 1);
-    }
+    AbsolutePath[] GetSrcProjectPaths() => [
+        RevitFiltrationProject, RevitFiltrationControlsProject, RevitFiltrationNinjectProject
+    ];
 
     /// Support plugins are available for:
     /// - JetBrains ReSharper        https://nuke.build/resharper
