@@ -26,18 +26,6 @@ class Build : NukeBuild, IHazSolution {
     [Parameter]
     readonly string DocsOutput = Path.Combine("docs", "_site");
 
-    /// <summary>
-    ///     Max Revit version.
-    /// </summary>
-    [Parameter("Max Revit version.")]
-    readonly int MaxVersion = 2024;
-
-    /// <summary>
-    ///     Min Revit version.
-    /// </summary>
-    [Parameter("Min Revit version.")]
-    readonly int MinVersion = 2020;
-
     [Parameter]
     readonly AbsolutePath PublishOutput;
 

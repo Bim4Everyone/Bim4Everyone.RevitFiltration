@@ -26,6 +26,7 @@
       "enum": [
         "Clean",
         "Compile",
+        "DocsCompile",
         "Publish",
         "Restore"
       ]
@@ -101,6 +102,9 @@
   "allOf": [
     {
       "properties": {
+        "ArtifactPath": {
+          "type": "string"
+        },
         "Configuration": {
           "type": "string",
           "description": "Configuration to build - Default is 'Debug' (local) or 'Release' (server)",
@@ -109,17 +113,16 @@
             "Release"
           ]
         },
-        "MaxVersion": {
-          "type": "integer",
-          "description": "Max Revit version",
-          "format": "int32"
+        "DocsCaches": {
+          "type": "string"
         },
-        "MinVersion": {
-          "type": "integer",
-          "description": "Min Revit version",
-          "format": "int32"
+        "DocsConfig": {
+          "type": "string"
         },
-        "Output": {
+        "DocsOutput": {
+          "type": "string"
+        },
+        "PublishOutput": {
           "type": "string"
         },
         "RevitVersions": {

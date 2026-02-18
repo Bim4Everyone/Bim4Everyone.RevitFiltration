@@ -11,5 +11,7 @@
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>Bim4Everyone.RevitFiltration.Ninject</_Parameter1>
         </AssemblyAttribute>
+
+        <PackageReference Include="PolyFill"/>
     </ItemGroup>
 </Project>

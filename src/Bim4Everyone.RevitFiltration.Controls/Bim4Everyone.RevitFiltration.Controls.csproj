@@ -21,6 +21,8 @@
             <PrivateAssets>all</PrivateAssets>
             <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
+
+        <PackageReference Include="PolyFill"/>
     </ItemGroup>
 
     <ItemGroup>

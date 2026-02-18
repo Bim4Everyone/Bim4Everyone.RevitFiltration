@@ -39,6 +39,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <GlobalPackageReference Include="PolyFill" Version="9.8.1"/>
+        <PackageVersion Include="PolyFill" Version="9.9.0"/>
     </ItemGroup>
 </Project>

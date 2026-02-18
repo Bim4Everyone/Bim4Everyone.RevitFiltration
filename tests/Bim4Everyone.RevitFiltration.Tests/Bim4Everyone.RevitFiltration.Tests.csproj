@@ -9,4 +9,8 @@
     <ItemGroup Condition="$(RevitVersion) != ''">
         <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="PolyFill"/>
+    </ItemGroup>
 </Project>
