@@ -4,6 +4,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+        <EnableTUnitPolyfills>false</EnableTUnitPolyfills>
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
