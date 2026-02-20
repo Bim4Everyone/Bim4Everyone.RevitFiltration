@@ -187,3 +187,9 @@ nuke compile
 ```
 nuke publish
 ```
+
+## Запуск тестов
+
+```
+dotnet run --project .\tests\Bim4Everyone.RevitFiltration.Tests\Bim4Everyone.RevitFiltration.Tests.csproj
+```
