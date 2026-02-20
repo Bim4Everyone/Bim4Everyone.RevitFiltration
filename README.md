@@ -188,6 +188,14 @@ nuke compile
 nuke publish
 ```
 
+## Генерация документации
+
+Для запуска необходима установка [docfx](https://dotnet.github.io/docfx/)
+
+```
+nuke docscompile
+```
+
 ## Запуск тестов
 
 ```
