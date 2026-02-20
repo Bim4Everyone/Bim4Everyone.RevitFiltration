@@ -3,7 +3,7 @@
     <PropertyGroup>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+        <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
