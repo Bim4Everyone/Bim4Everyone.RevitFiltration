@@ -5,6 +5,7 @@
         <IsTestProject>true</IsTestProject>
         <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
         <EnableTUnitPolyfills>false</EnableTUnitPolyfills>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
