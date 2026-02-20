@@ -1,42 +1,48 @@
 <Solution>
     <Configurations>
-        <BuildType Name="D2020"/>
-        <BuildType Name="D2021"/>
-        <BuildType Name="D2022"/>
-        <BuildType Name="D2023"/>
-        <BuildType Name="D2024"/>
-        <BuildType Name="Debug"/>
-        <BuildType Name="Release"/>
-        <Platform Name="x64"/>
+        <BuildType Name="D2020" />
+        <BuildType Name="D2021" />
+        <BuildType Name="D2022" />
+        <BuildType Name="D2023" />
+        <BuildType Name="D2024" />
+        <BuildType Name="Debug" />
+        <BuildType Name="Release" />
+        <Platform Name="x64" />
     </Configurations>
     <Folder Name="/Solution Items/">
-        <File Path=".editorconfig"/>
-        <File Path=".gitattributes"/>
-        <File Path=".gitignore"/>
-        <File Path="CONTRIBUTING.md"/>
-        <File Path="CREDITS.md"/>
-        <File Path="LICENSE.md"/>
-        <File Path="README.md"/>
-        <File Path="Directory.Build.props"/>
-        <File Path="Directory.Build.targets"/>
-        <File Path="Directory.Packages.props"/>
+        <File Path=".editorconfig" />
+        <File Path=".gitattributes" />
+        <File Path=".gitignore" />
+        <File Path="CONTRIBUTING.md" />
+        <File Path="CREDITS.md" />
+        <File Path="LICENSE.md" />
+        <File Path="README.md" />
+        <File Path="Directory.Build.props" />
+        <File Path="Directory.Build.targets" />
+        <File Path="Directory.Packages.props" />
     </Folder>
     <Folder Name="/src/">
-        <Project Path="src/Bim4Everyone.RevitFiltration.Controls/Bim4Everyone.RevitFiltration.Controls.csproj"/>
-        <Project Path="src/Bim4Everyone.RevitFiltration/Bim4Everyone.RevitFiltration.csproj"/>
-        <Project Path="src/Bim4Everyone.RevitFiltration.Ninject/Bim4Everyone.RevitFiltration.Ninject.csproj"/>
+        <Project Path="src/Bim4Everyone.RevitFiltration.Controls/Bim4Everyone.RevitFiltration.Controls.csproj">
+            <Platform Project="x64" />
+        </Project>
+        <Project Path="src/Bim4Everyone.RevitFiltration/Bim4Everyone.RevitFiltration.csproj">
+            <Platform Project="x64" />
+        </Project>
+        <Project Path="src/Bim4Everyone.RevitFiltration.Ninject/Bim4Everyone.RevitFiltration.Ninject.csproj">
+            <Platform Project="x64" />
+        </Project>
     </Folder>
     <Folder Name="/tests/">
-        <Project Path="tests/Bim4Everyone.RevitFiltration.Tests/Bim4Everyone.RevitFiltration.Tests.csproj"/>
+        <Project Path="tests/Bim4Everyone.RevitFiltration.Tests/Bim4Everyone.RevitFiltration.Tests.csproj">
+            <Platform Project="x64" />
+        </Project>
     </Folder>
     <Project Path="build/_build.csproj">
-        <Build Project="false"/>
-        <BuildType Solution="D2020|*" Project="Debug"/>
-        <BuildType Solution="D2021|*" Project="Debug"/>
-        <BuildType Solution="D2022|*" Project="Debug"/>
-        <BuildType Solution="D2023|*" Project="Debug"/>
-        <BuildType Solution="D2024|*" Project="Debug"/>
-        <BuildType Solution="Debug|*" Project="Debug"/>
-        <BuildType Solution="Release|*" Project="Release"/>
+        <Build Project="false" />
+        <BuildType Solution="D2020|*" Project="Debug" />
+        <BuildType Solution="D2021|*" Project="Debug" />
+        <BuildType Solution="D2022|*" Project="Debug" />
+        <BuildType Solution="D2023|*" Project="Debug" />
+        <BuildType Solution="D2024|*" Project="Debug" />
     </Project>
 </Solution>

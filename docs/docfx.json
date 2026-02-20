@@ -52,15 +52,15 @@
     "disableGitFeatures": false,
     "globalMetadata" :
     {
-      "_appName" : "Bim4Everyone.RevitFiltration",
-      "_appTitle" : "Bim4Everyone.RevitFiltration",
+      "_appName" : "RevitFiltration",
+      "_appTitle" : "RevitFiltration",
       "_appFooter" : "Copyright &copy; 2026 Bim4Everyone",
       "_appLogoPath": "images/Bim4Everyone.png",
       "_enableSearch": true,
       "_disableContribution": true
     },
     "sitemap": {
-      "baseUrl": "https://bim4everyone.github.io/Bim4Everyone.RevitFiltration",
+      "baseUrl": "https://bim4everyone.com/Bim4Everyone.RevitFiltration",
       "priority": 0.8,
       "changefreq": "monthly",
       "fileOptions": {

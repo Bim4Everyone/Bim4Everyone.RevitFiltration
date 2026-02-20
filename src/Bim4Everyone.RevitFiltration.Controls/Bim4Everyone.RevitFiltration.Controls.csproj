@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
         <UseWpf>true</UseWpf>
     </PropertyGroup>
@@ -7,23 +8,12 @@
         <Title>Bim4Everyone.RevitFiltration.Controls</Title>
         <PackageId>Bim4Everyone.RevitFiltration.Controlss</PackageId>
         <Description>Данный пакет содержит WPF контролы для фильтрации элементов в Autodesk Revit.</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <TargetFramework>net48</TargetFramework> <!-- set default target framework -->
         <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion> <!-- set default revit version -->
     </PropertyGroup>
-
-    <ItemGroup>
-        <Reference Include="System.Web"/>
-        <Reference Include="WindowsBase"/>
-        <Reference Include="PresentationCore"/>
-        <Reference Include="PresentationFramework"/>
-
-        <PackageReference Include="WPF-UI">
-            <PrivateAssets>all</PrivateAssets>
-            <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-
-        <PackageReference Include="PolyFill"/>
-    </ItemGroup>
 
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
@@ -32,10 +22,29 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Reference Include="dosymep.WpfCore">
+            <Private>False</Private>
+            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\dosymep.WpfCore.dll</HintPath>
+        </Reference>
+
+        <Reference Include="dosymep.SimpleServices">
+            <Private>False</Private>
+            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\dosymep.SimpleServices.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="WPF-UI">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+
         <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
             <PrivateAssets>all</PrivateAssets>
             <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
+
         <PackageReference Include="Microsoft.WindowsAPICodePack-Shell">
             <PrivateAssets>all</PrivateAssets>
             <ExcludeAssets>runtime</ExcludeAssets>
@@ -46,14 +55,4 @@
         <ProjectReference Include="..\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Reference Include="dosymep.SimpleServices">
-            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\dosymep.SimpleServices.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="dosymep.WpfCore">
-            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\dosymep.WpfCore.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-    </ItemGroup>
 </Project>

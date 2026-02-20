@@ -193,11 +193,11 @@ nuke publish
 Для запуска необходима установка [docfx](https://dotnet.github.io/docfx/)
 
 ```
-nuke docscompile
+nuke docs-compile
 ```
 
 ## Запуск тестов
 
 ```
-dotnet run --project .\tests\Bim4Everyone.RevitFiltration.Tests\Bim4Everyone.RevitFiltration.Tests.csproj
+nuke test
 ```

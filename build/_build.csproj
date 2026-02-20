@@ -12,6 +12,10 @@
     <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
   </PropertyGroup>
 
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Nuke.Common"/>
     <PackageReference Include="Nuke.Components"/>

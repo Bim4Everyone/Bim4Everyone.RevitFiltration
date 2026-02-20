@@ -30,8 +30,8 @@
         <PackageVersion Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*"/>
         <PackageVersion Include="Nice3point.TUnit.Revit" Version="$(RevitVersion).*"/>
     </ItemGroup>
-
+    
     <ItemGroup>
-        <PackageVersion Include="PolyFill" Version="9.9.0"/>
+        <GlobalPackageReference Include="PolyFill" Version="9.9.0"/>
     </ItemGroup>
 </Project>

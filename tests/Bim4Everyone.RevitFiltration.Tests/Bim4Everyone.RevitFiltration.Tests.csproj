@@ -8,11 +8,12 @@
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
     </PropertyGroup>
 
-    <ItemGroup Condition="$(RevitVersion) != ''">
-        <PackageReference Include="Nice3point.TUnit.Revit"/>
-    </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework> <!-- set default target framework -->
+        <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion> <!-- set default revit version -->
+    </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="PolyFill"/>
+        <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
 </Project>

@@ -29,7 +29,8 @@
         "DocsCompile",
         "DownloadBim4Everyone",
         "Publish",
-        "Restore"
+        "Restore",
+        "Test"
       ]
     },
     "Verbosity": {
@@ -143,6 +144,9 @@
         "Solution": {
           "type": "string",
           "description": "Path to a solution file that is automatically loaded"
+        },
+        "TestResultsPath": {
+          "type": "string"
         }
       }
     },
