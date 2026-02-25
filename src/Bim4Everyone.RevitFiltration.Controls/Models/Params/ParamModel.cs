@@ -29,24 +29,16 @@ internal class ParamModel : IEquatable<ParamModel> {
         if(StorageType == StorageType.Double) {
             // UnitType нужен только для конвертации метрических единиц, которые вводит пользователь в имперские единицы ревита,
             // в этом случае StorageType всегда Double
-#if REVIT_2020_OR_LESS
-            UnitType = parameter.UnitType;
-#else
+#if REVIT2021_OR_GREATER
             UnitType = parameter.UnitType ?? throw new ArgumentException($"{nameof(UnitType)} is null");
             TypeId = parameter.UnitType.TypeId;
+#else
+            UnitType = parameter.UnitType;
 #endif
         }
     }
 
-#if REVIT_2020_OR_LESS
-    [JsonConstructor]
-    public ParamModel(string name, string id, UnitType unitType, StorageType storageType) {
-        Name = name;
-        Id = id;
-        UnitType = unitType;
-        StorageType = storageType;
-    }
-#else
+#if REVIT2021_OR_GREATER
     [JsonConstructor]
     public ParamModel(string name, string id, string typeId, StorageType storageType) {
         Name = name;
@@ -54,6 +46,14 @@ internal class ParamModel : IEquatable<ParamModel> {
         TypeId = typeId;
         StorageType = storageType;
         UnitType = new ForgeTypeId(TypeId);
+    }
+#else
+    [JsonConstructor]
+    public ParamModel(string name, string id, UnitType unitType, StorageType storageType) {
+        Name = name;
+        Id = id;
+        UnitType = unitType;
+        StorageType = storageType;
     }
 #endif
 
@@ -66,15 +66,15 @@ internal class ParamModel : IEquatable<ParamModel> {
     [JsonProperty]
     public string Id { get; }
 
-#if REVIT_2020_OR_LESS
-    [JsonProperty]
-    private UnitType UnitType { get; }
-#else
+#if REVIT2021_OR_GREATER
     [JsonIgnore]
     private ForgeTypeId UnitType { get; } = new();
 
     [JsonProperty]
     private string TypeId { get; } = string.Empty;
+#else
+    [JsonProperty]
+    private UnitType UnitType { get; }
 #endif
 
     public ICollection<OperatorKind> GetOperatorKinds() {

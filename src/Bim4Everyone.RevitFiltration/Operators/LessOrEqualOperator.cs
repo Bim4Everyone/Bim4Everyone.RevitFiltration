@@ -23,10 +23,10 @@ internal class LessOrEqualOperator : IOperator {
 
     /// <inheritdoc />
     public FilterRule Create(ElementId paramId, string value) {
-#if REVIT_2022_OR_LESS
-        return ParameterFilterRuleFactory.CreateLessOrEqualRule(paramId, value, false);
-#else
+#if REVIT2023_OR_GREATER
         return ParameterFilterRuleFactory.CreateLessOrEqualRule(paramId, value);
+#else
+        return ParameterFilterRuleFactory.CreateLessOrEqualRule(paramId, value, false);
 #endif
     }
 

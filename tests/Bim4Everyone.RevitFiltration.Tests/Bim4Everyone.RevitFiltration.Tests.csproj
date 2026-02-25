@@ -1,25 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net4.8</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <LangVersion>12</LangVersion>
-        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+        <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+        <EnableTUnitPolyfills>false</EnableTUnitPolyfills>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
     </PropertyGroup>
 
-    <ItemGroup Condition="$(RevitVersion) != ''">
-        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*"/>
-        <PackageReference Include="Nice3point.TUnit.Revit" Version="$(RevitVersion).*"/>
-    </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework> <!-- set default target framework -->
+        <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion> <!-- set default revit version -->
+    </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="PolySharp" Version="1.14.1">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-        </PackageReference>
+        <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
 </Project>

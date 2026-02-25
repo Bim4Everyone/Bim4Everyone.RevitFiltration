@@ -15,10 +15,10 @@ internal class ElementIdConverter : JsonConverter<ElementId> {
     /// <param name="value">Экземпляр <see cref="Autodesk.Revit.DB.ElementId" /> для сериализации.</param>
     /// <param name="serializer">Сериализатор JSON.</param>
     public override void WriteJson(JsonWriter writer, ElementId value, JsonSerializer serializer) {
-#if REVIT_2023_OR_LESS
-        writer.WriteValue(value.IntegerValue);
-#else
+#if REVIT2024_OR_GREATER
         writer.WriteValue(value.Value);
+#else
+        writer.WriteValue(value.IntegerValue);
 #endif
     }
 
@@ -41,10 +41,10 @@ internal class ElementIdConverter : JsonConverter<ElementId> {
             return ElementId.InvalidElementId;
         }
 
-#if REVIT_2023_OR_LESS
-        return new ElementId(Convert.ToInt32(reader.Value));
-#else
+#if REVIT2024_OR_GREATER
         return new ElementId(Convert.ToInt64(reader.Value));
+#else
+        return new ElementId(Convert.ToInt32(reader.Value));
 #endif
     }
 }

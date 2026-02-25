@@ -1,13 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Title>Bim4Everyone.RevitFiltration.Ninject</Title>
+        <PackageId>Bim4Everyone.RevitFiltration.Ninject</PackageId>
+        <Description>Данный пакет содержит расширение для настройки контейнера зависимостей Ninject.</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework> <!-- set default target framework -->
+        <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion> <!-- set default revit version -->
+    </PropertyGroup>
+
     <ItemGroup>
-        <ProjectReference Include="..\Bim4Everyone.RevitFiltration.Controls\Bim4Everyone.RevitFiltration.Controls.csproj"/>
         <ProjectReference Include="..\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
+        <ProjectReference Include="..\Bim4Everyone.RevitFiltration.Controls\Bim4Everyone.RevitFiltration.Controls.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="Ninject">
-            <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\Ninject.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
+        <PackageReference Include="Ninject">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
     </ItemGroup>
+
+    <ItemGroup>
+        <GlobalPackageReference Remove="PolyFill"/>
+    </ItemGroup>
+
 </Project>

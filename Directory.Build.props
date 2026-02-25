@@ -5,11 +5,10 @@
         <NoWarn>1701;1702;MSB3246</NoWarn>
         <TargetFramework>net48</TargetFramework>
         <Nullable>enable</Nullable>
-        <LangVersion>12</LangVersion>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-        <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion>
         <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
         <Configurations>D2020;D2021;D2022;D2023;D2024;Debug;Release</Configurations>
     </PropertyGroup>
@@ -32,19 +31,17 @@
         <Version>$(RevitVersion).2.4</Version>
         <FileVersion>$(RevitVersion).2.4</FileVersion>
         <Company>Bim4Everyone</Company>
-        <Authors>Bim4Everyone team</Authors>
+        <Authors>Bim4Everyone</Authors>
         <PackageTags>Bim4Everyone, revit, plugins</PackageTags>
-        <Copyright>Copyright © 2025</Copyright>
+        <Copyright>Copyright © 2026</Copyright>
         <PackageProjectUrl>https://github.com/Bim4Everyone/Bim4Everyone.RevitFiltration.git</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Bim4Everyone/Bim4Everyone.RevitFiltration.git</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup Condition="$(RevitVersion) != ''">
-        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)" Version="*">
-            <PrivateAssets>all</PrivateAssets>
-            <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
+        <PackageReference Include="Autodesk.Revit.Sdk.Refs"/>
+        <PackageReference Include="Autodesk.Revit.Sdk.Refs.$(RevitVersion)"/>
 
         <Reference Include="dosymep.Bim4Everyone">
             <HintPath>$(AppData)\pyRevit\Extensions\BIM4Everyone.lib\dosymep_libs\libs\$(RevitVersion)\dosymep.Bim4Everyone.dll</HintPath>

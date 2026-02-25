@@ -23,10 +23,10 @@ internal class LessOperator : IOperator {
 
     /// <inheritdoc />
     public FilterRule Create(ElementId paramId, string value) {
-#if REVIT_2022_OR_LESS
-        return ParameterFilterRuleFactory.CreateLessRule(paramId, value, false);
-#else
+#if REVIT2023_OR_GREATER
         return ParameterFilterRuleFactory.CreateLessRule(paramId, value);
+#else
+        return ParameterFilterRuleFactory.CreateLessRule(paramId, value, false);
 #endif
     }
 

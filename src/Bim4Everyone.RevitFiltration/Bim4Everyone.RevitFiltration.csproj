@@ -1,8 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
+   
     <PropertyGroup>
         <Title>Bim4Everyone.RevitFiltration</Title>
         <PackageId>Bim4Everyone.RevitFiltration</PackageId>
         <Description>Данный пакет содержит базовые интерфейсы сервисов для фильтрации элементов в Autodesk Revit.</Description>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework> <!-- set default target framework -->
+        <RevitVersion Condition="'$(RevitVersion)' == ''">2024</RevitVersion> <!-- set default revit version -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -10,4 +16,5 @@
             <_Parameter1>Bim4Everyone.RevitFiltration.Ninject</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
+    
 </Project>
