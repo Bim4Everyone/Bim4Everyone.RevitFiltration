@@ -1,0 +1,1191 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Bim4Everyone.RevitFiltration
+  name: Bim4Everyone.RevitFiltration
+  href: api/2021/Bim4Everyone.RevitFiltration.html
+  commentId: N:Bim4Everyone.RevitFiltration
+  fullName: Bim4Everyone.RevitFiltration
+  nameWithType: Bim4Everyone.RevitFiltration
+- uid: Bim4Everyone.RevitFiltration.Controls
+  name: Bim4Everyone.RevitFiltration.Controls
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.html
+  commentId: N:Bim4Everyone.RevitFiltration.Controls
+  fullName: Bim4Everyone.RevitFiltration.Controls
+  nameWithType: Bim4Everyone.RevitFiltration.Controls
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider
+  name: IDataProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.IDataProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider
+  nameWithType: IDataProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
+  name: GetCategories()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetCategories
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories()
+  nameWithType: IDataProvider.GetCategories()
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories*
+  name: GetCategories
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetCategories_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
+  nameWithType: IDataProvider.GetCategories
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
+  name: GetDocuments()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetDocuments
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments()
+  nameWithType: IDataProvider.GetDocuments()
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments*
+  name: GetDocuments
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetDocuments_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
+  nameWithType: IDataProvider.GetDocuments
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})
+  name: GetParams(ICollection<Category>)
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetParams_System_Collections_Generic_ICollection_Autodesk_Revit_DB_Category__
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})
+  name.vb: GetParams(ICollection(Of Category))
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection<Autodesk.Revit.DB.Category>)
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection(Of Autodesk.Revit.DB.Category))
+  nameWithType: IDataProvider.GetParams(ICollection<Category>)
+  nameWithType.vb: IDataProvider.GetParams(ICollection(Of Category))
+- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams*
+  name: GetParams
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetParams_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams
+  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams
+  nameWithType: IDataProvider.GetParams
+- uid: Bim4Everyone.RevitFiltration.Controls.IErrorContext
+  name: IErrorContext
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.IErrorContext
+  fullName: Bim4Everyone.RevitFiltration.Controls.IErrorContext
+  nameWithType: IErrorContext
+- uid: Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message
+  name: Message
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html#Bim4Everyone_RevitFiltration_Controls_IErrorContext_Message
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message
+  fullName: Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message
+  nameWithType: IErrorContext.Message
+- uid: Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message*
+  name: Message
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html#Bim4Everyone_RevitFiltration_Controls_IErrorContext_Message_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message
+  fullName: Bim4Everyone.RevitFiltration.Controls.IErrorContext.Message
+  nameWithType: IErrorContext.Message
+- uid: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser
+  name: IFilterContextParser
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser
+  fullName: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser
+  nameWithType: IFilterContextParser
+- uid: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  name: Serialize(ILogicalFilterContext)
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html#Bim4Everyone_RevitFiltration_Controls_IFilterContextParser_Serialize_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  fullName: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize(Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  nameWithType: IFilterContextParser.Serialize(ILogicalFilterContext)
+- uid: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize*
+  name: Serialize
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html#Bim4Everyone_RevitFiltration_Controls_IFilterContextParser_Serialize_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize
+  fullName: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.Serialize
+  nameWithType: IFilterContextParser.Serialize
+- uid: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse(System.String,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext@)
+  name: TryParse(string, out ILogicalFilterContext?)
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html#Bim4Everyone_RevitFiltration_Controls_IFilterContextParser_TryParse_System_String_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext__
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse(System.String,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext@)
+  name.vb: TryParse(String, ILogicalFilterContext)
+  fullName: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse(string, out Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext?)
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse(String, Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  nameWithType: IFilterContextParser.TryParse(string, out ILogicalFilterContext?)
+  nameWithType.vb: IFilterContextParser.TryParse(String, ILogicalFilterContext)
+- uid: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse*
+  name: TryParse
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html#Bim4Everyone_RevitFiltration_Controls_IFilterContextParser_TryParse_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse
+  fullName: Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.TryParse
+  nameWithType: IFilterContextParser.TryParse
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext
+  name: ILogicalFilterContext
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext
+  nameWithType: ILogicalFilterContext
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter
+  name: GetFilter()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_GetFilter
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter()
+  nameWithType: ILogicalFilterContext.GetFilter()
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter*
+  name: GetFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_GetFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.GetFilter
+  nameWithType: ILogicalFilterContext.GetFilter
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories
+  name: SelectedCategories
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_SelectedCategories
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories
+  nameWithType: ILogicalFilterContext.SelectedCategories
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories*
+  name: SelectedCategories
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_SelectedCategories_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.SelectedCategories
+  nameWithType: ILogicalFilterContext.SelectedCategories
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider
+  name: ILogicalFilterProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider
+  nameWithType: ILogicalFilterProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(Bim4Everyone.RevitFiltration.Controls.IErrorContext[]@)
+  name: CanGetFilter(out IErrorContext[])
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_CanGetFilter_Bim4Everyone_RevitFiltration_Controls_IErrorContext____
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(Bim4Everyone.RevitFiltration.Controls.IErrorContext[]@)
+  name.vb: CanGetFilter(IErrorContext())
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(out Bim4Everyone.RevitFiltration.Controls.IErrorContext[])
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter(Bim4Everyone.RevitFiltration.Controls.IErrorContext())
+  nameWithType: ILogicalFilterProvider.CanGetFilter(out IErrorContext[])
+  nameWithType.vb: ILogicalFilterProvider.CanGetFilter(IErrorContext())
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter*
+  name: CanGetFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_CanGetFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.CanGetFilter
+  nameWithType: ILogicalFilterProvider.CanGetFilter
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter
+  name: GetFilter()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_GetFilter
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter()
+  nameWithType: ILogicalFilterProvider.GetFilter()
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter*
+  name: GetFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_GetFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.GetFilter
+  nameWithType: ILogicalFilterProvider.GetFilter
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory
+  name: ILogicalFilterProviderFactory
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory
+  nameWithType: ILogicalFilterProviderFactory
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
+  name: Create(IDataProvider)
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
+  nameWithType: ILogicalFilterProviderFactory.Create(IDataProvider)
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  name: Create(IDataProvider, ILogicalFilterContext)
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider, Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
+  nameWithType: ILogicalFilterProviderFactory.Create(IDataProvider, ILogicalFilterContext)
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*
+  name: Create
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create
+  nameWithType: ILogicalFilterProviderFactory.Create
+- uid: Bim4Everyone.RevitFiltration.Controls.Views
+  name: Bim4Everyone.RevitFiltration.Controls.Views
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.html
+  commentId: N:Bim4Everyone.RevitFiltration.Controls.Views
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views
+  nameWithType: Bim4Everyone.RevitFiltration.Controls.Views
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl
+  name: DynamicCategoriesFilterControl
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl
+  nameWithType: DynamicCategoriesFilterControl
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor
+  name: DynamicCategoriesFilterControl()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl__ctor
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor
+  name.vb: New()
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.DynamicCategoriesFilterControl()
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.New()
+  nameWithType: DynamicCategoriesFilterControl.DynamicCategoriesFilterControl()
+  nameWithType.vb: DynamicCategoriesFilterControl.New()
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor*
+  name: DynamicCategoriesFilterControl
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl__ctor_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.#ctor
+  name.vb: New
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.DynamicCategoriesFilterControl
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.New
+  nameWithType: DynamicCategoriesFilterControl.DynamicCategoriesFilterControl
+  nameWithType.vb: DynamicCategoriesFilterControl.New
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent
+  name: InitializeComponent()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_InitializeComponent
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent()
+  nameWithType: DynamicCategoriesFilterControl.InitializeComponent()
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent*
+  name: InitializeComponent
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_InitializeComponent_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent
+  nameWithType: DynamicCategoriesFilterControl.InitializeComponent
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService
+  name: LanguageService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LanguageService
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService
+  nameWithType: DynamicCategoriesFilterControl.LanguageService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService*
+  name: LanguageService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LanguageService_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageService
+  nameWithType: DynamicCategoriesFilterControl.LanguageService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageServiceProperty
+  name: LanguageServiceProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LanguageServiceProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageServiceProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LanguageServiceProperty
+  nameWithType: DynamicCategoriesFilterControl.LanguageServiceProperty
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService
+  name: LocalizationService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LocalizationService
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService
+  nameWithType: DynamicCategoriesFilterControl.LocalizationService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService*
+  name: LocalizationService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LocalizationService_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationService
+  nameWithType: DynamicCategoriesFilterControl.LocalizationService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationServiceProperty
+  name: LocalizationServiceProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LocalizationServiceProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationServiceProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LocalizationServiceProperty
+  nameWithType: DynamicCategoriesFilterControl.LocalizationServiceProperty
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider
+  name: LogicalFilterProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LogicalFilterProvider
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider
+  nameWithType: DynamicCategoriesFilterControl.LogicalFilterProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider*
+  name: LogicalFilterProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LogicalFilterProvider_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider
+  nameWithType: DynamicCategoriesFilterControl.LogicalFilterProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProviderProperty
+  name: LogicalFilterProviderProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_LogicalFilterProviderProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProviderProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProviderProperty
+  nameWithType: DynamicCategoriesFilterControl.LogicalFilterProviderProperty
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl
+  name: PresetCategoriesFilterControl
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html
+  commentId: T:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl
+  nameWithType: PresetCategoriesFilterControl
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.#ctor
+  name: PresetCategoriesFilterControl()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl__ctor
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.#ctor
+  name.vb: New()
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.PresetCategoriesFilterControl()
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.New()
+  nameWithType: PresetCategoriesFilterControl.PresetCategoriesFilterControl()
+  nameWithType.vb: PresetCategoriesFilterControl.New()
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.#ctor*
+  name: PresetCategoriesFilterControl
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl__ctor_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.#ctor
+  name.vb: New
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.PresetCategoriesFilterControl
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.New
+  nameWithType: PresetCategoriesFilterControl.PresetCategoriesFilterControl
+  nameWithType.vb: PresetCategoriesFilterControl.New
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent
+  name: InitializeComponent()
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_InitializeComponent
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent()
+  nameWithType: PresetCategoriesFilterControl.InitializeComponent()
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent*
+  name: InitializeComponent
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_InitializeComponent_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.InitializeComponent
+  nameWithType: PresetCategoriesFilterControl.InitializeComponent
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService
+  name: LanguageService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LanguageService
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService
+  nameWithType: PresetCategoriesFilterControl.LanguageService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService*
+  name: LanguageService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LanguageService_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageService
+  nameWithType: PresetCategoriesFilterControl.LanguageService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageServiceProperty
+  name: LanguageServiceProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LanguageServiceProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageServiceProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LanguageServiceProperty
+  nameWithType: PresetCategoriesFilterControl.LanguageServiceProperty
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService
+  name: LocalizationService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LocalizationService
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService
+  nameWithType: PresetCategoriesFilterControl.LocalizationService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService*
+  name: LocalizationService
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LocalizationService_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationService
+  nameWithType: PresetCategoriesFilterControl.LocalizationService
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationServiceProperty
+  name: LocalizationServiceProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LocalizationServiceProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationServiceProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LocalizationServiceProperty
+  nameWithType: PresetCategoriesFilterControl.LocalizationServiceProperty
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider
+  name: LogicalFilterProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LogicalFilterProvider
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider
+  nameWithType: PresetCategoriesFilterControl.LogicalFilterProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider*
+  name: LogicalFilterProvider
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LogicalFilterProvider_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider
+  nameWithType: PresetCategoriesFilterControl.LogicalFilterProvider
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty
+  name: LogicalFilterProviderProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_PresetCategoriesFilterControl_LogicalFilterProviderProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty
+  nameWithType: PresetCategoriesFilterControl.LogicalFilterProviderProperty
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter
+  name: ILogicalFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html
+  commentId: T:Bim4Everyone.RevitFiltration.ILogicalFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter
+  nameWithType: ILogicalFilter
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddBeginsWithRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddBeginsWithRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddBeginsWithRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddBeginsWithRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(System.String,System.String)
+  name: AddBeginsWithRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(System.String,System.String)
+  name.vb: AddBeginsWithRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(String, String)
+  nameWithType: ILogicalFilter.AddBeginsWithRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddBeginsWithRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule*
+  name: AddBeginsWithRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule
+  nameWithType: ILogicalFilter.AddBeginsWithRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddContainsRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddContainsRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddContainsRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddContainsRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(System.String,System.String)
+  name: AddContainsRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(System.String,System.String)
+  name.vb: AddContainsRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(String, String)
+  nameWithType: ILogicalFilter.AddContainsRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddContainsRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule*
+  name: AddContainsRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule
+  nameWithType: ILogicalFilter.AddContainsRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddEndsWithRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddEndsWithRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddEndsWithRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddEndsWithRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(System.String,System.String)
+  name: AddEndsWithRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(System.String,System.String)
+  name.vb: AddEndsWithRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(String, String)
+  nameWithType: ILogicalFilter.AddEndsWithRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddEndsWithRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule*
+  name: AddEndsWithRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule
+  nameWithType: ILogicalFilter.AddEndsWithRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddEqualsRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddEqualsRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddEqualsRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddEqualsRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddEqualsRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddEqualsRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddEqualsRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddEqualsRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddEqualsRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddEqualsRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddEqualsRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddEqualsRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddEqualsRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddEqualsRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Double)
+  name: AddEqualsRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Double)
+  name.vb: AddEqualsRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(String, Double)
+  nameWithType: ILogicalFilter.AddEqualsRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)
+  name: AddEqualsRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)
+  name.vb: AddEqualsRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(String, Integer)
+  nameWithType: ILogicalFilter.AddEqualsRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.String)
+  name: AddEqualsRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.String)
+  name.vb: AddEqualsRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(String, String)
+  nameWithType: ILogicalFilter.AddEqualsRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddEqualsRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*
+  name: AddEqualsRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule
+  nameWithType: ILogicalFilter.AddEqualsRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  name: AddFilter(ILogicalFilter)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddFilter_Bim4Everyone_RevitFiltration_ILogicalFilter_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  nameWithType: ILogicalFilter.AddFilter(ILogicalFilter)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter*
+  name: AddFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter
+  nameWithType: ILogicalFilter.AddFilter
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddGreaterOrEqualRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddGreaterOrEqualRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddGreaterOrEqualRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddGreaterOrEqualRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddGreaterOrEqualRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddGreaterOrEqualRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddGreaterOrEqualRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddGreaterOrEqualRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddGreaterOrEqualRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Double)
+  name: AddGreaterOrEqualRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Double)
+  name.vb: AddGreaterOrEqualRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(String, Double)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)
+  name: AddGreaterOrEqualRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)
+  name.vb: AddGreaterOrEqualRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(String, Integer)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.String)
+  name: AddGreaterOrEqualRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.String)
+  name.vb: AddGreaterOrEqualRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(String, String)
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddGreaterOrEqualRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*
+  name: AddGreaterOrEqualRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule
+  nameWithType: ILogicalFilter.AddGreaterOrEqualRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddGreaterRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddGreaterRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddGreaterRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddGreaterRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddGreaterRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddGreaterRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddGreaterRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddGreaterRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddGreaterRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddGreaterRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddGreaterRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddGreaterRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddGreaterRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddGreaterRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Double)
+  name: AddGreaterRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Double)
+  name.vb: AddGreaterRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(String, Double)
+  nameWithType: ILogicalFilter.AddGreaterRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)
+  name: AddGreaterRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)
+  name.vb: AddGreaterRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(String, Integer)
+  nameWithType: ILogicalFilter.AddGreaterRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.String)
+  name: AddGreaterRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.String)
+  name.vb: AddGreaterRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(String, String)
+  nameWithType: ILogicalFilter.AddGreaterRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddGreaterRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*
+  name: AddGreaterRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule
+  nameWithType: ILogicalFilter.AddGreaterRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  name: AddHasNoValueRule(BuiltInParameter)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_Autodesk_Revit_DB_BuiltInParameter_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  nameWithType: ILogicalFilter.AddHasNoValueRule(BuiltInParameter)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(System.String)
+  name: AddHasNoValueRule(string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(System.String)
+  name.vb: AddHasNoValueRule(String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(String)
+  nameWithType: ILogicalFilter.AddHasNoValueRule(string)
+  nameWithType.vb: ILogicalFilter.AddHasNoValueRule(String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule*
+  name: AddHasNoValueRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule
+  nameWithType: ILogicalFilter.AddHasNoValueRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  name: AddHasValueRule(BuiltInParameter)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_Autodesk_Revit_DB_BuiltInParameter_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)
+  nameWithType: ILogicalFilter.AddHasValueRule(BuiltInParameter)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(System.String)
+  name: AddHasValueRule(string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(System.String)
+  name.vb: AddHasValueRule(String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(String)
+  nameWithType: ILogicalFilter.AddHasValueRule(string)
+  nameWithType.vb: ILogicalFilter.AddHasValueRule(String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule*
+  name: AddHasValueRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule
+  nameWithType: ILogicalFilter.AddHasValueRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddLessOrEqualRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddLessOrEqualRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddLessOrEqualRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddLessOrEqualRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddLessOrEqualRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddLessOrEqualRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddLessOrEqualRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddLessOrEqualRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddLessOrEqualRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Double)
+  name: AddLessOrEqualRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Double)
+  name.vb: AddLessOrEqualRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(String, Double)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)
+  name: AddLessOrEqualRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)
+  name.vb: AddLessOrEqualRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(String, Integer)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.String)
+  name: AddLessOrEqualRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.String)
+  name.vb: AddLessOrEqualRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(String, String)
+  nameWithType: ILogicalFilter.AddLessOrEqualRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddLessOrEqualRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*
+  name: AddLessOrEqualRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule
+  nameWithType: ILogicalFilter.AddLessOrEqualRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddLessRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddLessRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddLessRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddLessRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddLessRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddLessRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddLessRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddLessRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddLessRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddLessRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddLessRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddLessRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddLessRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddLessRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddLessRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddLessRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddLessRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddLessRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Double)
+  name: AddLessRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Double)
+  name.vb: AddLessRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(String, Double)
+  nameWithType: ILogicalFilter.AddLessRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddLessRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)
+  name: AddLessRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)
+  name.vb: AddLessRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(String, Integer)
+  nameWithType: ILogicalFilter.AddLessRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddLessRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.String)
+  name: AddLessRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.String)
+  name.vb: AddLessRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(String, String)
+  nameWithType: ILogicalFilter.AddLessRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddLessRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*
+  name: AddLessRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule
+  nameWithType: ILogicalFilter.AddLessRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddNotBeginsWithRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddNotBeginsWithRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddNotBeginsWithRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddNotBeginsWithRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(System.String,System.String)
+  name: AddNotBeginsWithRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(System.String,System.String)
+  name.vb: AddNotBeginsWithRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(String, String)
+  nameWithType: ILogicalFilter.AddNotBeginsWithRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddNotBeginsWithRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule*
+  name: AddNotBeginsWithRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule
+  nameWithType: ILogicalFilter.AddNotBeginsWithRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddNotContainsRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddNotContainsRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddNotContainsRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddNotContainsRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(System.String,System.String)
+  name: AddNotContainsRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(System.String,System.String)
+  name.vb: AddNotContainsRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(String, String)
+  nameWithType: ILogicalFilter.AddNotContainsRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddNotContainsRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule*
+  name: AddNotContainsRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule
+  nameWithType: ILogicalFilter.AddNotContainsRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddNotEndsWithRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddNotEndsWithRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddNotEndsWithRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddNotEndsWithRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(System.String,System.String)
+  name: AddNotEndsWithRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(System.String,System.String)
+  name.vb: AddNotEndsWithRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(String, String)
+  nameWithType: ILogicalFilter.AddNotEndsWithRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddNotEndsWithRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule*
+  name: AddNotEndsWithRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule
+  nameWithType: ILogicalFilter.AddNotEndsWithRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  name: AddNotEqualsRule(BuiltInParameter, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name: AddNotEqualsRule(BuiltInParameter, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)
+  name.vb: AddNotEqualsRule(BuiltInParameter, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Double)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, double)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name: AddNotEqualsRule(BuiltInParameter, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)
+  name.vb: AddNotEqualsRule(BuiltInParameter, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, Integer)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, int)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name: AddNotEqualsRule(BuiltInParameter, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)
+  name.vb: AddNotEqualsRule(BuiltInParameter, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter, String)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, string)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(BuiltInParameter, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,Autodesk.Revit.DB.ElementId)
+  name: AddNotEqualsRule(string, ElementId)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_Autodesk_Revit_DB_ElementId_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,Autodesk.Revit.DB.ElementId)
+  name.vb: AddNotEqualsRule(String, ElementId)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(string, Autodesk.Revit.DB.ElementId)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(String, Autodesk.Revit.DB.ElementId)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(string, ElementId)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(String, ElementId)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Double)
+  name: AddNotEqualsRule(string, double)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_Double_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Double)
+  name.vb: AddNotEqualsRule(String, Double)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(string, double)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(String, Double)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(string, double)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(String, Double)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)
+  name: AddNotEqualsRule(string, int)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_Int32_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)
+  name.vb: AddNotEqualsRule(String, Integer)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(string, int)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(String, Integer)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(string, int)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(String, Integer)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.String)
+  name: AddNotEqualsRule(string, string)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_String_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.String)
+  name.vb: AddNotEqualsRule(String, String)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(string, string)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(String, String)
+  nameWithType: ILogicalFilter.AddNotEqualsRule(string, string)
+  nameWithType.vb: ILogicalFilter.AddNotEqualsRule(String, String)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*
+  name: AddNotEqualsRule
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule
+  nameWithType: ILogicalFilter.AddNotEqualsRule
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)
+  name: Build(Document, IOptions)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_IOptions_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document, Bim4Everyone.RevitFiltration.IOptions)
+  nameWithType: ILogicalFilter.Build(Document, IOptions)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.Build*
+  name: Build
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_Build_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.Build
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.Build
+  nameWithType: ILogicalFilter.Build
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterFactory
+  name: ILogicalFilterFactory
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html
+  commentId: T:Bim4Everyone.RevitFiltration.ILogicalFilterFactory
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterFactory
+  nameWithType: ILogicalFilterFactory
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter
+  name: CreateAndFilter()
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html#Bim4Everyone_RevitFiltration_ILogicalFilterFactory_CreateAndFilter
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter()
+  nameWithType: ILogicalFilterFactory.CreateAndFilter()
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter*
+  name: CreateAndFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html#Bim4Everyone_RevitFiltration_ILogicalFilterFactory_CreateAndFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateAndFilter
+  nameWithType: ILogicalFilterFactory.CreateAndFilter
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter
+  name: CreateOrFilter()
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html#Bim4Everyone_RevitFiltration_ILogicalFilterFactory_CreateOrFilter
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter()
+  nameWithType: ILogicalFilterFactory.CreateOrFilter()
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter*
+  name: CreateOrFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html#Bim4Everyone_RevitFiltration_ILogicalFilterFactory_CreateOrFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterFactory.CreateOrFilter
+  nameWithType: ILogicalFilterFactory.CreateOrFilter
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterParser
+  name: ILogicalFilterParser
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html
+  commentId: T:Bim4Everyone.RevitFiltration.ILogicalFilterParser
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser
+  nameWithType: ILogicalFilterParser
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  name: Serialize(ILogicalFilter)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html#Bim4Everyone_RevitFiltration_ILogicalFilterParser_Serialize_Bim4Everyone_RevitFiltration_ILogicalFilter_
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize(Bim4Everyone.RevitFiltration.ILogicalFilter)
+  nameWithType: ILogicalFilterParser.Serialize(ILogicalFilter)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize*
+  name: Serialize
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html#Bim4Everyone_RevitFiltration_ILogicalFilterParser_Serialize_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser.Serialize
+  nameWithType: ILogicalFilterParser.Serialize
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse(System.String,Bim4Everyone.RevitFiltration.ILogicalFilter@)
+  name: TryParse(string, out ILogicalFilter?)
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html#Bim4Everyone_RevitFiltration_ILogicalFilterParser_TryParse_System_String_Bim4Everyone_RevitFiltration_ILogicalFilter__
+  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse(System.String,Bim4Everyone.RevitFiltration.ILogicalFilter@)
+  name.vb: TryParse(String, ILogicalFilter)
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse(string, out Bim4Everyone.RevitFiltration.ILogicalFilter?)
+  fullName.vb: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse(String, Bim4Everyone.RevitFiltration.ILogicalFilter)
+  nameWithType: ILogicalFilterParser.TryParse(string, out ILogicalFilter?)
+  nameWithType.vb: ILogicalFilterParser.TryParse(String, ILogicalFilter)
+- uid: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse*
+  name: TryParse
+  href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html#Bim4Everyone_RevitFiltration_ILogicalFilterParser_TryParse_
+  commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse
+  fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse
+  nameWithType: ILogicalFilterParser.TryParse
+- uid: Bim4Everyone.RevitFiltration.IOptions
+  name: IOptions
+  href: api/2021/Bim4Everyone.RevitFiltration.IOptions.html
+  commentId: T:Bim4Everyone.RevitFiltration.IOptions
+  fullName: Bim4Everyone.RevitFiltration.IOptions
+  nameWithType: IOptions
+- uid: Bim4Everyone.RevitFiltration.IOptions.Tolerance
+  name: Tolerance
+  href: api/2021/Bim4Everyone.RevitFiltration.IOptions.html#Bim4Everyone_RevitFiltration_IOptions_Tolerance
+  commentId: P:Bim4Everyone.RevitFiltration.IOptions.Tolerance
+  fullName: Bim4Everyone.RevitFiltration.IOptions.Tolerance
+  nameWithType: IOptions.Tolerance
+- uid: Bim4Everyone.RevitFiltration.IOptions.Tolerance*
+  name: Tolerance
+  href: api/2021/Bim4Everyone.RevitFiltration.IOptions.html#Bim4Everyone_RevitFiltration_IOptions_Tolerance_
+  commentId: Overload:Bim4Everyone.RevitFiltration.IOptions.Tolerance
+  fullName: Bim4Everyone.RevitFiltration.IOptions.Tolerance
+  nameWithType: IOptions.Tolerance
+- uid: Bim4Everyone.RevitFiltration.Ninject
+  name: Bim4Everyone.RevitFiltration.Ninject
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.html
+  commentId: N:Bim4Everyone.RevitFiltration.Ninject
+  fullName: Bim4Everyone.RevitFiltration.Ninject
+  nameWithType: Bim4Everyone.RevitFiltration.Ninject
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions
+  name: NinjectExtensions
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html
+  commentId: T:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions
+  nameWithType: NinjectExtensions
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser(Ninject.IKernel)
+  name: UseFilterContextParser(IKernel)
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseFilterContextParser_Ninject_IKernel_
+  commentId: M:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser(Ninject.IKernel)
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser(Ninject.IKernel)
+  nameWithType: NinjectExtensions.UseFilterContextParser(IKernel)
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser*
+  name: UseFilterContextParser
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseFilterContextParser_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseFilterContextParser
+  nameWithType: NinjectExtensions.UseFilterContextParser
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory(Ninject.IKernel)
+  name: UseLogicalFilterFactory(IKernel)
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterFactory_Ninject_IKernel_
+  commentId: M:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory(Ninject.IKernel)
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory(Ninject.IKernel)
+  nameWithType: NinjectExtensions.UseLogicalFilterFactory(IKernel)
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory*
+  name: UseLogicalFilterFactory
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterFactory_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterFactory
+  nameWithType: NinjectExtensions.UseLogicalFilterFactory
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser(Ninject.IKernel)
+  name: UseLogicalFilterParser(IKernel)
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterParser_Ninject_IKernel_
+  commentId: M:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser(Ninject.IKernel)
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser(Ninject.IKernel)
+  nameWithType: NinjectExtensions.UseLogicalFilterParser(IKernel)
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser*
+  name: UseLogicalFilterParser
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterParser_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterParser
+  nameWithType: NinjectExtensions.UseLogicalFilterParser
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory(Ninject.IKernel)
+  name: UseLogicalFilterProviderFactory(IKernel)
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterProviderFactory_Ninject_IKernel_
+  commentId: M:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory(Ninject.IKernel)
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory(Ninject.IKernel)
+  nameWithType: NinjectExtensions.UseLogicalFilterProviderFactory(IKernel)
+- uid: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory*
+  name: UseLogicalFilterProviderFactory
+  href: api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html#Bim4Everyone_RevitFiltration_Ninject_NinjectExtensions_UseLogicalFilterProviderFactory_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory
+  fullName: Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.UseLogicalFilterProviderFactory
+  nameWithType: NinjectExtensions.UseLogicalFilterProviderFactory

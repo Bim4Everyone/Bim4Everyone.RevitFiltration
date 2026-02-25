@@ -1,0 +1,1529 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "**/articles/**": {
+        "baseUrl": "https://bim4everyone.com/Bim4Everyone.RevitFiltration/",
+        "changefreq": "monthly",
+        "priority": 0.8
+      },
+      "**/api/**": {
+        "baseUrl": "https://bim4everyone.com/Bim4Everyone.RevitFiltration/",
+        "changefreq": "monthly",
+        "priority": 0.3
+      }
+    },
+    "baseUrl": "https://bim4everyone.com/Bim4Everyone.RevitFiltration/",
+    "changefreq": "monthly",
+    "priority": 0.8
+  },
+  "source_base_path": "D:/a/Bim4Everyone.RevitFiltration/Bim4Everyone.RevitFiltration/docs",
+  "xrefmap": [
+    "xrefmap.yml",
+    "2020.xrefmap.yml",
+    "2021.xrefmap.yml",
+    "2022.xrefmap.yml",
+    "2023.xrefmap.yml",
+    "2024.xrefmap.yml"
+  ],
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IDataProvider",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml\" sourcestartlinenumber=\"1\">Провайдер данных.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IErrorContext",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml\" sourcestartlinenumber=\"1\">Ошибка ввода пользователя в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IFilterContextParser",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml\" sourcestartlinenumber=\"1\">Контекст фильтра элементов по категориям и правилам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml\" sourcestartlinenumber=\"1\">Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания провайдеров фильтров по категориям.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол только с фильтром по параметрам для всех доступных категорий из <xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в\n<xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.Views.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Controls.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilter.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilter",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.ILogicalFilter.yml\" sourcestartlinenumber=\"1\">Создает правила фильтрации элементов в Autodesk Revit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterFactory",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterParser",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.IOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.IOptions.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.IOptions",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.IOptions.yml\" sourcestartlinenumber=\"1\">Настройки сборки фильтра <xref href=\"Autodesk.Revit.DB.ElementFilter\" data-throw-if-not-resolved=\"false\"></xref> из <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml\" sourcestartlinenumber=\"1\">Расширения для настройки <xref href=\"Ninject.IKernel\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Ninject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Ninject.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/2020/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/index.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020"
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/2020/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/2020/toc.json"
+        }
+      },
+      "version": "2020",
+      "group": "2020"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IDataProvider",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml\" sourcestartlinenumber=\"1\">Провайдер данных.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IErrorContext",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml\" sourcestartlinenumber=\"1\">Ошибка ввода пользователя в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IFilterContextParser",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml\" sourcestartlinenumber=\"1\">Контекст фильтра элементов по категориям и правилам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml\" sourcestartlinenumber=\"1\">Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания провайдеров фильтров по категориям.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол только с фильтром по параметрам для всех доступных категорий из <xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в\n<xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.Views.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Controls.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilter",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.yml\" sourcestartlinenumber=\"1\">Создает правила фильтрации элементов в Autodesk Revit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterFactory",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterParser",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.IOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.IOptions.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.IOptions",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.IOptions.yml\" sourcestartlinenumber=\"1\">Настройки сборки фильтра <xref href=\"Autodesk.Revit.DB.ElementFilter\" data-throw-if-not-resolved=\"false\"></xref> из <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml\" sourcestartlinenumber=\"1\">Расширения для настройки <xref href=\"Ninject.IKernel\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Ninject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Ninject.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/2021/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/index.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021"
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/2021/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/2021/toc.json"
+        }
+      },
+      "version": "2021",
+      "group": "2021"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IDataProvider",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml\" sourcestartlinenumber=\"1\">Провайдер данных.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IErrorContext",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml\" sourcestartlinenumber=\"1\">Ошибка ввода пользователя в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IFilterContextParser",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml\" sourcestartlinenumber=\"1\">Контекст фильтра элементов по категориям и правилам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml\" sourcestartlinenumber=\"1\">Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания провайдеров фильтров по категориям.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол только с фильтром по параметрам для всех доступных категорий из <xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в\n<xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.Views.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Controls.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilter",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.yml\" sourcestartlinenumber=\"1\">Создает правила фильтрации элементов в Autodesk Revit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterFactory",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterParser",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.IOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.IOptions.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.IOptions",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.IOptions.yml\" sourcestartlinenumber=\"1\">Настройки сборки фильтра <xref href=\"Autodesk.Revit.DB.ElementFilter\" data-throw-if-not-resolved=\"false\"></xref> из <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml\" sourcestartlinenumber=\"1\">Расширения для настройки <xref href=\"Ninject.IKernel\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Ninject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Ninject.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/2022/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/index.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022"
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/2022/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/2022/toc.json"
+        }
+      },
+      "version": "2022",
+      "group": "2022"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IDataProvider",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml\" sourcestartlinenumber=\"1\">Провайдер данных.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IErrorContext",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml\" sourcestartlinenumber=\"1\">Ошибка ввода пользователя в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IFilterContextParser",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml\" sourcestartlinenumber=\"1\">Контекст фильтра элементов по категориям и правилам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml\" sourcestartlinenumber=\"1\">Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания провайдеров фильтров по категориям.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол только с фильтром по параметрам для всех доступных категорий из <xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в\n<xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.Views.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Controls.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilter.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilter",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.ILogicalFilter.yml\" sourcestartlinenumber=\"1\">Создает правила фильтрации элементов в Autodesk Revit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterFactory",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterParser",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.IOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.IOptions.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.IOptions",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.IOptions.yml\" sourcestartlinenumber=\"1\">Настройки сборки фильтра <xref href=\"Autodesk.Revit.DB.ElementFilter\" data-throw-if-not-resolved=\"false\"></xref> из <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml\" sourcestartlinenumber=\"1\">Расширения для настройки <xref href=\"Ninject.IKernel\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Ninject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Ninject.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/2023/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/index.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023"
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/2023/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/2023/toc.json"
+        }
+      },
+      "version": "2023",
+      "group": "2023"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IDataProvider",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.IDataProvider.yml\" sourcestartlinenumber=\"1\">Провайдер данных.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IErrorContext",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.IErrorContext.yml\" sourcestartlinenumber=\"1\">Ошибка ввода пользователя в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.IFilterContextParser",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.IFilterContextParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.yml\" sourcestartlinenumber=\"1\">Контекст фильтра элементов по категориям и правилам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.yml\" sourcestartlinenumber=\"1\">Сервис для получения контекста фильтра по категориям, который пользователь задал в UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания провайдеров фильтров по категориям.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол только с фильтром по параметрам для всех доступных категорий из <xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.yml\" sourcestartlinenumber=\"1\">Контрол с фильтром по параметрам и с возможностью выбора категорий из доступных в\n<xref href=\"Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProvider\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.Views.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls.Views",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Controls.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilter.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilter",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.ILogicalFilter.yml\" sourcestartlinenumber=\"1\">Создает правила фильтрации элементов в Autodesk Revit.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterFactory",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterFactory.yml\" sourcestartlinenumber=\"1\">Фабрика для создания <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterParser.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.ILogicalFilterParser",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.ILogicalFilterParser.yml\" sourcestartlinenumber=\"1\">Сериализует и десериализует <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.IOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.IOptions.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.IOptions",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.IOptions.yml\" sourcestartlinenumber=\"1\">Настройки сборки фильтра <xref href=\"Autodesk.Revit.DB.ElementFilter\" data-throw-if-not-resolved=\"false\"></xref> из <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Ninject.NinjectExtensions.yml\" sourcestartlinenumber=\"1\">Расширения для настройки <xref href=\"Ninject.IKernel\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Ninject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Ninject.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Ninject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/2024/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/index.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024"
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/2024/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/2024/toc.json"
+        }
+      },
+      "version": "2024",
+      "group": "2024"
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Bim4Everyone.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Bim4Everyone.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    },
+    {
+      "name": "2020",
+      "xrefmap": "2020.xrefmap.yml"
+    },
+    {
+      "name": "2021",
+      "xrefmap": "2021.xrefmap.yml"
+    },
+    {
+      "name": "2022",
+      "xrefmap": "2022.xrefmap.yml"
+    },
+    {
+      "name": "2023",
+      "xrefmap": "2023.xrefmap.yml"
+    },
+    {
+      "name": "2024",
+      "xrefmap": "2024.xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface ILogicalFilter | RevitFiltration </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ILogicalFilter | RevitFiltration ">
+      
+      <meta name="description" content="Создает правила фильтрации элементов в Autodesk Revit.">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/Bim4Everyone.png" alt="RevitFiltration">
+            RevitFiltration
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter">
+
+
+
+  <h1 id="Bim4Everyone_RevitFiltration_ILogicalFilter" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter" class="text-break">
+Interface ILogicalFilter  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bim4Everyone.html">Bim4Everyone</a>.<a class="xref" href="Bim4Everyone.RevitFiltration.html">RevitFiltration</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bim4Everyone.RevitFiltration.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Создает правила фильтрации элементов в Autodesk Revit.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ILogicalFilter</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddBeginsWithRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;начинается с&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddBeginsWithRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddBeginsWithRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddBeginsWithRule(System.String,System.String)">
+  AddBeginsWithRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;начинается с&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddBeginsWithRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddContainsRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;содержит&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddContainsRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddContainsRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddContainsRule(System.String,System.String)">
+  AddContainsRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;содержит&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddContainsRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddEndsWithRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;заканчивается на&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEndsWithRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEndsWithRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEndsWithRule(System.String,System.String)">
+  AddEndsWithRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;заканчивается на&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEndsWithRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddEqualsRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddEqualsRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddEqualsRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;равно&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddEqualsRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddEqualsRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Double)">
+  AddEqualsRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.Int32)">
+  AddEqualsRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddEqualsRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddEqualsRule(System.String,System.String)">
+  AddEqualsRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddEqualsRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddFilter_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddFilter_Bim4Everyone_RevitFiltration_ILogicalFilter_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddFilter(Bim4Everyone.RevitFiltration.ILogicalFilter)">
+  AddFilter(ILogicalFilter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет вложенный ILogicalFilter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddFilter(ILogicalFilter innerFilter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>innerFilter</code> <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Вложенный фильтр.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddGreaterOrEqualRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddGreaterOrEqualRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddGreaterOrEqualRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше или равно&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddGreaterOrEqualRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddGreaterOrEqualRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Double)">
+  AddGreaterOrEqualRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.Int32)">
+  AddGreaterOrEqualRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterOrEqualRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterOrEqualRule(System.String,System.String)">
+  AddGreaterOrEqualRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterOrEqualRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddGreaterRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddGreaterRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddGreaterRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddGreaterRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddGreaterRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Double)">
+  AddGreaterRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.Int32)">
+  AddGreaterRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddGreaterRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddGreaterRule(System.String,System.String)">
+  AddGreaterRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;больше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddGreaterRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_Autodesk_Revit_DB_BuiltInParameter_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+  AddHasNoValueRule(BuiltInParameter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не имеет значение&quot; для полученного параметра.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddHasNoValueRule(BuiltInParameter paramId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasNoValueRule_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasNoValueRule(System.String)">
+  AddHasNoValueRule(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не имеет значение&quot; для полученного параметра.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddHasNoValueRule(string paramName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_Autodesk_Revit_DB_BuiltInParameter_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(Autodesk.Revit.DB.BuiltInParameter)">
+  AddHasValueRule(BuiltInParameter)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;имеет значение&quot; для полученного параметра.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddHasValueRule(BuiltInParameter paramId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddHasValueRule_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddHasValueRule(System.String)">
+  AddHasValueRule(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;имеет значение&quot; для полученного параметра.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddHasValueRule(string paramName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddLessOrEqualRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddLessOrEqualRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddLessOrEqualRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше или равно&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddLessOrEqualRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddLessOrEqualRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Double)">
+  AddLessOrEqualRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.Int32)">
+  AddLessOrEqualRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessOrEqualRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessOrEqualRule(System.String,System.String)">
+  AddLessOrEqualRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше или равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessOrEqualRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddLessRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddLessRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddLessRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddLessRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddLessRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Double)">
+  AddLessRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.Int32)">
+  AddLessRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddLessRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddLessRule(System.String,System.String)">
+  AddLessRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;меньше&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddLessRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddNotBeginsWithRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не начинается с&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotBeginsWithRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotBeginsWithRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotBeginsWithRule(System.String,System.String)">
+  AddNotBeginsWithRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не начинается с&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotBeginsWithRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddNotContainsRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не содержит&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotContainsRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotContainsRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotContainsRule(System.String,System.String)">
+  AddNotContainsRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не содержит&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotContainsRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddNotEndsWithRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не заканчивается на&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEndsWithRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEndsWithRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEndsWithRule(System.String,System.String)">
+  AddNotEndsWithRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не заканчивается на&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEndsWithRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,Autodesk.Revit.DB.ElementId)">
+  AddNotEqualsRule(BuiltInParameter, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Double)">
+  AddNotEqualsRule(BuiltInParameter, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.Int32)">
+  AddNotEqualsRule(BuiltInParameter, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не равно&quot; для полученного параметра и значения.
+Работает для встроенных параметров (BuiltInParameter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd><p>Перечисление BuiltInParameter параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_Autodesk_Revit_DB_BuiltInParameter_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(Autodesk.Revit.DB.BuiltInParameter,System.String)">
+  AddNotEqualsRule(BuiltInParameter, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(BuiltInParameter paramId, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramId</code> <span class="xref">BuiltInParameter</span></dt>
+    <dd></dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_Autodesk_Revit_DB_ElementId_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,Autodesk.Revit.DB.ElementId)">
+  AddNotEqualsRule(string, ElementId)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(string paramName, ElementId paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <span class="xref">ElementId</span></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_Double_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Double)">
+  AddNotEqualsRule(string, double)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(string paramName, double paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_Int32_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.Int32)">
+  AddNotEqualsRule(string, int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(string paramName, int paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_AddNotEqualsRule_System_String_System_String_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule(System.String,System.String)">
+  AddNotEqualsRule(string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Добавляет правило фильтрации с условием &quot;не равно&quot; для полученного параметра и значения.
+Работает для пользовательских параметров (общих, проекта и глобальных).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilter AddNotEqualsRule(string paramName, string paramValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paramName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Имя параметра для фильтрации.</p>
+</dd>
+    <dt><code>paramValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Значение параметра для фильтрации.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Ссылка на текущий <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_IOptions_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
+  Build(Document, IOptions)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Создает фильтр по элементам в Autodesk Revit с заданными настройками.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ElementFilter Build(Document document, IOptions options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>document</code> <span class="xref">Document</span></dt>
+    <dd><p>Документ, в котором будут фильтроваться элементы.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Bim4Everyone.RevitFiltration.IOptions.html">IOptions</a></dt>
+    <dd><p>Настройки генерации фильтра.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ElementFilter</span></dt>
+    <dd><p>Фильтр по элементам.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2026 Bim4Everyone
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
