@@ -1,5 +1,3 @@
-using Autodesk.Revit.DB;
-
 using Bim4Everyone.RevitFiltration.Filtration;
 
 using Nice3point.TUnit.Revit;
@@ -10,7 +8,9 @@ using TUnit.Core.Executors;
 namespace Bim4Everyone.RevitFiltration.Tests;
 
 public class LogicalFilterArgumentValidationTests : RevitApiTest {
-    private ILogicalFilter CreateFilter() => new LogicalFilterFactory().CreateAndFilter();
+    private ILogicalFilter CreateFilter() {
+        return new LogicalFilterFactory().CreateAndFilter();
+    }
 
     // --- AddEqualsRule ---
 

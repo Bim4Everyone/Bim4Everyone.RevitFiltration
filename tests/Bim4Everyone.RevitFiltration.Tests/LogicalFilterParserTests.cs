@@ -15,7 +15,7 @@ public class LogicalFilterParserTests : RevitApiTest {
     private readonly IOptions _options = new TestOptions();
 
     private Document OpenDocument() {
-        var templatePath = Path.Combine(
+        string templatePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
             "Autodesk",
             $"RVT {Application.VersionNumber}",
@@ -25,9 +25,17 @@ public class LogicalFilterParserTests : RevitApiTest {
         return Application.NewProjectDocument(templatePath);
     }
 
-    private static ILogicalFilterParser CreateParser() => new LogicalFilterParser();
-    private static ILogicalFilter CreateAndFilter() => new LogicalFilterFactory().CreateAndFilter();
-    private static ILogicalFilter CreateOrFilter() => new LogicalFilterFactory().CreateOrFilter();
+    private static ILogicalFilterParser CreateParser() {
+        return new LogicalFilterParser();
+    }
+
+    private static ILogicalFilter CreateAndFilter() {
+        return new LogicalFilterFactory().CreateAndFilter();
+    }
+
+    private static ILogicalFilter CreateOrFilter() {
+        return new LogicalFilterFactory().CreateOrFilter();
+    }
 
     // --- Serialize ---
 
@@ -44,7 +52,7 @@ public class LogicalFilterParserTests : RevitApiTest {
         var parser = CreateParser();
         var filter = CreateAndFilter();
 
-        var result = parser.Serialize(filter);
+        string result = parser.Serialize(filter);
 
         await Assert.That(result).IsNotEmpty();
     }
@@ -55,7 +63,7 @@ public class LogicalFilterParserTests : RevitApiTest {
         var parser = CreateParser();
         var filter = CreateOrFilter();
 
-        var result = parser.Serialize(filter);
+        string result = parser.Serialize(filter);
 
         await Assert.That(result).IsNotEmpty();
     }
@@ -67,7 +75,7 @@ public class LogicalFilterParserTests : RevitApiTest {
     public async Task TryParse_NullContent_ReturnsFalse() {
         var parser = CreateParser();
 
-        var success = parser.TryParse(null!, out _);
+        bool success = parser.TryParse(null!, out _);
 
         await Assert.That(success).IsFalse();
     }
@@ -77,7 +85,7 @@ public class LogicalFilterParserTests : RevitApiTest {
     public async Task TryParse_EmptyContent_ReturnsFalse() {
         var parser = CreateParser();
 
-        var success = parser.TryParse(string.Empty, out _);
+        bool success = parser.TryParse(string.Empty, out _);
 
         await Assert.That(success).IsFalse();
     }
@@ -87,7 +95,7 @@ public class LogicalFilterParserTests : RevitApiTest {
     public async Task TryParse_WhitespaceContent_ReturnsFalse() {
         var parser = CreateParser();
 
-        var success = parser.TryParse("   ", out _);
+        bool success = parser.TryParse("   ", out _);
 
         await Assert.That(success).IsFalse();
     }
@@ -97,7 +105,7 @@ public class LogicalFilterParserTests : RevitApiTest {
     public async Task TryParse_InvalidJson_ReturnsFalse() {
         var parser = CreateParser();
 
-        var success = parser.TryParse("not valid json {{{", out _);
+        bool success = parser.TryParse("not valid json {{{", out _);
 
         await Assert.That(success).IsFalse();
     }
@@ -106,9 +114,9 @@ public class LogicalFilterParserTests : RevitApiTest {
     [TestExecutor<RevitThreadExecutor>]
     public async Task TryParse_ValidJson_ReturnsTrueAndNonNullFilter() {
         var parser = CreateParser();
-        var json = parser.Serialize(CreateAndFilter());
+        string json = parser.Serialize(CreateAndFilter());
 
-        var success = parser.TryParse(json, out var filter);
+        bool success = parser.TryParse(json, out var filter);
 
         await Assert.That(success).IsTrue();
         await Assert.That(filter).IsNotNull();
