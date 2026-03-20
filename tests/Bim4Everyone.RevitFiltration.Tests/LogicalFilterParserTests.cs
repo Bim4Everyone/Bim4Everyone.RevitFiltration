@@ -13,8 +13,11 @@ namespace Bim4Everyone.RevitFiltration.Tests;
 
 public class LogicalFilterParserTests : RevitApiTest {
     private readonly IOptions _options = new TestOptions();
+    private static Document _document = null!;
 
-    private Document OpenDocument() {
+    [Before(Class)]
+    [HookExecutor<RevitThreadExecutor>]
+    public static void OpenDocument() {
         string templatePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
             "Autodesk",
@@ -22,7 +25,13 @@ public class LogicalFilterParserTests : RevitApiTest {
             "Templates",
             "English",
             "DefaultMetric.rte");
-        return Application.NewProjectDocument(templatePath);
+        _document = Application.NewProjectDocument(templatePath);
+    }
+
+    [After(Class)]
+    [HookExecutor<RevitThreadExecutor>]
+    public static void CloseDocument() {
+        _document.Close(false);
     }
 
     private static ILogicalFilterParser CreateParser() {
@@ -127,92 +136,67 @@ public class LogicalFilterParserTests : RevitApiTest {
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task RoundTrip_AndFilter_BuildsToLogicalAndFilter() {
-        var document = OpenDocument();
-        try {
-            var parser = CreateParser();
-            var original = CreateAndFilter()
-                .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
+        var parser = CreateParser();
+        var original = CreateAndFilter()
+            .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
 
-            parser.TryParse(parser.Serialize(original), out var restored);
-            var result = restored!.Build(document, _options);
+        parser.TryParse(parser.Serialize(original), out var restored);
+        var result = restored!.Build(_document, _options);
 
-            await Assert.That(result).IsAssignableTo<LogicalAndFilter>();
-        } finally {
-            document.Close(false);
-        }
+        await Assert.That(result).IsAssignableTo<LogicalAndFilter>();
     }
 
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task RoundTrip_OrFilter_BuildsToLogicalOrFilter() {
-        var document = OpenDocument();
-        try {
-            var parser = CreateParser();
-            var original = CreateOrFilter()
-                .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
+        var parser = CreateParser();
+        var original = CreateOrFilter()
+            .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
 
-            parser.TryParse(parser.Serialize(original), out var restored);
-            var result = restored!.Build(document, _options);
+        parser.TryParse(parser.Serialize(original), out var restored);
+        var result = restored!.Build(_document, _options);
 
-            await Assert.That(result).IsAssignableTo<LogicalOrFilter>();
-        } finally {
-            document.Close(false);
-        }
+        await Assert.That(result).IsAssignableTo<LogicalOrFilter>();
     }
 
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task RoundTrip_WithIntRule_BuildsSuccessfully() {
-        var document = OpenDocument();
-        try {
-            var parser = CreateParser();
-            var original = CreateAndFilter()
-                .AddEqualsRule(BuiltInParameter.PHASE_CREATED, 1);
+        var parser = CreateParser();
+        var original = CreateAndFilter()
+            .AddEqualsRule(BuiltInParameter.PHASE_CREATED, 1);
 
-            parser.TryParse(parser.Serialize(original), out var restored);
-            var result = restored!.Build(document, _options);
+        parser.TryParse(parser.Serialize(original), out var restored);
+        var result = restored!.Build(_document, _options);
 
-            await Assert.That(result).IsNotNull();
-        } finally {
-            document.Close(false);
-        }
+        await Assert.That(result).IsNotNull();
     }
 
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task RoundTrip_WithStringRule_BuildsSuccessfully() {
-        var document = OpenDocument();
-        try {
-            var parser = CreateParser();
-            var original = CreateAndFilter()
-                .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "val");
+        var parser = CreateParser();
+        var original = CreateAndFilter()
+            .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "val");
 
-            parser.TryParse(parser.Serialize(original), out var restored);
-            var result = restored!.Build(document, _options);
+        parser.TryParse(parser.Serialize(original), out var restored);
+        var result = restored!.Build(_document, _options);
 
-            await Assert.That(result).IsNotNull();
-        } finally {
-            document.Close(false);
-        }
+        await Assert.That(result).IsNotNull();
     }
 
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task RoundTrip_WithNestedFilter_BuildsSuccessfully() {
-        var document = OpenDocument();
-        try {
-            var parser = CreateParser();
-            var inner = CreateOrFilter().AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "a");
-            var original = CreateAndFilter()
-                .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "b")
-                .AddFilter(inner);
+        var parser = CreateParser();
+        var inner = CreateOrFilter().AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "a");
+        var original = CreateAndFilter()
+            .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "b")
+            .AddFilter(inner);
 
-            parser.TryParse(parser.Serialize(original), out var restored);
-            var result = restored!.Build(document, _options);
+        parser.TryParse(parser.Serialize(original), out var restored);
+        var result = restored!.Build(_document, _options);
 
-            await Assert.That(result).IsNotNull();
-        } finally {
-            document.Close(false);
-        }
+        await Assert.That(result).IsNotNull();
     }
 }
