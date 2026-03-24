@@ -26,7 +26,7 @@ internal class LogicalFilterParser : ILogicalFilterParser {
         try {
             filter = JsonConvert.DeserializeObject<LogicalFilter>(content, _settings);
             return true;
-        } catch(JsonSerializationException) {
+        } catch(JsonException) {
             filter = null;
             return false;
         }

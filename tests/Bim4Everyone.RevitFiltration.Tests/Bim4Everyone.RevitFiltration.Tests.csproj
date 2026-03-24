@@ -16,4 +16,24 @@
     <ItemGroup>
         <PackageReference Include="Nice3point.TUnit.Revit"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <GlobalPackageReference Remove="PolyFill"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Update="pyRevitLabs.Json">
+            <Private>True</Private>
+        </Reference>
+        <Reference Update="dosymep.Revit">
+            <Private>True</Private>
+        </Reference>
+        <Reference Update="dosymep.Bim4Everyone">
+            <Private>True</Private>
+        </Reference>
+    </ItemGroup>
 </Project>
