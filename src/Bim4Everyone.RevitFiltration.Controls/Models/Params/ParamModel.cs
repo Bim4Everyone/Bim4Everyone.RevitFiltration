@@ -21,17 +21,23 @@ internal class ParamModel : IEquatable<ParamModel> {
 
         Name = parameter.Name;
         if(string.IsNullOrWhiteSpace(parameter.Id)) {
-            throw new ArgumentException($"{nameof(Id)} is null");
+            throw new ArgumentException($"{nameof(Id)} is null, param name: {Name}");
         }
 
         Id = parameter.Id;
         StorageType = parameter.StorageType;
         if(StorageType == StorageType.Double) {
             // UnitType нужен только для конвертации метрических единиц, которые вводит пользователь в имперские единицы ревита,
-            // в этом случае StorageType всегда Double
+            // в этом случае StorageType всегда Double.
+            // При этом необходимость в конвертации есть только для размеров: длины, площади, объемы и т.п.
 #if REVIT2021_OR_GREATER
-            UnitType = parameter.UnitType ?? throw new ArgumentException($"{nameof(UnitType)} is null");
-            TypeId = parameter.UnitType.TypeId;
+            try {
+                UnitType = parameter.UnitType;
+                TypeId = parameter.UnitType?.TypeId ?? string.Empty;
+            } catch(ArgumentOutOfRangeException) {
+                UnitType = new ForgeTypeId();
+                TypeId = string.Empty;
+            }
 #else
             UnitType = parameter.UnitType;
 #endif
@@ -78,6 +84,11 @@ internal class ParamModel : IEquatable<ParamModel> {
 #endif
 
     public ICollection<OperatorKind> GetOperatorKinds() {
+        if(Id == nameof(BuiltInParameter.ELEM_PARTITION_PARAM)) {
+            // у рабочего набора StorageType - Integer, но поведение как у строкового параметра
+            return OperatorKindUtils.GetOperatorKinds(StorageType.String);
+        }
+
         return OperatorKindUtils.GetOperatorKinds(StorageType);
     }
 
