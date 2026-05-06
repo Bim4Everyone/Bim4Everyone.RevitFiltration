@@ -8,6 +8,8 @@ using Bim4Everyone.RevitFiltration.Controls.Models.Value;
 using Bim4Everyone.RevitFiltration.Controls.Models.Visitor;
 
 using dosymep.Bim4Everyone;
+using dosymep.Bim4Everyone.SystemParams;
+using dosymep.Revit;
 
 using pyRevitLabs.Json;
 
@@ -24,7 +26,7 @@ internal class ParamModel : IEquatable<ParamModel> {
             throw new ArgumentException($"{nameof(Id)} is null, param name: {Name}");
         }
 
-        Id = parameter.Id;
+        Id = parameter is SystemParam sysParam ? sysParam.SystemParamId.ToString() : parameter.Id;
         StorageType = parameter.StorageType;
         if(StorageType == StorageType.Double) {
             // UnitType нужен только для конвертации метрических единиц, которые вводит пользователь в имперские единицы ревита,
@@ -35,7 +37,7 @@ internal class ParamModel : IEquatable<ParamModel> {
                 UnitType = parameter.UnitType;
                 TypeId = parameter.UnitType?.TypeId ?? string.Empty;
             } catch(ArgumentOutOfRangeException) {
-                UnitType = new ForgeTypeId();
+                UnitType = ForgeTypeIdExtensions.EmptyForgeTypeId;
                 TypeId = string.Empty;
             }
 #else
