@@ -4,6 +4,14 @@ namespace Bim4Everyone.RevitFiltration.Controls.Models.Utils;
 
 internal class DoubleValueParser {
 #if REVIT2021_OR_GREATER
+    /// <summary>
+    ///     Парсит строковое значение из метрической системы в число в единицах ревита. Если <see cref="unitType" />
+    ///     не задан, строка парсится в число без конвертации единиц измерения.
+    /// </summary>
+    /// <param name="value">Строковое значение в метрической системе.</param>
+    /// <param name="unitType">Единицы измерения параметра.</param>
+    /// <param name="result">Значение в единицах ревита.</param>
+    /// <returns>True, если конвертация строки была успешной, иначе - False.</returns>
     public static bool TryParse(string value, ForgeTypeId unitType, out double result) {
         if(string.IsNullOrEmpty(unitType.TypeId)) {
             return double.TryParse(value, out result);
