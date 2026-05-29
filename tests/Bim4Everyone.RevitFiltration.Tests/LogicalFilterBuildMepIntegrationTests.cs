@@ -13,7 +13,7 @@ using TUnit.Core.Executors;
 namespace Bim4Everyone.RevitFiltration.Tests;
 
 public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
-    private readonly IOptions _options = new TestOptions();
+    private readonly Options _options = new TestOptions();
     private Document _document = null!;
 
     [Before(Test)]

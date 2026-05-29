@@ -11,7 +11,7 @@ using TUnit.Core.Executors;
 namespace Bim4Everyone.RevitFiltration.Tests;
 
 public class LogicalFilterBuildTests : RevitApiTest {
-    private readonly IOptions _options = new TestOptions();
+    private readonly Options _options = new TestOptions();
     private static Document _document = null!;
 
     [Before(Class)]
@@ -72,7 +72,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "test");
 
-        await Assert.That(() => filter.Build(_document, null!)).Throws<ArgumentNullException>();
+        await Assert.That(() => filter.Build(_document, (Options) null!)).Throws<ArgumentNullException>();
     }
 
     // --- Compositor type ---

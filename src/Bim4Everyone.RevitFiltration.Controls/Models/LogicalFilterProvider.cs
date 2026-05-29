@@ -1,17 +1,19 @@
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
+using Bim4Everyone.RevitFiltration.Controls.Models.Params;
 
+using dosymep.Bim4Everyone;
 using dosymep.Revit;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
 
 internal class LogicalFilterProvider : ILogicalFilterProvider {
-    private readonly IDataProvider _dataProvider;
+    private readonly DataProvider _dataProvider;
     private readonly List<IErrorContext> _errors;
     private readonly ILogicalFilterFactory _factory;
     private ILogicalFilterContext? _filterContext;
 
     public LogicalFilterProvider(
-        IDataProvider dataProvider,
+        DataProvider dataProvider,
         ILogicalFilterFactory factory) {
         _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
@@ -20,7 +22,7 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
     }
 
     public LogicalFilterProvider(
-        IDataProvider dataProvider,
+        DataProvider dataProvider,
         ILogicalFilterFactory factory,
         ILogicalFilterContext filterContext) {
         _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
@@ -32,6 +34,8 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         _errors = [];
         Load(filterContext);
     }
+
+    public event EventHandler<FilterContextChangedEventArgs>? FilterContextChanged;
 
     public ILogicalFilterContext GetFilter() {
         if(_filterContext is null) {
@@ -46,7 +50,7 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         return _errors.Count == 0 && _filterContext is not null;
     }
 
-    public IDataProvider GetDataProvider() {
+    public DataProvider GetDataProvider() {
         return _dataProvider;
     }
 
@@ -63,14 +67,32 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
             throw new ArgumentException(nameof(errors));
         }
 
+        var oldContext = _filterContext;
         _errors.Clear();
         _errors.AddRange(errors);
         _filterContext = null;
+        RaiseFilterContextChanged(oldContext, null);
     }
 
     public void SetFilter(ILogicalFilterContext filter) {
-        _filterContext = filter ?? throw new ArgumentNullException(nameof(filter));
+        if(filter is null) {
+            throw new ArgumentNullException(nameof(filter));
+        }
+
+        var oldContext = _filterContext;
+        _filterContext = filter;
         _errors.Clear();
+        RaiseFilterContextChanged(oldContext, _filterContext);
+    }
+
+    private void RaiseFilterContextChanged(
+        ILogicalFilterContext? oldContext,
+        ILogicalFilterContext? newContext) {
+        if(ReferenceEquals(oldContext, newContext)) {
+            return;
+        }
+
+        FilterContextChanged?.Invoke(this, new FilterContextChangedEventArgs(oldContext, newContext));
     }
 
     private void Load(ILogicalFilterContext filterContext) {
@@ -87,17 +109,30 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
             return;
         }
 
-        var availableParamIds = _dataProvider.GetParams(
-                filter.Categories.Select(c => availableCategories[c]).ToArray())
-            .Select(p => p.Id)
-            .ToHashSet();
+        var availableParams = _dataProvider.GetParams(
+            filter.Categories.Select(c => availableCategories[c]).Distinct().ToArray());
+        string[] availableParamIds = availableParams.Select(p => p.Id).ToArray();
         if(ContainsNotAvailableParams(filter.RootSet, availableParamIds)) {
             _errors.Clear();
             _filterContext = null;
             return;
         }
 
+        BindRevitParams(filter.RootSet, availableParams);
         SetFilter(filterContext);
+    }
+
+    /// <summary>
+    /// Задайт свойство <see cref="ParamModel.RevitParam"/>
+    /// </summary>
+    private void BindRevitParams(Set set, ICollection<RevitParam> availableParams) {
+        foreach(var rule in set.InnerRules) {
+            rule.Param.RevitParam = availableParams.FirstOrDefault(rp => rule.Param.Equals(rp));
+        }
+
+        foreach(var innerSet in set.InnerSets) {
+            BindRevitParams(innerSet, availableParams);
+        }
     }
 
     private bool ContainsNotAvailableParams(Set set, ICollection<string> paramIds) {

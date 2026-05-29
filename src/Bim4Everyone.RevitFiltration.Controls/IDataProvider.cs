@@ -7,6 +7,7 @@ namespace Bim4Everyone.RevitFiltration.Controls;
 /// <summary>
 ///     Провайдер данных.
 /// </summary>
+[Obsolete("Используйте класс DataProvider вместо интерфейса IDataProvider.")]
 public interface IDataProvider {
     /// <summary>
     ///     Возвращает параметры, доступные сразу для всех заданных категорий.

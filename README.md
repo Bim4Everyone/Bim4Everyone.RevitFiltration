@@ -44,19 +44,23 @@ kernel.UseLogicalFilterFactory(); // сервис для создания фил
 kernel.UseLogicalFilterParser(); // сервис для сериализации и десериализации фильтра (опционально)
 ```
 
-3. Реализовать `IOptions` для настроек генерации фильтра.
+3. Задать настройки генерации фильтра через класс `Options`.
+
+> Интерфейс `IOptions` устарел (`[Obsolete]`). Используйте класс `Options`. Старые перегрузки `Build(Document, IOptions)`
+> сохранены для обратной совместимости.
 
 ### Пример использования в плагине
 
 Из DI контейнера необходимо получить сервис `ILogicalFilterFactory`, затем сконструировать необходимый фильтр и
-сгенерировать `ElementFilter`, используя класс, реализующий `IOptions`. Пример:
+сгенерировать `ElementFilter`, используя класс `Options`. Чтобы сгенерировать фильтр по типоразмерам (а не по
+экземплярам), установите `Options.FilterByType = true`. Пример:
 
 ```
 public void SampleFilterCreation(ILogicalFilterFactory filterFactory, Autodesk.Revit.UI.UIDocument uiDoc) {
     ILogicalFilter filter = filterFactory.CreateAndFilter()
         .AddEqualsRule(BuiltInParameter.SCHEDULE_LEVEL_PARAM, "Level 1");
 
-    IOptions opts = new DefaultOptions();
+    var opts = new Options { Tolerance = 1e-6, FilterByType = false };
     var elements = new FilteredElementCollector(uiDoc.Document)
         .WhereElementIsNotElementType()
         .OfCategory(BuiltInCategory.OST_Planting)
@@ -91,62 +95,68 @@ kernel.UseDefaultProviderFactory(); // сервис для привязки пр
 kernel.UseDefaultContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
 ```
 
-3. Реализовать `IOptions`, `IDataProvider`.
+3. Сконструировать `DataProvider` (для значений параметров — по экземплярам элементов либо через собственную функцию).
 
-Пример реализации `IDtaProvider`:
+> Интерфейс `IDataProvider` устарел (`[Obsolete]`). Используйте класс `DataProvider`. Старые перегрузки
+> `ILogicalFilterProviderFactory.Create(IDataProvider ...)` сохранены для обратной совместимости.
+
+У класса `DataProvider` два конструктора:
+
+- значения параметров берутся из экземпляров элементов заданных документов:
+  `DataProvider(categories, getParams, documents)`;
+- значения параметров переопределяются собственной функцией (можно вернуть свой список значений):
+  `DataProvider(categories, getParams, getParamValues)`.
+
+Пример создания `DataProvider`:
 
 ```
-internal class FilterDataProvider : IDataProvider {
-    private readonly Document _doc;
+ICollection<Category> GetCategories(Document doc) {
+    return ParameterFilterUtilities.GetAllFilterableCategories()
+        .Select(c => Category.GetCategory(doc, c))
+        .Where(category => category != null)
+        .Where(c => c.CategoryType == CategoryType.Model && c.IsVisibleInUI)
+        .ToArray();
+}
 
-    public FilterDataProvider(Document doc) {
-        _doc = doc;
-    }
+ICollection<RevitParam> GetParams(Document doc, ICollection<Category> categories) {
+    return ParameterFilterUtilities
+        .GetFilterableParametersInCommon(doc, [..categories.Select(c => c.Id)])
+        .Select(paramId => GetFilterableParam(doc, paramId))
+        .Where(p => p != null)
+        .ToArray();
+}
 
-    public ICollection<RevitParam> GetParams(ICollection<Category> categories) {
-        return ParameterFilterUtilities
-            .GetFilterableParametersInCommon(_doc, [..categories.Select(c => c.Id)])
-            .Select(GetFilterableParam)
-            .Where(p => p != null)
-            .ToArray();
-    }
-
-    public ICollection<Category> GetCategories() {
-        return ParameterFilterUtilities.GetAllFilterableCategories()
-            .Select(c => Category.GetCategory(_doc, c))
-            .Where(category => category != null)
-            .Where(c => c.CategoryType == CategoryType.Model && c.IsVisibleInUI)
-            .ToArray();
-    }
-
-    public ICollection<Document> GetDocuments() {
-        return [_doc];
-    }
-
-    private RevitParam GetFilterableParam(ElementId paramId) {
-        try {
-            if(paramId.IsSystemId()) {
-                return SystemParamsConfig.Instance.CreateRevitParam(
-                        _doc,
-                        (BuiltInParameter) paramId.GetIdValue());
-            }
-            
-            var element = _doc.GetElement(paramId);
-            if(element is SharedParameterElement sharedParameterElement) {
-                return SharedParamsConfig.Instance.CreateRevitParam(
-                        _doc,
-                        sharedParameterElement.Name);
-            }
-
-            if(element is ParameterElement parameterElement) {
-                return ProjectParamsConfig.Instance.CreateRevitParam(_doc, parameterElement.Name);
-            }
-            return null;
-        } catch(Exception) {
-            return null;
+RevitParam GetFilterableParam(Document doc, ElementId paramId) {
+    try {
+        if(paramId.IsSystemId()) {
+            return SystemParamsConfig.Instance.CreateRevitParam(doc, (BuiltInParameter) paramId.GetIdValue());
         }
+
+        var element = doc.GetElement(paramId);
+        if(element is SharedParameterElement sharedParameterElement) {
+            return SharedParamsConfig.Instance.CreateRevitParam(doc, sharedParameterElement.Name);
+        }
+
+        if(element is ParameterElement parameterElement) {
+            return ProjectParamsConfig.Instance.CreateRevitParam(doc, parameterElement.Name);
+        }
+        return null;
+    } catch(Exception) {
+        return null;
     }
 }
+
+// значения параметров берутся из экземпляров элементов документа
+var dataProvider = new DataProvider(
+    GetCategories(doc),
+    categories => GetParams(doc, categories),
+    new[] { doc });
+
+// либо переопределить список значений параметра собственной функцией
+var customDataProvider = new DataProvider(
+    GetCategories(doc),
+    categories => GetParams(doc, categories),
+    (categories, revitParam) => GetCustomValues(doc, categories, revitParam));
 ```
 
 4. Настроить ViewModel окна:
@@ -156,13 +166,21 @@ internal class YourViewModel {
     public YourViewModel(
         ILogicalFilterProviderFactory filterProviderFactory,
         ILanguageService languageService,
-        IDataProvider dataProvider) {
+        DataProvider dataProvider) {
         FilterProvider = filterProviderFactory.Create(dataProvider)
     }
 
     public ILogicalFilterProvider FilterProvider { get; } // провайдер для получения фильтра из UI
     public ILanguageService LanguageService { get; } // сервис для установки локализации в контроле
 }
+```
+
+`ILogicalFilterProvider` уведомляет об изменении контекста фильтра событием `FilterContextChanged`:
+
+```
+FilterProvider.FilterContextChanged += (sender, args) => {
+    // args.OldContext, args.NewContext
+};
 ```
 
 5. Подключить нужный контрол в xaml:

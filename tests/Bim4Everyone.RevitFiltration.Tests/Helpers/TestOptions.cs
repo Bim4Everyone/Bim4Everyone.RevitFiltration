@@ -1,5 +1,7 @@
 namespace Bim4Everyone.RevitFiltration.Tests.Helpers;
 
-internal class TestOptions : IOptions {
-    public double Tolerance { get; set; } = 1e-6;
+internal class TestOptions : Options {
+    public TestOptions() {
+        Tolerance = 1e-6;
+    }
 }

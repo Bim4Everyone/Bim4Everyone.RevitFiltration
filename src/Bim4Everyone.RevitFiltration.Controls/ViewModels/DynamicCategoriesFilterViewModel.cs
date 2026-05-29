@@ -172,7 +172,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
     }
 
     private CategoriesInfoViewModel InitializeCategoriesInfo(
-        IDataProvider provider,
+        DataProvider provider,
         ICollection<BuiltInCategory>? selectedCategories = null) {
         if(selectedCategories == null
            || selectedCategories.Count == 0) {
@@ -202,7 +202,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
         UpdateLogicalFilterContext();
     }
 
-    public Filter GetFilter() {
+    private Filter GetFilter() {
         if(RootSet == null
            || CategoriesInfo == null) {
             throw new InvalidOperationException();
