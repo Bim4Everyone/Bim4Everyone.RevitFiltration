@@ -1,7 +1,6 @@
 using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Filtration;
-using Bim4Everyone.RevitFiltration.Tests.Helpers;
 
 using Nice3point.TUnit.Revit;
 using Nice3point.TUnit.Revit.Executors;
@@ -11,7 +10,7 @@ using TUnit.Core.Executors;
 namespace Bim4Everyone.RevitFiltration.Tests;
 
 public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
-    private readonly Options _options = new TestOptions();
+    private readonly Options _options = new();
     private Document _document = null!;
 
     [Before(Test)]
