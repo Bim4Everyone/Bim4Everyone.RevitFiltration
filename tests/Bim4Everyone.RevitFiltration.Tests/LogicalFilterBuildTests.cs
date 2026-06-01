@@ -9,13 +9,13 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterBuildTests : RevitApiTest {
-    private static Document _document = null!;
-    private readonly Options _options = new();
+public sealed class LogicalFilterBuildTests : RevitApiTest {
+    private Document _document;
+    private Options Options;
 
-    [Before(Class)]
+    [Before(Test)]
     [HookExecutor<RevitThreadExecutor>]
-    public static void OpenDocument() {
+    public void OpenDocument() {
         string templatePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
             "Autodesk",
@@ -24,12 +24,13 @@ public class LogicalFilterBuildTests : RevitApiTest {
             "English",
             "DefaultMetric.rte");
         _document = Application.NewProjectDocument(templatePath);
+        Options = new Options();
     }
 
-    [After(Class)]
+    [After(Test)]
     [HookExecutor<RevitThreadExecutor>]
-    public static void CloseDocument() {
-        _document.Close(false);
+    public void CloseDocument() {
+        _document?.Close(false);
     }
 
     // --- Empty filter ---
@@ -39,7 +40,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
     public async Task Build_NoRules_AndFilter_ReturnsElementIsElementTypeFilter() {
         var filter = new LogicalFilterFactory().CreateAndFilter();
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<ElementIsElementTypeFilter>();
     }
@@ -49,7 +50,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
     public async Task Build_NoRules_OrFilter_ReturnsElementIsElementTypeFilter() {
         var filter = new LogicalFilterFactory().CreateOrFilter();
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<ElementIsElementTypeFilter>();
     }
@@ -62,7 +63,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "test");
 
-        await Assert.That(() => filter.Build(null!, _options)).Throws<ArgumentNullException>();
+        await Assert.That(() => filter.Build(null!, Options)).Throws<ArgumentNullException>();
     }
 
     [Test]
@@ -83,7 +84,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "a")
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "b");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<LogicalAndFilter>();
     }
@@ -95,7 +96,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "a")
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "b");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<LogicalOrFilter>();
     }
@@ -107,7 +108,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var inner = factory.CreateAndFilter();
         var outer = factory.CreateAndFilter().AddFilter(inner);
 
-        var result = outer.Build(_document, _options);
+        var result = outer.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<LogicalAndFilter>();
     }
@@ -120,7 +121,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.PHASE_CREATED, 1);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -131,7 +132,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_COST, 100.0);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -142,7 +143,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "test");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -153,7 +154,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEqualsRule(BuiltInParameter.ELEM_CATEGORY_PARAM, ElementId.InvalidElementId);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -164,7 +165,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddHasValueRule(BuiltInParameter.ALL_MODEL_MARK);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -175,7 +176,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddHasNoValueRule(BuiltInParameter.ALL_MODEL_MARK);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -186,7 +187,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddBeginsWithRule(BuiltInParameter.ALL_MODEL_MARK, "A");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -197,7 +198,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddContainsRule(BuiltInParameter.ALL_MODEL_MARK, "A");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -208,7 +209,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddEndsWithRule(BuiltInParameter.ALL_MODEL_MARK, "A");
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -219,7 +220,7 @@ public class LogicalFilterBuildTests : RevitApiTest {
         var filter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterOrEqualRule(BuiltInParameter.ALL_MODEL_COST, 1.0);
 
-        var result = filter.Build(_document, _options);
+        var result = filter.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }

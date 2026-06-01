@@ -7,7 +7,7 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterArgumentValidationTests : RevitApiTest {
+public sealed class LogicalFilterArgumentValidationTests : RevitApiTest {
     private ILogicalFilter CreateFilter() {
         return new LogicalFilterFactory().CreateAndFilter();
     }

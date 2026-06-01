@@ -11,9 +11,9 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
-    private readonly Options _options = new();
-    private Document _document = null!;
+public sealed class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
+    private Document _document;
+    private Options Options;
 
     [Before(Test)]
     [HookExecutor<RevitThreadExecutor>]
@@ -26,19 +26,20 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
             "English",
             "Systems-Default_Metric.rte");
         _document = Application.NewProjectDocument(templatePath);
+        Options = new Options();
     }
 
     [After(Test)]
     [HookExecutor<RevitThreadExecutor>]
     public void CloseDocument() {
-        _document.Close(false);
+        _document?.Close(false);
     }
 
-    private static Level GetDefaultLevel(Document doc) {
+    private Level GetDefaultLevel(Document doc) {
         return new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().First();
     }
 
-    private static Pipe CreatePipe(Document doc, Level level, int index) {
+    private Pipe CreatePipe(Document doc, Level level, int index) {
         var systemTypeId = new FilteredElementCollector(doc).OfClass(typeof(PipingSystemType)).First().Id;
         var pipeTypeId = new FilteredElementCollector(doc).OfClass(typeof(PipeType)).First().Id;
         return Pipe.Create(
@@ -50,7 +51,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
             new XYZ(index * 10.0 + 5.0, 0, 0));
     }
 
-    private static Duct CreateDuct(Document doc, Level level, int index) {
+    private Duct CreateDuct(Document doc, Level level, int index) {
         var systemTypeId = new FilteredElementCollector(doc).OfClass(typeof(MechanicalSystemType)).First().Id;
         var ductTypeId = new FilteredElementCollector(doc).OfClass(typeof(DuctType)).First().Id;
         return Duct.Create(
@@ -62,7 +63,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
             new XYZ(index * 10.0 + 5.0, 20, 0));
     }
 
-    private static Pipe CreatePipeWithLength(Document doc, Level level, int index, double lengthFeet) {
+    private Pipe CreatePipeWithLength(Document doc, Level level, int index, double lengthFeet) {
         double startX = index * 30.0;
         var systemTypeId = new FilteredElementCollector(doc).OfClass(typeof(PipingSystemType)).First().Id;
         var pipeTypeId = new FilteredElementCollector(doc).OfClass(typeof(PipeType)).First().Id;
@@ -75,7 +76,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
             new XYZ(startX + lengthFeet, 100.0, 0));
     }
 
-    private static Duct CreateDuctWithLength(Document doc, Level level, int index, double lengthFeet) {
+    private Duct CreateDuctWithLength(Document doc, Level level, int index, double lengthFeet) {
         double startX = index * 30.0;
         var systemTypeId = new FilteredElementCollector(doc).OfClass(typeof(MechanicalSystemType)).First().Id;
         var ductTypeId = new FilteredElementCollector(doc).OfClass(typeof(DuctType)).First().Id;
@@ -88,14 +89,14 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
             new XYZ(startX + lengthFeet, 200.0, 0));
     }
 
-    private static void RunInTransaction(Document doc, string name, Action action) {
+    private void RunInTransaction(Document doc, string name, Action action) {
         using var t = new Transaction(doc, name);
         t.Start();
         action();
         t.Commit();
     }
 
-    private static int Collect(Document doc, BuiltInCategory cat, ElementFilter filter) {
+    private int Collect(Document doc, BuiltInCategory cat, ElementFilter filter) {
         return new FilteredElementCollector(doc)
             .OfCategory(cat)
             .WhereElementIsNotElementType()
@@ -128,7 +129,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddBeginsWithRule(BuiltInParameter.ALL_MODEL_MARK, prefix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_PipeCurves, elementFilter);
         await Assert.That(count).IsEqualTo(4);
@@ -157,7 +158,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddContainsRule(BuiltInParameter.ALL_MODEL_MARK, mid)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_PipeCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -188,7 +189,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddBeginsWithRule(BuiltInParameter.ALL_MODEL_MARK, prefix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_DuctCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -217,7 +218,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddContainsRule(BuiltInParameter.ALL_MODEL_MARK, mid)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_DuctCurves, elementFilter);
         await Assert.That(count).IsEqualTo(4);
@@ -244,7 +245,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_PipeCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -269,7 +270,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddLessOrEqualRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_PipeCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -296,7 +297,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterOrEqualRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_DuctCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -321,7 +322,7 @@ public class LogicalFilterBuildMepIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddLessRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_DuctCurves, elementFilter);
         await Assert.That(count).IsEqualTo(3);

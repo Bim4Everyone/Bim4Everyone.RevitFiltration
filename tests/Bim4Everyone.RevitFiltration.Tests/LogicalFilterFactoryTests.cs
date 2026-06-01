@@ -7,7 +7,7 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterFactoryTests : RevitApiTest {
+public sealed class LogicalFilterFactoryTests : RevitApiTest {
     [Test]
     [TestExecutor<RevitThreadExecutor>]
     public async Task CreateAndFilter_ReturnsNonNull() {
