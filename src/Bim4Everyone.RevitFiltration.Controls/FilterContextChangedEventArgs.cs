@@ -3,7 +3,7 @@ namespace Bim4Everyone.RevitFiltration.Controls;
 /// <summary>
 ///     Аргументы события изменения контекста фильтра в <see cref="ILogicalFilterProvider" />.
 /// </summary>
-public class FilterContextChangedEventArgs : EventArgs {
+public sealed class FilterContextChangedEventArgs : EventArgs {
     /// <summary>
     ///     Создает аргументы события изменения контекста фильтра.
     /// </summary>
