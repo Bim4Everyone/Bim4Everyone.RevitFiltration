@@ -91,8 +91,8 @@ public void SampleFilterParsing(ILogicalFilter filter, ILogicalFilterParser pars
 
 ```
 kernel.UseLogicalFilterFactory(); // сервис для создания ILogicalFilter (обязательно)
-kernel.UseDefaultProviderFactory(); // сервис для привязки провайдера контекста фильтра из UI к ViewModel (обязательно)
-kernel.UseDefaultContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
+kernel.UseLogicalFilterProviderFactory(); // сервис для привязки провайдера контекста фильтра из UI к ViewModel (обязательно)
+kernel.UseFilterContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
 ```
 
 3. Сконструировать `DataProvider` (для значений параметров — по экземплярам элементов либо через собственную функцию).
@@ -107,7 +107,8 @@ kernel.UseDefaultContextParser(); // сервис для сериализаци�
 - значения параметров переопределяются собственной функцией (можно вернуть свой список значений):
   `DataProvider(categories, getParams, getParamValues)`.
 
-Пример создания `DataProvider`:
+Обоим конструкторам нужны функции получения доступных категорий и параметров. Их можно описать один раз и
+переиспользовать в любом из примеров ниже:
 
 ```
 ICollection<Category> GetCategories(Document doc) {
@@ -145,18 +146,30 @@ RevitParam GetFilterableParam(Document doc, ElementId paramId) {
         return null;
     }
 }
+```
 
-// значения параметров берутся из экземпляров элементов документа
+Пример 1. Значения параметров берутся из экземпляров элементов заданных документов:
+
+```
 var dataProvider = new DataProvider(
     GetCategories(doc),
     categories => GetParams(doc, categories),
     new[] { doc });
+```
 
-// либо переопределить список значений параметра собственной функцией
+Пример 2. Значения параметров задаются собственной функцией (можно вернуть свой список значений из любого
+источника — базы данных, конфига, фиксированного списка и т.п.):
+
+```
+ICollection<string> GetCustomValues(ICollection<Category> categories, RevitParam revitParam) {
+    // здесь — любой свой источник значений; для примера возвращаем фиксированный список
+    return ["Значение 1", "Значение 2"];
+}
+
 var customDataProvider = new DataProvider(
     GetCategories(doc),
     categories => GetParams(doc, categories),
-    (categories, revitParam) => GetCustomValues(doc, categories, revitParam));
+    (categories, revitParam) => GetCustomValues(categories, revitParam));
 ```
 
 4. Настроить ViewModel окна:
@@ -167,7 +180,8 @@ internal class YourViewModel {
         ILogicalFilterProviderFactory filterProviderFactory,
         ILanguageService languageService,
         DataProvider dataProvider) {
-        FilterProvider = filterProviderFactory.Create(dataProvider)
+        FilterProvider = filterProviderFactory.Create(dataProvider);
+        LanguageService = languageService;
     }
 
     public ILogicalFilterProvider FilterProvider { get; } // провайдер для получения фильтра из UI
