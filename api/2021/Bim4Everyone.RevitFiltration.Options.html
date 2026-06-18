@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IOptions | RevitFiltration </title>
+      <title>Class Options | RevitFiltration </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IOptions | RevitFiltration ">
+      <meta name="title" content="Class Options | RevitFiltration ">
       
       <meta name="description" content="Настройки сборки фильтра  из .">
       <link rel="icon" href="../../favicon.ico">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Bim4Everyone.RevitFiltration.IOptions">
+        <article data-uid="Bim4Everyone.RevitFiltration.Options">
 
 
 
-  <h1 id="Bim4Everyone_RevitFiltration_IOptions" data-uid="Bim4Everyone.RevitFiltration.IOptions" class="text-break">
-Interface IOptions  
+  <h1 id="Bim4Everyone_RevitFiltration_Options" data-uid="Bim4Everyone.RevitFiltration.Options" class="text-break">
+Class Options  
   </h1>
 
   <div class="facts text-secondary">
@@ -102,8 +102,66 @@ Interface IOptions
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте класс Options вместо интерфейса IOptions.&quot;)]
-public interface IOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class Options</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Options</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Bim4Everyone_RevitFiltration_Options__ctor_" data-uid="Bim4Everyone.RevitFiltration.Options.#ctor*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_Options__ctor" data-uid="Bim4Everyone.RevitFiltration.Options.#ctor">
+  Options()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Options()</code></pre>
   </div>
 
 
@@ -122,9 +180,42 @@ public interface IOptions</code></pre>
 </h2>
 
 
-  <a id="Bim4Everyone_RevitFiltration_IOptions_Tolerance_" data-uid="Bim4Everyone.RevitFiltration.IOptions.Tolerance*"></a>
+  <a id="Bim4Everyone_RevitFiltration_Options_FilterByType_" data-uid="Bim4Everyone.RevitFiltration.Options.FilterByType*"></a>
 
-  <h3 id="Bim4Everyone_RevitFiltration_IOptions_Tolerance" data-uid="Bim4Everyone.RevitFiltration.IOptions.Tolerance">
+  <h3 id="Bim4Everyone_RevitFiltration_Options_FilterByType" data-uid="Bim4Everyone.RevitFiltration.Options.FilterByType">
+  FilterByType
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Если True, фильтр генерируется по типоразмерам (типам элементов).
+Если False (по умолчанию), фильтр генерируется по экземплярам элементов.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FilterByType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_Options_Tolerance_" data-uid="Bim4Everyone.RevitFiltration.Options.Tolerance*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_Options_Tolerance" data-uid="Bim4Everyone.RevitFiltration.Options.Tolerance">
   Tolerance
   
   </h3>
@@ -134,7 +225,7 @@ public interface IOptions</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">double Tolerance { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public double Tolerance { get; set; }</code></pre>
   </div>
 
 

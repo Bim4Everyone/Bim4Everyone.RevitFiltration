@@ -123,6 +123,87 @@ Interface ILogicalFilterProviderFactory
 
   <a id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*"></a>
 
+  <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_DataProvider_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider)">
+  Create(DataProvider)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Создает провайдер фильтра элементов по доступным данным.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilterProvider Create(DataProvider dataProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataProvider</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.DataProvider.html">DataProvider</a></dt>
+    <dd><p>Провайдер доступных данных для выбора пользователя.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html">ILogicalFilterProvider</a></dt>
+    <dd><p>Провайдер контекста фильтра по категориям.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*"></a>
+
+  <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_DataProvider_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
+  Create(DataProvider, ILogicalFilterContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Загружает заданный контекст и создает провайдер фильтра элементов по доступным данным.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ILogicalFilterProvider Create(DataProvider dataProvider, ILogicalFilterContext contextToLoad)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataProvider</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.DataProvider.html">DataProvider</a></dt>
+    <dd><p>Провайдер доступных данных для выбора пользователя.</p>
+</dd>
+    <dt><code>contextToLoad</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html">ILogicalFilterContext</a></dt>
+    <dd><p>Контекст для загрузки. Категории и правила фильтрации по параметрам, которых нет в доступных, будут удалены.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html">ILogicalFilterProvider</a></dt>
+    <dd><p>Провайдер контекста фильтра по категориям.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*"></a>
+
   <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)">
   Create(IDataProvider)
   
@@ -133,7 +214,8 @@ Interface ILogicalFilterProviderFactory
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ILogicalFilterProvider Create(IDataProvider dataProvider)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте перегрузку Create(DataProvider).&quot;)]
+ILogicalFilterProvider Create(IDataProvider dataProvider)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -172,7 +254,8 @@ Interface ILogicalFilterProviderFactory
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ILogicalFilterProvider Create(IDataProvider dataProvider, ILogicalFilterContext contextToLoad)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте перегрузку Create(DataProvider, ILogicalFilterContext).&quot;)]
+ILogicalFilterProvider Create(IDataProvider dataProvider, ILogicalFilterContext contextToLoad)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
