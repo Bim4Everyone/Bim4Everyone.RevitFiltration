@@ -5,6 +5,11 @@ namespace Bim4Everyone.RevitFiltration.Controls;
 /// </summary>
 public interface ILogicalFilterProvider {
     /// <summary>
+    ///     Возникает при изменении контекста фильтра.
+    /// </summary>
+    event EventHandler<FilterContextChangedEventArgs>? FilterContextChanged;
+
+    /// <summary>
     ///     Возвращает контекст фильтра, настроенного в UI. Перед вызовом надо проверить, что контекст может быть получен,
     ///     вызвав метод <see cref="CanGetFilter" />.
     /// </summary>
@@ -22,7 +27,7 @@ public interface ILogicalFilterProvider {
     /// <summary>
     ///     Возвращает провайдер данных.
     /// </summary>
-    internal IDataProvider GetDataProvider();
+    internal DataProvider GetDataProvider();
 
     internal ILogicalFilterFactory GetLogicalFilterFactory();
 

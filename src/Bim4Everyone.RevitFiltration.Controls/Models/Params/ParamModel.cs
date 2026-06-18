@@ -27,6 +27,7 @@ internal class ParamModel : IEquatable<ParamModel> {
         }
 
         Id = parameter is SystemParam sysParam ? sysParam.SystemParamId.ToString() : parameter.Id;
+        RevitParam = parameter;
         StorageType = parameter.StorageType;
         if(StorageType == StorageType.Double) {
             // UnitType нужен только для конвертации метрических единиц, которые вводит пользователь в имперские единицы ревита,
@@ -49,7 +50,7 @@ internal class ParamModel : IEquatable<ParamModel> {
 #if REVIT2021_OR_GREATER
     [JsonConstructor]
     public ParamModel(string name, string id, string typeId, StorageType storageType) {
-        Name = name;
+        Name = LocalizeName(name, id);
         Id = id;
         TypeId = typeId;
         StorageType = storageType;
@@ -58,7 +59,7 @@ internal class ParamModel : IEquatable<ParamModel> {
 #else
     [JsonConstructor]
     public ParamModel(string name, string id, UnitType unitType, StorageType storageType) {
-        Name = name;
+        Name = LocalizeName(name, id);
         Id = id;
         UnitType = unitType;
         StorageType = storageType;
@@ -73,6 +74,13 @@ internal class ParamModel : IEquatable<ParamModel> {
 
     [JsonProperty]
     public string Id { get; }
+
+    /// <summary>
+    ///     Соответствующий <see cref="RevitParam" />. Заполняется при создании из <see cref="RevitParam" />
+    ///     либо при загрузке контекста (обратный маппинг по доступным параметрам). Null после десериализации.
+    /// </summary>
+    [JsonIgnore]
+    public RevitParam? RevitParam { get; set; }
 
 #if REVIT2021_OR_GREATER
     [JsonIgnore]
@@ -140,6 +148,22 @@ internal class ParamModel : IEquatable<ParamModel> {
                && Id.Equals(other.Id);
     }
 
+    /// <summary>
+    ///     Проверяет, соответствует ли данная модель параметру <see cref="RevitParam" />.
+    /// </summary>
+    /// <param name="p">Параметр Revit для сравнения.</param>
+    /// <returns>True, если параметры совпадают, иначе false.</returns>
+    public bool Equals(RevitParam? p) {
+        if(p is null) {
+            return false;
+        }
+
+        string id = p is SystemParam sysParam ? sysParam.SystemParamId.ToString() : p.Id;
+        return Name == p.Name
+            && StorageType == p.StorageType
+            && Id.Equals(id);
+    }
+
     public override bool Equals(object? obj) {
         if(obj is null) {
             return false;
@@ -163,5 +187,24 @@ internal class ParamModel : IEquatable<ParamModel> {
             hashCode = (hashCode * 397) ^ Id.GetHashCode();
             return hashCode;
         }
+    }
+
+    /// <summary>
+    ///     Локализует название системного параметра по текущему языку интерфейса Revit.
+    ///     Нужно при десериализации контекста, сохраненного в другой языковой версии Revit.
+    /// </summary>
+    /// <param name="name">Сохраненное название параметра.</param>
+    /// <param name="id">Идентификатор параметра.</param>
+    /// <returns>Локализованное название для системного параметра, иначе исходное название.</returns>
+    private string LocalizeName(string name, string id) {
+        if(Enum.TryParse(id, out BuiltInParameter builtInParameter)) {
+            try {
+                return LabelUtils.GetLabelFor(builtInParameter);
+            } catch (Autodesk.Revit.Exceptions.InvalidOperationException) {
+                return name;
+            }
+        }
+
+        return name;
     }
 }

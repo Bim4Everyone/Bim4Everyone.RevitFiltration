@@ -7,7 +7,31 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
     }
 
+    [Obsolete("Используйте перегрузку Create(DataProvider).")]
     public ILogicalFilterProvider Create(IDataProvider dataProvider) {
+        if(dataProvider == null) {
+            throw new ArgumentNullException(nameof(dataProvider));
+        }
+
+        return Create(Adapt(dataProvider));
+    }
+
+    [Obsolete("Используйте перегрузку Create(DataProvider, ILogicalFilterContext).")]
+    public ILogicalFilterProvider Create(
+        IDataProvider dataProvider,
+        ILogicalFilterContext contextToLoad) {
+        if(dataProvider == null) {
+            throw new ArgumentNullException(nameof(dataProvider));
+        }
+        
+        if(contextToLoad == null) {
+            throw new ArgumentNullException(nameof(contextToLoad));
+        }
+
+        return Create(Adapt(dataProvider), contextToLoad);
+    }
+
+    public ILogicalFilterProvider Create(DataProvider dataProvider) {
         if(dataProvider == null) {
             throw new ArgumentNullException(nameof(dataProvider));
         }
@@ -16,7 +40,7 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
     }
 
     public ILogicalFilterProvider Create(
-        IDataProvider dataProvider,
+        DataProvider dataProvider,
         ILogicalFilterContext contextToLoad) {
         if(dataProvider == null) {
             throw new ArgumentNullException(nameof(dataProvider));
@@ -27,5 +51,13 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
         }
 
         return new LogicalFilterProvider(dataProvider, _factory, contextToLoad);
+    }
+
+    [Obsolete("Адаптер для обратной совместимости с IDataProvider.")]
+    private DataProvider Adapt(IDataProvider dataProvider) {
+        return new DataProvider(
+            dataProvider.GetCategories(),
+            dataProvider.GetParams,
+            dataProvider.GetDocuments());
     }
 }

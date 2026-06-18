@@ -31,7 +31,7 @@ internal class Rule : IFilterRule {
     public IOperatorToken OperatorToken { get; }
 
     /// <inheritdoc />
-    public FilterRule CreateFilterRule(Document document, IOptions options) {
+    public FilterRule CreateFilterRule(Document document, Options options) {
         return OperatorToken.Create(Param.GetId(document), document, options);
     }
 }

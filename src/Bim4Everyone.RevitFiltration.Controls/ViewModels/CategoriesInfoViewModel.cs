@@ -5,22 +5,19 @@ using Autodesk.Revit.DB;
 using Bim4Everyone.RevitFiltration.Controls.Core;
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
-using Bim4Everyone.RevitFiltration.Controls.Models.Value;
 using Bim4Everyone.RevitFiltration.Controls.Services;
-
-using dosymep.Revit;
 
 namespace Bim4Everyone.RevitFiltration.Controls.ViewModels;
 
 internal class CategoriesInfoViewModel : BaseViewModel {
     private readonly ObservableCollection<ParamViewModel> _availableParams;
-    private readonly IDataProvider _dataProvider;
+    private readonly DataProvider _dataProvider;
     private readonly ILocalizationProvider _localization;
     private readonly ObservableCollection<CategoryViewModel> _selectedCategories;
 
     public CategoriesInfoViewModel(
         ILocalizationProvider localization,
-        IDataProvider dataProvider,
+        DataProvider dataProvider,
         ICollection<Category> selectedCategories) {
         if(selectedCategories == null) {
             throw new ArgumentNullException(nameof(selectedCategories));
@@ -48,12 +45,9 @@ internal class CategoriesInfoViewModel : BaseViewModel {
             return [];
         }
 
-        var builtInCategories = categories.Select(c => c.Category.GetBuiltInCategory())
-            .ToHashSet();
-
-        return _dataProvider.GetDocuments()
-            .SelectMany(d => GetValues(d, builtInCategories, param))
-            .Distinct()
+        return _dataProvider.GetParamValues(
+                categories.Select(c => c.Category).ToArray(),
+                param.ParamModel)
             .OrderBy(v => v)
             .Select(v => new ParamValueViewModel(v))
             .ToArray();
@@ -82,17 +76,5 @@ internal class CategoriesInfoViewModel : BaseViewModel {
         foreach(var param in @params) {
             _availableParams.Add(param);
         }
-    }
-
-    private ICollection<ParamValue> GetValues(
-        Document doc,
-        ICollection<BuiltInCategory> categories,
-        ParamViewModel param) {
-        return new FilteredElementCollector(doc)
-            .WhereElementIsNotElementType()
-            .WherePasses(new ElementMulticategoryFilter(categories))
-            .Where(e => e.IsExistsParamValue(param.Name))
-            .Select(e => param.ParamModel.GetParamValueFromString(e.GetParam(param.Name).AsValueString()))
-            .ToArray();
     }
 }

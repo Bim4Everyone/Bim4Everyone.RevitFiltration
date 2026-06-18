@@ -44,19 +44,23 @@ kernel.UseLogicalFilterFactory(); // сервис для создания фил
 kernel.UseLogicalFilterParser(); // сервис для сериализации и десериализации фильтра (опционально)
 ```
 
-3. Реализовать `IOptions` для настроек генерации фильтра.
+3. Задать настройки генерации фильтра через класс `Options`.
+
+> Интерфейс `IOptions` устарел (`[Obsolete]`). Используйте класс `Options`. Старые перегрузки `Build(Document, IOptions)`
+> сохранены для обратной совместимости.
 
 ### Пример использования в плагине
 
 Из DI контейнера необходимо получить сервис `ILogicalFilterFactory`, затем сконструировать необходимый фильтр и
-сгенерировать `ElementFilter`, используя класс, реализующий `IOptions`. Пример:
+сгенерировать `ElementFilter`, используя класс `Options`. Чтобы сгенерировать фильтр по типоразмерам (а не по
+экземплярам), установите `Options.FilterByType = true`. Пример:
 
 ```
 public void SampleFilterCreation(ILogicalFilterFactory filterFactory, Autodesk.Revit.UI.UIDocument uiDoc) {
     ILogicalFilter filter = filterFactory.CreateAndFilter()
         .AddEqualsRule(BuiltInParameter.SCHEDULE_LEVEL_PARAM, "Level 1");
 
-    IOptions opts = new DefaultOptions();
+    var opts = new Options { Tolerance = 1e-6, FilterByType = false };
     var elements = new FilteredElementCollector(uiDoc.Document)
         .WhereElementIsNotElementType()
         .OfCategory(BuiltInCategory.OST_Planting)
@@ -87,66 +91,85 @@ public void SampleFilterParsing(ILogicalFilter filter, ILogicalFilterParser pars
 
 ```
 kernel.UseLogicalFilterFactory(); // сервис для создания ILogicalFilter (обязательно)
-kernel.UseDefaultProviderFactory(); // сервис для привязки провайдера контекста фильтра из UI к ViewModel (обязательно)
-kernel.UseDefaultContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
+kernel.UseLogicalFilterProviderFactory(); // сервис для привязки провайдера контекста фильтра из UI к ViewModel (обязательно)
+kernel.UseFilterContextParser(); // сервис для сериализации и десериализации контекста фильтра UI (опционально)
 ```
 
-3. Реализовать `IOptions`, `IDataProvider`.
+3. Сконструировать `DataProvider` (для значений параметров — по экземплярам элементов либо через собственную функцию).
 
-Пример реализации `IDtaProvider`:
+> Интерфейс `IDataProvider` устарел (`[Obsolete]`). Используйте класс `DataProvider`. Старые перегрузки
+> `ILogicalFilterProviderFactory.Create(IDataProvider ...)` сохранены для обратной совместимости.
+
+У класса `DataProvider` два конструктора:
+
+- значения параметров берутся из экземпляров элементов заданных документов:
+  `DataProvider(categories, getParams, documents)`;
+- значения параметров переопределяются собственной функцией (можно вернуть свой список значений):
+  `DataProvider(categories, getParams, getParamValues)`.
+
+Обоим конструкторам нужны функции получения доступных категорий и параметров. Их можно описать один раз и
+переиспользовать в любом из примеров ниже:
 
 ```
-internal class FilterDataProvider : IDataProvider {
-    private readonly Document _doc;
+ICollection<Category> GetCategories(Document doc) {
+    return ParameterFilterUtilities.GetAllFilterableCategories()
+        .Select(c => Category.GetCategory(doc, c))
+        .Where(category => category != null)
+        .Where(c => c.CategoryType == CategoryType.Model && c.IsVisibleInUI)
+        .ToArray();
+}
 
-    public FilterDataProvider(Document doc) {
-        _doc = doc;
-    }
+ICollection<RevitParam> GetParams(Document doc, ICollection<Category> categories) {
+    return ParameterFilterUtilities
+        .GetFilterableParametersInCommon(doc, [..categories.Select(c => c.Id)])
+        .Select(paramId => GetFilterableParam(doc, paramId))
+        .Where(p => p != null)
+        .ToArray();
+}
 
-    public ICollection<RevitParam> GetParams(ICollection<Category> categories) {
-        return ParameterFilterUtilities
-            .GetFilterableParametersInCommon(_doc, [..categories.Select(c => c.Id)])
-            .Select(GetFilterableParam)
-            .Where(p => p != null)
-            .ToArray();
-    }
-
-    public ICollection<Category> GetCategories() {
-        return ParameterFilterUtilities.GetAllFilterableCategories()
-            .Select(c => Category.GetCategory(_doc, c))
-            .Where(category => category != null)
-            .Where(c => c.CategoryType == CategoryType.Model && c.IsVisibleInUI)
-            .ToArray();
-    }
-
-    public ICollection<Document> GetDocuments() {
-        return [_doc];
-    }
-
-    private RevitParam GetFilterableParam(ElementId paramId) {
-        try {
-            if(paramId.IsSystemId()) {
-                return SystemParamsConfig.Instance.CreateRevitParam(
-                        _doc,
-                        (BuiltInParameter) paramId.GetIdValue());
-            }
-            
-            var element = _doc.GetElement(paramId);
-            if(element is SharedParameterElement sharedParameterElement) {
-                return SharedParamsConfig.Instance.CreateRevitParam(
-                        _doc,
-                        sharedParameterElement.Name);
-            }
-
-            if(element is ParameterElement parameterElement) {
-                return ProjectParamsConfig.Instance.CreateRevitParam(_doc, parameterElement.Name);
-            }
-            return null;
-        } catch(Exception) {
-            return null;
+RevitParam GetFilterableParam(Document doc, ElementId paramId) {
+    try {
+        if(paramId.IsSystemId()) {
+            return SystemParamsConfig.Instance.CreateRevitParam(doc, (BuiltInParameter) paramId.GetIdValue());
         }
+
+        var element = doc.GetElement(paramId);
+        if(element is SharedParameterElement sharedParameterElement) {
+            return SharedParamsConfig.Instance.CreateRevitParam(doc, sharedParameterElement.Name);
+        }
+
+        if(element is ParameterElement parameterElement) {
+            return ProjectParamsConfig.Instance.CreateRevitParam(doc, parameterElement.Name);
+        }
+        return null;
+    } catch(Exception) {
+        return null;
     }
 }
+```
+
+Пример 1. Значения параметров берутся из экземпляров элементов заданных документов:
+
+```
+var dataProvider = new DataProvider(
+    GetCategories(doc),
+    categories => GetParams(doc, categories),
+    new[] { doc });
+```
+
+Пример 2. Значения параметров задаются собственной функцией (можно вернуть свой список значений из любого
+источника — базы данных, конфига, фиксированного списка и т.п.):
+
+```
+ICollection<string> GetCustomValues(ICollection<Category> categories, RevitParam revitParam) {
+    // здесь — любой свой источник значений; для примера возвращаем фиксированный список
+    return ["Значение 1", "Значение 2"];
+}
+
+var customDataProvider = new DataProvider(
+    GetCategories(doc),
+    categories => GetParams(doc, categories),
+    (categories, revitParam) => GetCustomValues(categories, revitParam));
 ```
 
 4. Настроить ViewModel окна:
@@ -156,13 +179,22 @@ internal class YourViewModel {
     public YourViewModel(
         ILogicalFilterProviderFactory filterProviderFactory,
         ILanguageService languageService,
-        IDataProvider dataProvider) {
-        FilterProvider = filterProviderFactory.Create(dataProvider)
+        DataProvider dataProvider) {
+        FilterProvider = filterProviderFactory.Create(dataProvider);
+        LanguageService = languageService;
     }
 
     public ILogicalFilterProvider FilterProvider { get; } // провайдер для получения фильтра из UI
     public ILanguageService LanguageService { get; } // сервис для установки локализации в контроле
 }
+```
+
+`ILogicalFilterProvider` уведомляет об изменении контекста фильтра событием `FilterContextChanged`:
+
+```
+FilterProvider.FilterContextChanged += (sender, args) => {
+    // args.OldContext, args.NewContext
+};
 ```
 
 5. Подключить нужный контрол в xaml:

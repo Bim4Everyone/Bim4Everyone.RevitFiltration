@@ -2,7 +2,6 @@ using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Filtration;
 using Bim4Everyone.RevitFiltration.Serialization;
-using Bim4Everyone.RevitFiltration.Tests.Helpers;
 
 using Nice3point.TUnit.Revit;
 using Nice3point.TUnit.Revit.Executors;
@@ -11,13 +10,13 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterParserTests : RevitApiTest {
-    private readonly IOptions _options = new TestOptions();
-    private static Document _document = null!;
+public sealed class LogicalFilterParserTests : RevitApiTest {
+    private Document _document;
+    private Options Options;
 
-    [Before(Class)]
+    [Before(Test)]
     [HookExecutor<RevitThreadExecutor>]
-    public static void OpenDocument() {
+    public void OpenDocument() {
         string templatePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),
             "Autodesk",
@@ -26,23 +25,24 @@ public class LogicalFilterParserTests : RevitApiTest {
             "English",
             "DefaultMetric.rte");
         _document = Application.NewProjectDocument(templatePath);
+        Options = new Options();
     }
 
-    [After(Class)]
+    [After(Test)]
     [HookExecutor<RevitThreadExecutor>]
-    public static void CloseDocument() {
-        _document.Close(false);
+    public void CloseDocument() {
+        _document?.Close(false);
     }
 
-    private static ILogicalFilterParser CreateParser() {
+    private ILogicalFilterParser CreateParser() {
         return new LogicalFilterParser();
     }
 
-    private static ILogicalFilter CreateAndFilter() {
+    private ILogicalFilter CreateAndFilter() {
         return new LogicalFilterFactory().CreateAndFilter();
     }
 
-    private static ILogicalFilter CreateOrFilter() {
+    private ILogicalFilter CreateOrFilter() {
         return new LogicalFilterFactory().CreateOrFilter();
     }
 
@@ -141,7 +141,7 @@ public class LogicalFilterParserTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
 
         parser.TryParse(parser.Serialize(original), out var restored);
-        var result = restored!.Build(_document, _options);
+        var result = restored!.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<LogicalAndFilter>();
     }
@@ -154,7 +154,7 @@ public class LogicalFilterParserTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "x");
 
         parser.TryParse(parser.Serialize(original), out var restored);
-        var result = restored!.Build(_document, _options);
+        var result = restored!.Build(_document, Options);
 
         await Assert.That(result).IsAssignableTo<LogicalOrFilter>();
     }
@@ -167,7 +167,7 @@ public class LogicalFilterParserTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.PHASE_CREATED, 1);
 
         parser.TryParse(parser.Serialize(original), out var restored);
-        var result = restored!.Build(_document, _options);
+        var result = restored!.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -180,7 +180,7 @@ public class LogicalFilterParserTests : RevitApiTest {
             .AddEqualsRule(BuiltInParameter.ALL_MODEL_MARK, "val");
 
         parser.TryParse(parser.Serialize(original), out var restored);
-        var result = restored!.Build(_document, _options);
+        var result = restored!.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }
@@ -195,7 +195,7 @@ public class LogicalFilterParserTests : RevitApiTest {
             .AddFilter(inner);
 
         parser.TryParse(parser.Serialize(original), out var restored);
-        var result = restored!.Build(_document, _options);
+        var result = restored!.Build(_document, Options);
 
         await Assert.That(result).IsNotNull();
     }

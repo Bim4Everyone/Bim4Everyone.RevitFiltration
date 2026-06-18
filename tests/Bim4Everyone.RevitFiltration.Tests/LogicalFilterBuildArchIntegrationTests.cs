@@ -1,7 +1,6 @@
 using Autodesk.Revit.DB;
 
 using Bim4Everyone.RevitFiltration.Filtration;
-using Bim4Everyone.RevitFiltration.Tests.Helpers;
 
 using Nice3point.TUnit.Revit;
 using Nice3point.TUnit.Revit.Executors;
@@ -10,9 +9,9 @@ using TUnit.Core.Executors;
 
 namespace Bim4Everyone.RevitFiltration.Tests;
 
-public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
-    private readonly IOptions _options = new TestOptions();
-    private Document _document = null!;
+public sealed class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
+    private Document _document;
+    private Options Options;
 
     [Before(Test)]
     [HookExecutor<RevitThreadExecutor>]
@@ -25,24 +24,25 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
             "English",
             "DefaultMetric.rte");
         _document = Application.NewProjectDocument(templatePath);
+        Options = new Options();
     }
 
     [After(Test)]
     [HookExecutor<RevitThreadExecutor>]
     public void CloseDocument() {
-        _document.Close(false);
+        _document?.Close(false);
     }
 
-    private static Level GetDefaultLevel(Document doc) {
+    private Level GetDefaultLevel(Document doc) {
         return new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().First();
     }
 
-    private static Wall CreateWall(Document doc, Level level, int index) {
+    private Wall CreateWall(Document doc, Level level, int index) {
         var line = Line.CreateBound(new XYZ(index * 10.0, 0, 0), new XYZ(index * 10.0 + 5.0, 0, 0));
         return Wall.Create(doc, line, level.Id, false);
     }
 
-    private static Floor CreateFloor(Document doc, Level level, int index) {
+    private Floor CreateFloor(Document doc, Level level, int index) {
         double offset = index * 20.0;
         var loop = new CurveLoop();
         loop.Append(Line.CreateBound(new XYZ(offset, 0, 0), new XYZ(offset + 10, 0, 0)));
@@ -53,13 +53,13 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
         return Floor.Create(doc, new List<CurveLoop> { loop }, typeId, level.Id);
     }
 
-    private static Wall CreateWallWithLength(Document doc, Level level, int index, double lengthFeet) {
+    private Wall CreateWallWithLength(Document doc, Level level, int index, double lengthFeet) {
         double startX = index * 30.0;
         var line = Line.CreateBound(new XYZ(startX, 100.0, 0), new XYZ(startX + lengthFeet, 100.0, 0));
         return Wall.Create(doc, line, level.Id, false);
     }
 
-    private static Floor CreateFloorWithSize(Document doc, Level level, int index, double sizeFeet) {
+    private Floor CreateFloorWithSize(Document doc, Level level, int index, double sizeFeet) {
         double offsetX = index * 50.0;
         const double offsetY = 200.0;
         var loop = new CurveLoop();
@@ -77,14 +77,14 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
         return Floor.Create(doc, new List<CurveLoop> { loop }, typeId, level.Id);
     }
 
-    private static void RunInTransaction(Document doc, string name, Action action) {
+    private void RunInTransaction(Document doc, string name, Action action) {
         using var t = new Transaction(doc, name);
         t.Start();
         action();
         t.Commit();
     }
 
-    private static int Collect(Document doc, BuiltInCategory cat, ElementFilter filter) {
+    private int Collect(Document doc, BuiltInCategory cat, ElementFilter filter) {
         return new FilteredElementCollector(doc)
             .OfCategory(cat)
             .WhereElementIsNotElementType()
@@ -117,7 +117,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddBeginsWithRule(BuiltInParameter.ALL_MODEL_MARK, prefix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -146,7 +146,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddContainsRule(BuiltInParameter.ALL_MODEL_MARK, mid)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(2);
@@ -175,7 +175,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddEndsWithRule(BuiltInParameter.ALL_MODEL_MARK, suffix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(4);
@@ -206,7 +206,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddBeginsWithRule(BuiltInParameter.ALL_MODEL_MARK, prefix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(4);
@@ -235,7 +235,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddContainsRule(BuiltInParameter.ALL_MODEL_MARK, mid)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -264,7 +264,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddEndsWithRule(BuiltInParameter.ALL_MODEL_MARK, suffix)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(2);
@@ -291,7 +291,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -316,7 +316,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddLessRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -341,7 +341,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterOrEqualRule(BuiltInParameter.CURVE_ELEM_LENGTH, 10.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Walls, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -368,7 +368,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddGreaterRule(BuiltInParameter.HOST_AREA_COMPUTED, 100.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -393,7 +393,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddLessRule(BuiltInParameter.HOST_AREA_COMPUTED, 100.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(3);
@@ -418,7 +418,7 @@ public class LogicalFilterBuildArchIntegrationTests : RevitApiTest {
 
         var elementFilter = new LogicalFilterFactory().CreateAndFilter()
             .AddLessOrEqualRule(BuiltInParameter.HOST_AREA_COMPUTED, 100.0)
-            .Build(_document, _options);
+            .Build(_document, Options);
 
         int count = Collect(_document, BuiltInCategory.OST_Floors, elementFilter);
         await Assert.That(count).IsEqualTo(3);

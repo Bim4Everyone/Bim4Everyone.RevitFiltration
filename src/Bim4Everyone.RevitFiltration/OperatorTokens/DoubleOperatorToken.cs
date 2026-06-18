@@ -32,7 +32,7 @@ internal class DoubleOperatorToken : IOperatorToken {
     public IOperator Operator { get; }
 
     /// <inheritdoc />
-    public FilterRule Create(ElementId paramId, Document document, IOptions options) {
+    public FilterRule Create(ElementId paramId, Document document, Options options) {
         return Operator.Create(paramId, Value, options.Tolerance);
     }
 }

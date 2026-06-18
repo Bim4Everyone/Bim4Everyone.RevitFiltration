@@ -36,7 +36,7 @@ internal class StringOperatorToken : IOperatorToken {
     public IOperator Operator { get; }
 
     /// <inheritdoc />
-    public FilterRule Create(ElementId paramId, Document document, IOptions options) {
+    public FilterRule Create(ElementId paramId, Document document, Options options) {
         if(ParamStorageTypeIsElementId(paramId, document)
            && Operator is EqualsOperator or NotEqualsOperator) {
             // попытка получения элемента, являющегося значением параметра

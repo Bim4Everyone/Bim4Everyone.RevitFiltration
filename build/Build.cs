@@ -7,7 +7,8 @@ using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
-using Nuke.Components;
+
+using Serilog;
 
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
@@ -71,10 +72,15 @@ class Build : NukeBuild {
                 TestResultsPath.CreateOrCleanDirectory();
                 (RootDirectory / DocsOutput).CreateOrCleanDirectory();
                 DocsCaches.GlobFiles("**/*.yml").DeleteFiles();
-                RootDirectory.GlobDirectories("**/bin", "**/obj")
-                    .Where(item => item != RootDirectory / "build" / "bin")
-                    .Where(item => item != RootDirectory / "build" / "obj")
-                    .DeleteDirectories();
+                foreach(var dir in RootDirectory.GlobDirectories("**/bin", "**/obj")
+                            .Where(item => item != RootDirectory / "build" / "bin")
+                            .Where(item => item != RootDirectory / "build" / "obj")) {
+                    try {
+                        dir.DeleteDirectory();
+                    } catch(UnauthorizedAccessException ex) {
+                        Log.Warning("Skipping locked path during Clean: {Path} ({Reason})", dir, ex.Message);
+                    }
+                }
             });
 
     Target Restore =>

@@ -27,7 +27,17 @@ internal class LogicalFilter : ILogicalFilter {
     public ICompositor Compositor { get; }
 
     /// <inheritdoc />
+    [Obsolete("Используйте перегрузку Build(Document, Options).")]
     public ElementFilter Build(Document document, IOptions options) {
+        if(options == null) {
+            throw new ArgumentNullException(nameof(options));
+        }
+
+        return Build(document, new Options { Tolerance = options.Tolerance, FilterByType = false });
+    }
+
+    /// <inheritdoc />
+    public ElementFilter Build(Document document, Options options) {
         if(document == null) {
             throw new ArgumentNullException(nameof(document));
         }
@@ -36,18 +46,31 @@ internal class LogicalFilter : ILogicalFilter {
             throw new ArgumentNullException(nameof(options));
         }
 
+        return Build(document, options, true);
+    }
+
+    private ElementFilter Build(Document document, Options options, bool isRoot) {
         List<ElementFilter> filters = [];
         filters.AddRange(
             InnerRules
                 .Select(r => new ElementParameterFilter(r.CreateFilterRule(document, options), false)));
         filters.AddRange(
             InnerFilters
-                .Select(s => s.Build(document, options)));
+                .Select(s => s is LogicalFilter lf
+                    ? lf.Build(document, options, false)
+                    : s.Build(document, options)));
         if(filters.Count == 0) {
-            return new ElementIsElementTypeFilter(true); // фильтр по всем элементам, которые не ElementType
+            // пустой набор: фильтр по всем экземплярам либо по всем типоразмерам
+            return new ElementIsElementTypeFilter(!options.FilterByType);
         }
 
-        return Compositor.Create(filters);
+        var combined = Compositor.Create(filters);
+        if(isRoot && options.FilterByType) {
+            // ограничиваем результат типоразмерами (типами элементов)
+            return new LogicalAndFilter(combined, new ElementIsElementTypeFilter(false));
+        }
+
+        return combined;
     }
 
     /// <inheritdoc />
