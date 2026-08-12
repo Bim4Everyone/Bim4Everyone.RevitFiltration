@@ -86,13 +86,17 @@ internal class SetViewModel : BaseViewModel {
         NotifyInnerSetsChanges();
     }
 
-    public void Renew() {
+    /// <summary>
+    ///     Сверяет вложенные наборы и правила с текущим списком доступных параметров,
+    ///     сбрасывая те правила, параметры которых стали недоступны.
+    /// </summary>
+    public void ValidateParams() {
         foreach(var set in InnerSets) {
-            set.Renew();
+            set.ValidateParams();
         }
 
         foreach(var rule in InnerRules) {
-            rule.Renew();
+            rule.ValidateParams();
         }
     }
 

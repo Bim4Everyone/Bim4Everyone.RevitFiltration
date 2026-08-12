@@ -193,7 +193,7 @@ internal class DynamicCategoriesFilterViewModel : BaseViewModel {
                 .Select(c => c.Category)
                 .ToArray()
             ?? []);
-        RootSet?.Renew();
+        RootSet?.ValidateParams();
         UpdateLogicalFilterContext();
         CommandManager.InvalidateRequerySuggested();
     }
