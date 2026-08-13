@@ -66,15 +66,31 @@ internal class CategoriesInfoViewModel : BaseViewModel {
         SetParams(categories);
     }
 
+    /// <summary>
+    ///     Обновляет список доступных параметров под заданные категории.
+    ///     Уже присутствующие параметры остаются прежними экземплярами:
+    ///     полная очистка коллекции сбросила бы выбор параметра во всех правилах.
+    /// </summary>
+    /// <param name="categories">Выбранные категории.</param>
     private void SetParams(ICollection<Category> categories) {
-        _availableParams.Clear();
+        // сортировка по Id нужна, чтобы порядок одноименных параметров не зависел от порядка выдачи провайдера
         var @params = _dataProvider.GetParams(categories)
             .Select(p => new ParamViewModel(_localization, new ParamModel(p)))
             .Distinct()
             .OrderBy(p => p.Name)
+            .ThenBy(p => p.ParamModel.Id)
             .ToArray();
-        foreach(var param in @params) {
-            _availableParams.Add(param);
+
+        foreach(var param in _availableParams.Except(@params).ToArray()) {
+            _availableParams.Remove(param);
+        }
+
+        // после удаления оставшиеся параметры - отсортированное подмножество новых,
+        // поэтому несовпадение по индексу означает, что параметр новый
+        for(int i = 0; i < @params.Length; i++) {
+            if(!@params[i].Equals(_availableParams.ElementAtOrDefault(i))) {
+                _availableParams.Insert(i, @params[i]);
+            }
         }
     }
 }

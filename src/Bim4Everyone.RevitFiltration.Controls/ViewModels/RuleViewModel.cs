@@ -143,7 +143,19 @@ internal class RuleViewModel : BaseViewModel {
             : SelectedParameter.GetErrorText(StringValue);
     }
 
-    public void Renew() {
+    /// <summary>
+    ///     Сверяет правило с текущим списком доступных параметров.
+    ///     Если выбранный параметр больше не доступен, правило сбрасывается,
+    ///     иначе оно сохраняется, а список существующих значений параметра помечается как устаревший.
+    /// </summary>
+    public void ValidateParams() {
+        if(SelectedParameter != null
+           && CategoriesInfo.AvailableParams.Contains(SelectedParameter)) {
+            // набор категорий изменился, значит существующие значения параметра надо перечитать
+            _paramValuesAlreadyUpdated = false;
+            return;
+        }
+
         SelectedParameter = null;
         SelectedOperator = null;
         StringValue = string.Empty;
