@@ -1,3 +1,5 @@
+using Autodesk.Revit.DB;
+
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
 
 internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
@@ -51,6 +53,25 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
         }
 
         return new LogicalFilterProvider(dataProvider, _factory, contextToLoad);
+    }
+
+    public ILogicalFilterProvider Create(
+        DataProvider dataProvider,
+        ILogicalFilter filterToLoad,
+        ICollection<BuiltInCategory> categories) {
+        if(dataProvider == null) {
+            throw new ArgumentNullException(nameof(dataProvider));
+        }
+
+        if(filterToLoad == null) {
+            throw new ArgumentNullException(nameof(filterToLoad));
+        }
+
+        if(categories == null) {
+            throw new ArgumentNullException(nameof(categories));
+        }
+
+        return new LogicalFilterProvider(dataProvider, _factory, filterToLoad, categories);
     }
 
     [Obsolete("Адаптер для обратной совместимости с IDataProvider.")]

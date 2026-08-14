@@ -189,6 +189,20 @@ internal class YourViewModel {
 }
 ```
 
+Чтобы открыть в контроле уже готовый `ILogicalFilter` (например, полученный из `ILogicalFilterParser.TryParse`),
+используйте перегрузку `Create` с фильтром и категориями, для которых он был задан:
+
+```
+FilterProvider = filterProviderFactory.Create(
+    dataProvider,
+    filter,
+    new[] { BuiltInCategory.OST_Walls, BuiltInCategory.OST_Floors });
+```
+
+Фильтр загружается только целиком: если хотя бы одна категория недоступна в `DataProvider` либо хотя бы одно правило
+не удается сопоставить с доступными для этих категорий параметрами, провайдер вернет `CanGetFilter() == false`
+и контрол откроется пустым — так же, как при загрузке несовместимого `ILogicalFilterContext`.
+
 `ILogicalFilterProvider` уведомляет об изменении контекста фильтра событием `FilterContextChanged`:
 
 ```

@@ -94,12 +94,20 @@ internal class ParamModel : IEquatable<ParamModel> {
 #endif
 
     public ICollection<OperatorKind> GetOperatorKinds() {
-        if(Id == nameof(BuiltInParameter.ELEM_PARTITION_PARAM)) {
+        if(IsElemPartitionParam()) {
             // у рабочего набора StorageType - Integer, но поведение как у строкового параметра
             return OperatorKindUtils.GetOperatorKinds(StorageType.String);
         }
 
         return OperatorKindUtils.GetOperatorKinds(StorageType);
+    }
+
+    /// <summary>
+    ///     Возвращает true, если параметр - рабочий набор.
+    ///     Важно учитывать, что у рабочего набора StorageType - Integer, но поведение как у строкового параметра.
+    /// </summary>
+    public bool IsElemPartitionParam() {
+        return Id == nameof(BuiltInParameter.ELEM_PARTITION_PARAM);
     }
 
     public void AddInnerRule(ILogicalFilter logicalFilter, IVisitor visitor, ParamValue paramValue) {
@@ -123,6 +131,17 @@ internal class ParamModel : IEquatable<ParamModel> {
         }
 
         return ParamValue.GetParamValue(StorageType, displayValue, displayValue);
+    }
+
+    /// <summary>
+    ///     Создает значение параметра из числа в единицах Revit.
+    ///     Операция, обратная <see cref="GetParamValueFromString" />:
+    ///     отображаемое значение конвертируется в метрическую систему.
+    /// </summary>
+    /// <param name="value">Значение в единицах Revit.</param>
+    /// <returns>Значение параметра с отображаемым значением в метрической системе.</returns>
+    public ParamValue GetParamValueFromDouble(double value) {
+        return new DoubleParamValue(value, DoubleValueParser.Format(value, UnitType));
     }
 
     /// <summary>

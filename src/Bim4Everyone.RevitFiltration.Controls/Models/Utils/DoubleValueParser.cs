@@ -1,3 +1,5 @@
+using System.Globalization;
+
 using Autodesk.Revit.DB;
 
 namespace Bim4Everyone.RevitFiltration.Controls.Models.Utils;
@@ -19,12 +21,42 @@ internal class DoubleValueParser {
 
         return UnitFormatUtils.TryParse(new Units(UnitSystem.Metric), unitType, value, out result);
     }
+
+    /// <summary>
+    ///     Форматирует число в единицах ревита в строковое значение в метрической системе.
+    ///     Операция, обратная <see cref="TryParse" />. Если <see cref="unitType" />
+    ///     не задан, число форматируется без конвертации единиц измерения.
+    /// </summary>
+    /// <param name="value">Значение в единицах ревита.</param>
+    /// <param name="unitType">Единицы измерения параметра.</param>
+    /// <returns>Строковое значение в метрической системе.</returns>
+    public static string Format(double value, ForgeTypeId unitType) {
+        if(string.IsNullOrEmpty(unitType.TypeId)) {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        return UnitFormatUtils.Format(new Units(UnitSystem.Metric), unitType, value, true);
+    }
 #else
     public static bool TryParse(string value, UnitType unitType, out double result) {
 
         return unitType == UnitType.UT_Undefined
             ? double.TryParse(value, out result)
             : UnitFormatUtils.TryParse(new Units(UnitSystem.Metric), unitType, value, out result);
+    }
+
+    /// <summary>
+    ///     Форматирует число в единицах ревита в строковое значение в метрической системе.
+    ///     Операция, обратная <see cref="TryParse" />. Если <see cref="unitType" />
+    ///     не задан, число форматируется без конвертации единиц измерения.
+    /// </summary>
+    /// <param name="value">Значение в единицах ревита.</param>
+    /// <param name="unitType">Единицы измерения параметра.</param>
+    /// <returns>Строковое значение в метрической системе.</returns>
+    public static string Format(double value, UnitType unitType) {
+        return unitType == UnitType.UT_Undefined
+            ? value.ToString(CultureInfo.InvariantCulture)
+            : UnitFormatUtils.Format(new Units(UnitSystem.Metric), unitType, value, true, true);
     }
 #endif
 }
