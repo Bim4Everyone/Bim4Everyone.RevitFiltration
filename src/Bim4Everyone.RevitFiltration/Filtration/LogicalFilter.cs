@@ -27,16 +27,6 @@ internal class LogicalFilter : ILogicalFilter {
     public ICompositor Compositor { get; }
 
     /// <inheritdoc />
-    [Obsolete("Используйте перегрузку Build(Document, Options).")]
-    public ElementFilter Build(Document document, IOptions options) {
-        if(options == null) {
-            throw new ArgumentNullException(nameof(options));
-        }
-
-        return Build(document, new Options { Tolerance = options.Tolerance, FilterByType = false });
-    }
-
-    /// <inheritdoc />
     public ElementFilter Build(Document document, Options options) {
         if(document == null) {
             throw new ArgumentNullException(nameof(document));

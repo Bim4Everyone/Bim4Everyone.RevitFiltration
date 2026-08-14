@@ -12,15 +12,6 @@ public interface ILogicalFilter {
     /// <param name="document">Документ, в котором будут фильтроваться элементы.</param>
     /// <param name="options">Настройки генерации фильтра.</param>
     /// <returns>Фильтр по элементам.</returns>
-    [Obsolete("Используйте перегрузку Build(Document, Options).")]
-    ElementFilter Build(Document document, IOptions options);
-
-    /// <summary>
-    ///     Создает фильтр по элементам в Autodesk Revit с заданными настройками.
-    /// </summary>
-    /// <param name="document">Документ, в котором будут фильтроваться элементы.</param>
-    /// <param name="options">Настройки генерации фильтра.</param>
-    /// <returns>Фильтр по элементам.</returns>
     ElementFilter Build(Document document, Options options);
 
     /// <summary>
