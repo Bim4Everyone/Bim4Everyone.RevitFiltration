@@ -55,4 +55,8 @@
         <ProjectReference Include="..\Bim4Everyone.RevitFiltration\Bim4Everyone.RevitFiltration.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <GlobalPackageReference Remove="PolyFill"/>
+    </ItemGroup>
+
 </Project>
