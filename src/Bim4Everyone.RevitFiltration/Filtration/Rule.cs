@@ -32,6 +32,7 @@ internal class Rule : IFilterRule {
 
     /// <inheritdoc />
     public FilterRule CreateFilterRule(Document document, Options options) {
-        return OperatorToken.Create(Param.GetId(document), document, options);
+        var filterRule = OperatorToken.Create(Param.GetId(document), document, options);
+        return options.Inverted ? new FilterInverseRule(filterRule) : filterRule;
     }
 }

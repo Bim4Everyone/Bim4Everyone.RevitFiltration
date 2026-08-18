@@ -50,11 +50,13 @@ internal class LogicalFilter : ILogicalFilter {
                     ? lf.Build(document, options, false)
                     : s.Build(document, options)));
         if(filters.Count == 0) {
-            // пустой набор: фильтр по всем экземплярам либо по всем типоразмерам
+            // пустой набор не инвертируется: фильтр по всем экземплярам либо по всем типоразмерам
             return new ElementIsElementTypeFilter(!options.FilterByType);
         }
 
-        var combined = Compositor.Create(filters);
+        var combined = options.Inverted
+            ? Compositor.Invert().Create(filters)
+            : Compositor.Create(filters);
         if(isRoot && options.FilterByType) {
             // ограничиваем результат типоразмерами (типами элементов)
             return new LogicalAndFilter(combined, new ElementIsElementTypeFilter(false));

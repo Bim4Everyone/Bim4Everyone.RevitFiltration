@@ -9,4 +9,9 @@ internal class OrCompositor : ICompositor {
     public ElementFilter Create(ICollection<ElementFilter> filters) {
         return new LogicalOrFilter(filters.ToArray());
     }
+
+    /// <inheritdoc />
+    public ICompositor Invert() {
+        return new AndCompositor();
+    }
 }
