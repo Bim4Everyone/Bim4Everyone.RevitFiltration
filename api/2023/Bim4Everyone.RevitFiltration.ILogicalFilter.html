@@ -2812,49 +2812,6 @@ Interface ILogicalFilter
 
   <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build*"></a>
 
-  <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_IOptions_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)">
-  Build(Document, IOptions)
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Создает фильтр по элементам в Autodesk Revit с заданными настройками.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте перегрузку Build(Document, Options).&quot;)]
-ElementFilter Build(Document document, IOptions options)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>document</code> <span class="xref">Document</span></dt>
-    <dd><p>Документ, в котором будут фильтроваться элементы.</p>
-</dd>
-    <dt><code>options</code> <a class="xref" href="Bim4Everyone.RevitFiltration.IOptions.html">IOptions</a></dt>
-    <dd><p>Настройки генерации фильтра.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">ElementFilter</span></dt>
-    <dd><p>Фильтр по элементам.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build*"></a>
-
   <h3 id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_Options_" data-uid="Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)">
   Build(Document, Options)
   
@@ -2891,6 +2848,11 @@ ElementFilter Build(Document document, IOptions options)</code></pre>
 
 
 
+  <h4 class="section" id="Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_Options__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Если задан <a class="xref" href="Bim4Everyone.RevitFiltration.Options.html#Bim4Everyone_RevitFiltration_Options_Inverted">Inverted</a>, фильтр строится инвертированным по законам де Моргана.
+Пустой набор правил при этом не инвертируется и отбирает
+все экземпляры элементов либо все типоразмеры в зависимости от <a class="xref" href="Bim4Everyone.RevitFiltration.Options.html#Bim4Everyone_RevitFiltration_Options_FilterByType">FilterByType</a>.</p>
+</div>
 
 
 

@@ -94,51 +94,6 @@ references:
   commentId: Overload:Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs.OldContext
   fullName: Bim4Everyone.RevitFiltration.Controls.FilterContextChangedEventArgs.OldContext
   nameWithType: FilterContextChangedEventArgs.OldContext
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider
-  name: IDataProvider
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html
-  commentId: T:Bim4Everyone.RevitFiltration.Controls.IDataProvider
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider
-  nameWithType: IDataProvider
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
-  name: GetCategories()
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetCategories
-  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories()
-  nameWithType: IDataProvider.GetCategories()
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories*
-  name: GetCategories
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetCategories_
-  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetCategories
-  nameWithType: IDataProvider.GetCategories
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
-  name: GetDocuments()
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetDocuments
-  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments()
-  nameWithType: IDataProvider.GetDocuments()
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments*
-  name: GetDocuments
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetDocuments_
-  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetDocuments
-  nameWithType: IDataProvider.GetDocuments
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})
-  name: GetParams(ICollection<Category>)
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetParams_System_Collections_Generic_ICollection_Autodesk_Revit_DB_Category__
-  commentId: M:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection{Autodesk.Revit.DB.Category})
-  name.vb: GetParams(ICollection(Of Category))
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection<Autodesk.Revit.DB.Category>)
-  fullName.vb: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams(System.Collections.Generic.ICollection(Of Autodesk.Revit.DB.Category))
-  nameWithType: IDataProvider.GetParams(ICollection<Category>)
-  nameWithType.vb: IDataProvider.GetParams(ICollection(Of Category))
-- uid: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams*
-  name: GetParams
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.IDataProvider.html#Bim4Everyone_RevitFiltration_Controls_IDataProvider_GetParams_
-  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams
-  fullName: Bim4Everyone.RevitFiltration.Controls.IDataProvider.GetParams
-  nameWithType: IDataProvider.GetParams
 - uid: Bim4Everyone.RevitFiltration.Controls.IErrorContext
   name: IErrorContext
   href: api/2022/Bim4Everyone.RevitFiltration.Controls.IErrorContext.html
@@ -277,18 +232,15 @@ references:
   commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
   fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider, Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
   nameWithType: ILogicalFilterProviderFactory.Create(DataProvider, ILogicalFilterContext)
-- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
-  name: Create(IDataProvider)
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_
-  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
-  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)
-  nameWithType: ILogicalFilterProviderFactory.Create(IDataProvider)
-- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
-  name: Create(IDataProvider, ILogicalFilterContext)
-  href: api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_
-  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
-  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider, Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)
-  nameWithType: ILogicalFilterProviderFactory.Create(IDataProvider, ILogicalFilterContext)
+- uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.ILogicalFilter,System.Collections.Generic.ICollection{Autodesk.Revit.DB.BuiltInCategory})
+  name: Create(DataProvider, ILogicalFilter, ICollection<BuiltInCategory>)
+  href: api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_DataProvider_Bim4Everyone_RevitFiltration_ILogicalFilter_System_Collections_Generic_ICollection_Autodesk_Revit_DB_BuiltInCategory__
+  commentId: M:Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.ILogicalFilter,System.Collections.Generic.ICollection{Autodesk.Revit.DB.BuiltInCategory})
+  name.vb: Create(DataProvider, ILogicalFilter, ICollection(Of BuiltInCategory))
+  fullName: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider, Bim4Everyone.RevitFiltration.ILogicalFilter, System.Collections.Generic.ICollection<Autodesk.Revit.DB.BuiltInCategory>)
+  fullName.vb: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider, Bim4Everyone.RevitFiltration.ILogicalFilter, System.Collections.Generic.ICollection(Of Autodesk.Revit.DB.BuiltInCategory))
+  nameWithType: ILogicalFilterProviderFactory.Create(DataProvider, ILogicalFilter, ICollection<BuiltInCategory>)
+  nameWithType.vb: ILogicalFilterProviderFactory.Create(DataProvider, ILogicalFilter, ICollection(Of BuiltInCategory))
 - uid: Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*
   name: Create
   href: api/2022/Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_
@@ -1135,12 +1087,6 @@ references:
   commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule
   fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.AddNotEqualsRule
   nameWithType: ILogicalFilter.AddNotEqualsRule
-- uid: Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)
-  name: Build(Document, IOptions)
-  href: api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_IOptions_
-  commentId: M:Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.IOptions)
-  fullName: Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document, Bim4Everyone.RevitFiltration.IOptions)
-  nameWithType: ILogicalFilter.Build(Document, IOptions)
 - uid: Bim4Everyone.RevitFiltration.ILogicalFilter.Build(Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Options)
   name: Build(Document, Options)
   href: api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.html#Bim4Everyone_RevitFiltration_ILogicalFilter_Build_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_Options_
@@ -1216,24 +1162,6 @@ references:
   commentId: Overload:Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse
   fullName: Bim4Everyone.RevitFiltration.ILogicalFilterParser.TryParse
   nameWithType: ILogicalFilterParser.TryParse
-- uid: Bim4Everyone.RevitFiltration.IOptions
-  name: IOptions
-  href: api/2022/Bim4Everyone.RevitFiltration.IOptions.html
-  commentId: T:Bim4Everyone.RevitFiltration.IOptions
-  fullName: Bim4Everyone.RevitFiltration.IOptions
-  nameWithType: IOptions
-- uid: Bim4Everyone.RevitFiltration.IOptions.Tolerance
-  name: Tolerance
-  href: api/2022/Bim4Everyone.RevitFiltration.IOptions.html#Bim4Everyone_RevitFiltration_IOptions_Tolerance
-  commentId: P:Bim4Everyone.RevitFiltration.IOptions.Tolerance
-  fullName: Bim4Everyone.RevitFiltration.IOptions.Tolerance
-  nameWithType: IOptions.Tolerance
-- uid: Bim4Everyone.RevitFiltration.IOptions.Tolerance*
-  name: Tolerance
-  href: api/2022/Bim4Everyone.RevitFiltration.IOptions.html#Bim4Everyone_RevitFiltration_IOptions_Tolerance_
-  commentId: Overload:Bim4Everyone.RevitFiltration.IOptions.Tolerance
-  fullName: Bim4Everyone.RevitFiltration.IOptions.Tolerance
-  nameWithType: IOptions.Tolerance
 - uid: Bim4Everyone.RevitFiltration.Ninject
   name: Bim4Everyone.RevitFiltration.Ninject
   href: api/2022/Bim4Everyone.RevitFiltration.Ninject.html
@@ -1330,6 +1258,18 @@ references:
   commentId: Overload:Bim4Everyone.RevitFiltration.Options.FilterByType
   fullName: Bim4Everyone.RevitFiltration.Options.FilterByType
   nameWithType: Options.FilterByType
+- uid: Bim4Everyone.RevitFiltration.Options.Inverted
+  name: Inverted
+  href: api/2022/Bim4Everyone.RevitFiltration.Options.html#Bim4Everyone_RevitFiltration_Options_Inverted
+  commentId: P:Bim4Everyone.RevitFiltration.Options.Inverted
+  fullName: Bim4Everyone.RevitFiltration.Options.Inverted
+  nameWithType: Options.Inverted
+- uid: Bim4Everyone.RevitFiltration.Options.Inverted*
+  name: Inverted
+  href: api/2022/Bim4Everyone.RevitFiltration.Options.html#Bim4Everyone_RevitFiltration_Options_Inverted_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Options.Inverted
+  fullName: Bim4Everyone.RevitFiltration.Options.Inverted
+  nameWithType: Options.Inverted
 - uid: Bim4Everyone.RevitFiltration.Options.Tolerance
   name: Tolerance
   href: api/2022/Bim4Everyone.RevitFiltration.Options.html#Bim4Everyone_RevitFiltration_Options_Tolerance

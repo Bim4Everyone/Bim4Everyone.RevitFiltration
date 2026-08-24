@@ -181,7 +181,9 @@ Interface ILogicalFilterProviderFactory
     <dd><p>Провайдер доступных данных для выбора пользователя.</p>
 </dd>
     <dt><code>contextToLoad</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html">ILogicalFilterContext</a></dt>
-    <dd><p>Контекст для загрузки. Категории и правила фильтрации по параметрам, которых нет в доступных, будут удалены.</p>
+    <dd><p>Контекст для загрузки. Если хотя бы одна из категорий недоступна либо хотя бы одно правило
+не удается сопоставить с доступными параметрами, контекст не загружается: будет создан провайдер с пустым контекстом
+с <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_CanGetFilter_Bim4Everyone_RevitFiltration_Controls_IErrorContext____">CanGetFilter(out IErrorContext[])</a> = False.</p>
 </dd>
   </dl>
 
@@ -204,67 +206,32 @@ Interface ILogicalFilterProviderFactory
 
   <a id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*"></a>
 
-  <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider)">
-  Create(IDataProvider)
+  <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_DataProvider_Bim4Everyone_RevitFiltration_ILogicalFilter_System_Collections_Generic_ICollection_Autodesk_Revit_DB_BuiltInCategory__" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.DataProvider,Bim4Everyone.RevitFiltration.ILogicalFilter,System.Collections.Generic.ICollection{Autodesk.Revit.DB.BuiltInCategory})">
+  Create(DataProvider, ILogicalFilter, ICollection&lt;BuiltInCategory&gt;)
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Создает провайдер фильтра элементов по доступным данным.</p>
+  <div class="markdown level1 summary"><p>Загружает заданный фильтр с заданными категориями
+и создает провайдер фильтра элементов по доступным данным.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте перегрузку Create(DataProvider).&quot;)]
-ILogicalFilterProvider Create(IDataProvider dataProvider)</code></pre>
+    <pre><code class="lang-csharp hljs">ILogicalFilterProvider Create(DataProvider dataProvider, ILogicalFilter filterToLoad, ICollection&lt;BuiltInCategory&gt; categories)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dataProvider</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.IDataProvider.html">IDataProvider</a></dt>
+    <dt><code>dataProvider</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.DataProvider.html">DataProvider</a></dt>
     <dd><p>Провайдер доступных данных для выбора пользователя.</p>
 </dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html">ILogicalFilterProvider</a></dt>
-    <dd><p>Провайдер контекста фильтра по категориям.</p>
+    <dt><code>filterToLoad</code> <a class="xref" href="Bim4Everyone.RevitFiltration.ILogicalFilter.html">ILogicalFilter</a></dt>
+    <dd><p>Фильтр для загрузки. Если хотя бы одна из заданных категорий недоступна либо хотя бы одно правило
+не удается сопоставить с доступными параметрами, фильтр не загружается: будет создан провайдер с пустым контекстом
+с <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProvider.html#Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProvider_CanGetFilter_Bim4Everyone_RevitFiltration_Controls_IErrorContext____">CanGetFilter(out IErrorContext[])</a> = False.</p>
 </dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create*"></a>
-
-  <h3 id="Bim4Everyone_RevitFiltration_Controls_ILogicalFilterProviderFactory_Create_Bim4Everyone_RevitFiltration_Controls_IDataProvider_Bim4Everyone_RevitFiltration_Controls_ILogicalFilterContext_" data-uid="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterProviderFactory.Create(Bim4Everyone.RevitFiltration.Controls.IDataProvider,Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext)">
-  Create(IDataProvider, ILogicalFilterContext)
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Загружает заданный контекст и создает провайдер фильтра элементов по доступным данным.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Используйте перегрузку Create(DataProvider, ILogicalFilterContext).&quot;)]
-ILogicalFilterProvider Create(IDataProvider dataProvider, ILogicalFilterContext contextToLoad)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>dataProvider</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.IDataProvider.html">IDataProvider</a></dt>
-    <dd><p>Провайдер доступных данных для выбора пользователя.</p>
-</dd>
-    <dt><code>contextToLoad</code> <a class="xref" href="Bim4Everyone.RevitFiltration.Controls.ILogicalFilterContext.html">ILogicalFilterContext</a></dt>
-    <dd><p>Контекст для загрузки. Категории и правила фильтрации по параметрам, которых нет в доступных, будут удалены.</p>
+    <dt><code>categories</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<span class="xref">BuiltInCategory</span>&gt;</dt>
+    <dd><p>Категории элементов, для которых задан фильтр.</p>
 </dd>
   </dl>
 
