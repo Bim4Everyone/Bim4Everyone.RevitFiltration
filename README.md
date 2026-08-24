@@ -46,9 +46,6 @@ kernel.UseLogicalFilterParser(); // сервис для сериализации
 
 3. Задать настройки генерации фильтра через класс `Options`.
 
-> Интерфейс `IOptions` устарел (`[Obsolete]`). Используйте класс `Options`. Старые перегрузки `Build(Document, IOptions)`
-> сохранены для обратной совместимости.
-
 ### Пример использования в плагине
 
 Из DI контейнера необходимо получить сервис `ILogicalFilterFactory`, затем сконструировать необходимый фильтр и
@@ -96,9 +93,6 @@ kernel.UseFilterContextParser(); // сервис для сериализации
 ```
 
 3. Сконструировать `DataProvider` (для значений параметров — по экземплярам элементов либо через собственную функцию).
-
-> Интерфейс `IDataProvider` устарел (`[Obsolete]`). Используйте класс `DataProvider`. Старые перегрузки
-> `ILogicalFilterProviderFactory.Create(IDataProvider ...)` сохранены для обратной совместимости.
 
 У класса `DataProvider` два конструктора:
 
@@ -188,6 +182,20 @@ internal class YourViewModel {
     public ILanguageService LanguageService { get; } // сервис для установки локализации в контроле
 }
 ```
+
+Чтобы открыть в контроле уже готовый `ILogicalFilter` (например, полученный из `ILogicalFilterParser.TryParse`),
+используйте перегрузку `Create` с фильтром и категориями, для которых он был задан:
+
+```
+FilterProvider = filterProviderFactory.Create(
+    dataProvider,
+    filter,
+    new[] { BuiltInCategory.OST_Walls, BuiltInCategory.OST_Floors });
+```
+
+Фильтр загружается только целиком: если хотя бы одна категория недоступна в `DataProvider` либо хотя бы одно правило
+не удается сопоставить с доступными для этих категорий параметрами, провайдер вернет `CanGetFilter() == false`
+и контрол откроется пустым — так же, как при загрузке несовместимого `ILogicalFilterContext`.
 
 `ILogicalFilterProvider` уведомляет об изменении контекста фильтра событием `FilterContextChanged`:
 

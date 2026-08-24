@@ -1,3 +1,5 @@
+using Autodesk.Revit.DB;
+
 using Bim4Everyone.RevitFiltration.Controls.Models.FilterModel;
 using Bim4Everyone.RevitFiltration.Controls.Models.Params;
 
@@ -33,6 +35,25 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
 
         _errors = [];
         Load(filterContext);
+    }
+
+    public LogicalFilterProvider(
+        DataProvider dataProvider,
+        ILogicalFilterFactory factory,
+        ILogicalFilter filter,
+        ICollection<BuiltInCategory> categories) {
+        _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
+        _factory = factory ?? throw new ArgumentNullException(nameof(factory));
+        if(filter is null) {
+            throw new ArgumentNullException(nameof(filter));
+        }
+
+        if(categories is null) {
+            throw new ArgumentNullException(nameof(categories));
+        }
+
+        _errors = [];
+        Load(filter, categories);
     }
 
     public event EventHandler<FilterContextChangedEventArgs>? FilterContextChanged;
@@ -103,7 +124,8 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         var filter = filterContext.Filter;
         var availableCategories = _dataProvider.GetCategories()
             .ToDictionary(c => c.GetBuiltInCategory(), c => c);
-        if(filter.Categories.Any(c => !availableCategories.ContainsKey(c))) {
+        if(availableCategories.Count == 0
+           || filter.Categories.Any(c => !availableCategories.ContainsKey(c))) {
             _errors.Clear();
             _filterContext = null;
             return;
@@ -112,7 +134,8 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         var availableParams = _dataProvider.GetParams(
             filter.Categories.Select(c => availableCategories[c]).Distinct().ToArray());
         string[] availableParamIds = availableParams.Select(p => p.Id).ToArray();
-        if(ContainsNotAvailableParams(filter.RootSet, availableParamIds)) {
+        if(availableParamIds.Length == 0
+           || ContainsNotAvailableParams(filter.RootSet, availableParamIds)) {
             _errors.Clear();
             _filterContext = null;
             return;
@@ -122,8 +145,36 @@ internal class LogicalFilterProvider : ILogicalFilterProvider {
         SetFilter(filterContext);
     }
 
+    private void Load(ILogicalFilter filter, ICollection<BuiltInCategory> categories) {
+        var availableCategories = _dataProvider.GetCategories()
+            .ToDictionary(c => c.GetBuiltInCategory(), c => c);
+        if(availableCategories.Count == 0
+           || categories.Any(c => !availableCategories.ContainsKey(c))) {
+            _errors.Clear();
+            _filterContext = null;
+            return;
+        }
+
+        var availableParams = _dataProvider.GetParams(
+            categories.Select(c => availableCategories[c]).Distinct().ToArray());
+        var converter = new LogicalFilterConverter();
+        if(availableParams.Count == 0
+           || !converter.TryConvert(filter, availableParams, out var rootSet)) {
+            _errors.Clear();
+            _filterContext = null;
+            return;
+        }
+
+        SetFilter(
+            new LogicalFilterContext(
+                new Filter {
+                    RootSet = rootSet!,
+                    Categories = categories.Distinct().ToArray()
+                }) { Factory = _factory });
+    }
+
     /// <summary>
-    /// Задайт свойство <see cref="ParamModel.RevitParam"/>
+    /// Задает свойство <see cref="ParamModel.RevitParam"/>
     /// </summary>
     private void BindRevitParams(Set set, ICollection<RevitParam> availableParams) {
         foreach(var rule in set.InnerRules) {

@@ -23,7 +23,7 @@ internal interface IFilterRule {
     ///     Создаёт правило фильтрации на основе документа Revit.
     /// </summary>
     /// <param name="document">Документ Revit.</param>
-    /// <param name="options">Настройки точности для проверки чисел с плавающей точкой.</param>
+    /// <param name="options">Настройки генерации фильтра.</param>
     /// <returns>Возвращает объект FilterRule из Revit.</returns>
     internal FilterRule CreateFilterRule(Document document, Options options);
 }

@@ -1,3 +1,5 @@
+using Autodesk.Revit.DB;
+
 namespace Bim4Everyone.RevitFiltration.Controls.Models;
 
 internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
@@ -5,30 +7,6 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
 
     public LogicalFilterProviderFactory(ILogicalFilterFactory factory) {
         _factory = factory ?? throw new ArgumentNullException(nameof(factory));
-    }
-
-    [Obsolete("Используйте перегрузку Create(DataProvider).")]
-    public ILogicalFilterProvider Create(IDataProvider dataProvider) {
-        if(dataProvider == null) {
-            throw new ArgumentNullException(nameof(dataProvider));
-        }
-
-        return Create(Adapt(dataProvider));
-    }
-
-    [Obsolete("Используйте перегрузку Create(DataProvider, ILogicalFilterContext).")]
-    public ILogicalFilterProvider Create(
-        IDataProvider dataProvider,
-        ILogicalFilterContext contextToLoad) {
-        if(dataProvider == null) {
-            throw new ArgumentNullException(nameof(dataProvider));
-        }
-        
-        if(contextToLoad == null) {
-            throw new ArgumentNullException(nameof(contextToLoad));
-        }
-
-        return Create(Adapt(dataProvider), contextToLoad);
     }
 
     public ILogicalFilterProvider Create(DataProvider dataProvider) {
@@ -53,11 +31,22 @@ internal class LogicalFilterProviderFactory : ILogicalFilterProviderFactory {
         return new LogicalFilterProvider(dataProvider, _factory, contextToLoad);
     }
 
-    [Obsolete("Адаптер для обратной совместимости с IDataProvider.")]
-    private DataProvider Adapt(IDataProvider dataProvider) {
-        return new DataProvider(
-            dataProvider.GetCategories(),
-            dataProvider.GetParams,
-            dataProvider.GetDocuments());
+    public ILogicalFilterProvider Create(
+        DataProvider dataProvider,
+        ILogicalFilter filterToLoad,
+        ICollection<BuiltInCategory> categories) {
+        if(dataProvider == null) {
+            throw new ArgumentNullException(nameof(dataProvider));
+        }
+
+        if(filterToLoad == null) {
+            throw new ArgumentNullException(nameof(filterToLoad));
+        }
+
+        if(categories == null) {
+            throw new ArgumentNullException(nameof(categories));
+        }
+
+        return new LogicalFilterProvider(dataProvider, _factory, filterToLoad, categories);
     }
 }

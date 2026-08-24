@@ -13,6 +13,9 @@
 
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+            <_Parameter1>Bim4Everyone.RevitFiltration.Controls</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>Bim4Everyone.RevitFiltration.Ninject</_Parameter1>
         </AssemblyAttribute>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
