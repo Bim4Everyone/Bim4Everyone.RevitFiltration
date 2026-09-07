@@ -809,7 +809,7 @@ internal class LogicalFilter : ILogicalFilter {
             return true;
         }
 
-        foreach(var s in InnerFilters) {
+        foreach(var s in parentLogicalFilter.InnerFilters) {
             if(s is LogicalFilter filter
                && IsFilterInside(innerLogicalFilter, filter)) {
                 return true;
