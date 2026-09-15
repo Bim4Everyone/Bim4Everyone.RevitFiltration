@@ -201,6 +201,81 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"FilteredElementCollector\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по их материалам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по параметрам их материалов.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml\" sourcestartlinenumber=\"1\">Настройки отбора материалов по значениям их параметров.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter",
+      "Summary": "<p sourcefile=\"api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml\" sourcestartlinenumber=\"1\">Фильтр элементов по материалам, которые в них используются.\nСоздается через <xref href=\"Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter%2cAutodesk.Revit.DB.Document%2cBim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2020/Bim4Everyone.RevitFiltration.Extensions.Materials.html"
+        }
+      },
+      "version": "2020",
+      "group": "2020",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/2020/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
       "output": {
         ".html": {
@@ -492,6 +567,81 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"FilteredElementCollector\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по их материалам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по параметрам их материалов.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml\" sourcestartlinenumber=\"1\">Настройки отбора материалов по значениям их параметров.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter",
+      "Summary": "<p sourcefile=\"api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml\" sourcestartlinenumber=\"1\">Фильтр элементов по материалам, которые в них используются.\nСоздается через <xref href=\"Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter%2cAutodesk.Revit.DB.Document%2cBim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.html"
+        }
+      },
+      "version": "2021",
+      "group": "2021",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials",
       "Summary": null
     },
     {
@@ -791,6 +941,81 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"FilteredElementCollector\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по их материалам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по параметрам их материалов.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml\" sourcestartlinenumber=\"1\">Настройки отбора материалов по значениям их параметров.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter",
+      "Summary": "<p sourcefile=\"api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml\" sourcestartlinenumber=\"1\">Фильтр элементов по материалам, которые в них используются.\nСоздается через <xref href=\"Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter%2cAutodesk.Revit.DB.Document%2cBim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2022/Bim4Everyone.RevitFiltration.Extensions.Materials.html"
+        }
+      },
+      "version": "2022",
+      "group": "2022",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/2022/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
       "output": {
         ".html": {
@@ -1086,6 +1311,81 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"FilteredElementCollector\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по их материалам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по параметрам их материалов.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml\" sourcestartlinenumber=\"1\">Настройки отбора материалов по значениям их параметров.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter",
+      "Summary": "<p sourcefile=\"api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml\" sourcestartlinenumber=\"1\">Фильтр элементов по материалам, которые в них используются.\nСоздается через <xref href=\"Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter%2cAutodesk.Revit.DB.Document%2cBim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2023/Bim4Everyone.RevitFiltration.Extensions.Materials.html"
+        }
+      },
+      "version": "2023",
+      "group": "2023",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/2023/Bim4Everyone.RevitFiltration.ILogicalFilter.yml",
       "output": {
         ".html": {
@@ -1377,6 +1677,81 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Bim4Everyone.RevitFiltration.Controls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"FilteredElementCollector\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по их материалам.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.yml\" sourcestartlinenumber=\"1\">Расширения <xref href=\"Bim4Everyone.RevitFiltration.ILogicalFilter\" data-throw-if-not-resolved=\"false\"></xref> для фильтрации элементов по параметрам их материалов.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.yml\" sourcestartlinenumber=\"1\">Настройки отбора материалов по значениям их параметров.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter",
+      "Summary": "<p sourcefile=\"api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.yml\" sourcestartlinenumber=\"1\">Фильтр элементов по материалам, которые в них используются.\nСоздается через <xref href=\"Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter%2cAutodesk.Revit.DB.Document%2cBim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/2024/Bim4Everyone.RevitFiltration.Extensions.Materials.html"
+        }
+      },
+      "version": "2024",
+      "group": "2024",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Bim4Everyone.RevitFiltration.Extensions.Materials",
       "Summary": null
     },
     {

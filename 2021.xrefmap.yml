@@ -277,6 +277,24 @@ references:
   fullName.vb: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.New
   nameWithType: DynamicCategoriesFilterControl.DynamicCategoriesFilterControl
   nameWithType.vb: DynamicCategoriesFilterControl.New
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent
+  name: AdditionalContent
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_AdditionalContent
+  commentId: P:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent
+  nameWithType: DynamicCategoriesFilterControl.AdditionalContent
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent*
+  name: AdditionalContent
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_AdditionalContent_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContent
+  nameWithType: DynamicCategoriesFilterControl.AdditionalContent
+- uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContentProperty
+  name: AdditionalContentProperty
+  href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_AdditionalContentProperty
+  commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContentProperty
+  fullName: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.AdditionalContentProperty
+  nameWithType: DynamicCategoriesFilterControl.AdditionalContentProperty
 - uid: Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.InitializeComponent
   name: InitializeComponent()
   href: api/2021/Bim4Everyone.RevitFiltration.Controls.Views.DynamicCategoriesFilterControl.html#Bim4Everyone_RevitFiltration_Controls_Views_DynamicCategoriesFilterControl_InitializeComponent
@@ -433,6 +451,123 @@ references:
   commentId: F:Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty
   fullName: Bim4Everyone.RevitFiltration.Controls.Views.PresetCategoriesFilterControl.LogicalFilterProviderProperty
   nameWithType: PresetCategoriesFilterControl.LogicalFilterProviderProperty
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials
+  name: Bim4Everyone.RevitFiltration.Extensions.Materials
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.html
+  commentId: N:Bim4Everyone.RevitFiltration.Extensions.Materials
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials
+  nameWithType: Bim4Everyone.RevitFiltration.Extensions.Materials
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions
+  name: FilteredElementCollectorExtensions
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html
+  commentId: T:Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions
+  nameWithType: FilteredElementCollectorExtensions
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter(Autodesk.Revit.DB.FilteredElementCollector,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter)
+  name: PassesFilter(FilteredElementCollector, MaterialsFilter)
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_FilteredElementCollectorExtensions_PassesFilter_Autodesk_Revit_DB_FilteredElementCollector_Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialsFilter_
+  commentId: M:Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter(Autodesk.Revit.DB.FilteredElementCollector,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter)
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter(Autodesk.Revit.DB.FilteredElementCollector, Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter)
+  nameWithType: FilteredElementCollectorExtensions.PassesFilter(FilteredElementCollector, MaterialsFilter)
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter*
+  name: PassesFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_FilteredElementCollectorExtensions_PassesFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.FilteredElementCollectorExtensions.PassesFilter
+  nameWithType: FilteredElementCollectorExtensions.PassesFilter
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions
+  name: LogicalFilterExtensions
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html
+  commentId: T:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions
+  nameWithType: LogicalFilterExtensions
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)
+  name: BuildMaterialsFilter(ILogicalFilter, Document, MaterialOptions)
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_LogicalFilterExtensions_BuildMaterialsFilter_Bim4Everyone_RevitFiltration_ILogicalFilter_Autodesk_Revit_DB_Document_Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions_
+  commentId: M:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter,Autodesk.Revit.DB.Document,Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter(Bim4Everyone.RevitFiltration.ILogicalFilter, Autodesk.Revit.DB.Document, Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions)
+  nameWithType: LogicalFilterExtensions.BuildMaterialsFilter(ILogicalFilter, Document, MaterialOptions)
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter*
+  name: BuildMaterialsFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_LogicalFilterExtensions_BuildMaterialsFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.LogicalFilterExtensions.BuildMaterialsFilter
+  nameWithType: LogicalFilterExtensions.BuildMaterialsFilter
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions
+  name: MaterialOptions
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html
+  commentId: T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions
+  nameWithType: MaterialOptions
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.#ctor
+  name: MaterialOptions()
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions__ctor
+  commentId: M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.#ctor
+  name.vb: New()
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.MaterialOptions()
+  fullName.vb: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.New()
+  nameWithType: MaterialOptions.MaterialOptions()
+  nameWithType.vb: MaterialOptions.New()
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.#ctor*
+  name: MaterialOptions
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions__ctor_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.#ctor
+  name.vb: New
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.MaterialOptions
+  fullName.vb: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.New
+  nameWithType: MaterialOptions.MaterialOptions
+  nameWithType.vb: MaterialOptions.New
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted
+  name: Inverted
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions_Inverted
+  commentId: P:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted
+  nameWithType: MaterialOptions.Inverted
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted*
+  name: Inverted
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions_Inverted_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Inverted
+  nameWithType: MaterialOptions.Inverted
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance
+  name: Tolerance
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions_Tolerance
+  commentId: P:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance
+  nameWithType: MaterialOptions.Tolerance
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance*
+  name: Tolerance
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialOptions_Tolerance_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialOptions.Tolerance
+  nameWithType: MaterialOptions.Tolerance
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter
+  name: MaterialsFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html
+  commentId: T:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter
+  nameWithType: MaterialsFilter
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(Autodesk.Revit.DB.Element)
+  name: PassesFilter(Element)
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialsFilter_PassesFilter_Autodesk_Revit_DB_Element_
+  commentId: M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(Autodesk.Revit.DB.Element)
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(Autodesk.Revit.DB.Element)
+  nameWithType: MaterialsFilter.PassesFilter(Element)
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.Element})
+  name: PassesFilter(IEnumerable<Element>)
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialsFilter_PassesFilter_System_Collections_Generic_IEnumerable_Autodesk_Revit_DB_Element__
+  commentId: M:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(System.Collections.Generic.IEnumerable{Autodesk.Revit.DB.Element})
+  name.vb: PassesFilter(IEnumerable(Of Element))
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(System.Collections.Generic.IEnumerable<Autodesk.Revit.DB.Element>)
+  fullName.vb: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter(System.Collections.Generic.IEnumerable(Of Autodesk.Revit.DB.Element))
+  nameWithType: MaterialsFilter.PassesFilter(IEnumerable<Element>)
+  nameWithType.vb: MaterialsFilter.PassesFilter(IEnumerable(Of Element))
+- uid: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter*
+  name: PassesFilter
+  href: api/2021/Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.html#Bim4Everyone_RevitFiltration_Extensions_Materials_MaterialsFilter_PassesFilter_
+  commentId: Overload:Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter
+  fullName: Bim4Everyone.RevitFiltration.Extensions.Materials.MaterialsFilter.PassesFilter
+  nameWithType: MaterialsFilter.PassesFilter
 - uid: Bim4Everyone.RevitFiltration.ILogicalFilter
   name: ILogicalFilter
   href: api/2021/Bim4Everyone.RevitFiltration.ILogicalFilter.html
