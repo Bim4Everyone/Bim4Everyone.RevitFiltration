@@ -39,6 +39,22 @@ public partial class DynamicCategoriesFilterControl {
             new PropertyMetadata(null));
 
     /// <summary>
+    ///     Свойство для размещения произвольного контента справа снизу, под критериями фильтрации.
+    /// </summary>
+    /// <remarks>
+    ///     Контент ведет себя так, будто объявлен там же, где сам контрол:
+    ///     ему передается <see cref="System.Windows.FrameworkElement.DataContext" /> этого контрола,
+    ///     поэтому привязки внутри контента работают против внешней модели представления.
+    ///     Заданный на самом контенте DataContext, как обычно, имеет приоритет.
+    /// </remarks>
+    public static readonly DependencyProperty AdditionalContentProperty
+        = DependencyProperty.Register(
+            nameof(AdditionalContent),
+            typeof(object),
+            typeof(DynamicCategoriesFilterControl),
+            new PropertyMetadata(null));
+
+    /// <summary>
     ///     Создает контрол только с фильтром по параметрам для всех доступных категорий из
     ///     <see cref="LogicalFilterProvider" />
     /// </summary>
@@ -52,6 +68,12 @@ public partial class DynamicCategoriesFilterControl {
     public ILogicalFilterProvider? LogicalFilterProvider {
         get => (ILogicalFilterProvider) GetValue(LogicalFilterProviderProperty);
         set => SetValue(LogicalFilterProviderProperty, value);
+    }
+
+    /// <inheritdoc cref="AdditionalContentProperty" />
+    public object? AdditionalContent {
+        get => GetValue(AdditionalContentProperty);
+        set => SetValue(AdditionalContentProperty, value);
     }
 
     /// <summary>

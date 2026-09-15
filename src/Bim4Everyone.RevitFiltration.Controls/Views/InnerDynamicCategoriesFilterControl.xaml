@@ -49,17 +49,52 @@
             Grid.Column="1"
             Style="{StaticResource CustomGridSplitter}" />
 
-        <Border
-            Grid.Column="2"
-            Style="{StaticResource CustomBorder}">
-            <ScrollViewer>
-                <StackPanel>
-                    <Label
-                        Content="{Binding RootSetHeader}" />
-                    <local:SetView
-                        DataContext="{Binding RootSet}" />
-                </StackPanel>
-            </ScrollViewer>
-        </Border>
+        <Grid
+            Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="1*" />
+                <RowDefinition
+                    Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Border
+                Grid.Row="0"
+                Style="{StaticResource CustomBorder}">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Label
+                            Content="{Binding RootSetHeader}" />
+                        <local:SetView
+                            DataContext="{Binding RootSet}" />
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <Border
+                Grid.Row="1"
+                Margin="0 5 0 0">
+                <Border.Style>
+                    <Style
+                        TargetType="Border"
+                        BasedOn="{StaticResource CustomBorder}">
+                        <Style.Triggers>
+                            <DataTrigger
+                                Binding="{Binding AdditionalContent, ElementName=_this}"
+                                Value="{x:Null}">
+                                <Setter
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <!-- ContentControl, а не ContentPresenter: последний для UIElement-контента
+                     сбрасывает свой DataContext, и контент не получает внешнюю модель представления -->
+                <ContentControl
+                    Content="{Binding AdditionalContent, ElementName=_this}"
+                    DataContext="{Binding AdditionalContentDataContext, ElementName=_this}" />
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

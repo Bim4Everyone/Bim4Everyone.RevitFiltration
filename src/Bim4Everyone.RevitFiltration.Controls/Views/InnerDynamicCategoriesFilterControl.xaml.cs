@@ -29,6 +29,20 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
             typeof(InnerDynamicCategoriesFilterControl),
             new PropertyMetadata(null, OnLanguageServiceChanged));
 
+    public static readonly DependencyProperty AdditionalContentProperty =
+        DependencyProperty.Register(
+            nameof(AdditionalContent),
+            typeof(object),
+            typeof(InnerDynamicCategoriesFilterControl),
+            new PropertyMetadata(null));
+
+    public static readonly DependencyProperty AdditionalContentDataContextProperty =
+        DependencyProperty.Register(
+            nameof(AdditionalContentDataContext),
+            typeof(object),
+            typeof(InnerDynamicCategoriesFilterControl),
+            new PropertyMetadata(null));
+
     public InnerDynamicCategoriesFilterControl() {
         InitializeComponent();
     }
@@ -46,6 +60,16 @@ internal partial class InnerDynamicCategoriesFilterControl : UserControl {
     public ILanguageService LanguageService {
         get => (ILanguageService) GetValue(LanguageServiceProperty);
         set => SetValue(LanguageServiceProperty, value);
+    }
+
+    public object? AdditionalContent {
+        get => GetValue(AdditionalContentProperty);
+        set => SetValue(AdditionalContentProperty, value);
+    }
+
+    public object? AdditionalContentDataContext {
+        get => GetValue(AdditionalContentDataContextProperty);
+        set => SetValue(AdditionalContentDataContextProperty, value);
     }
 
     private static void OnLogicalFilterProviderChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
