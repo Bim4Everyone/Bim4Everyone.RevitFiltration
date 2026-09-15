@@ -73,6 +73,31 @@ public void SampleFilterParsing(ILogicalFilter filter, ILogicalFilterParser pars
 }
 ```
 
+### Фильтрация по параметрам материалов
+
+Пространство имён `Bim4Everyone.RevitFiltration.Extensions.Materials` позволяет отобрать элементы, в которых
+используется материал с заданными значениями параметров. Правила задаются тем же `ILogicalFilter`, но применяются
+не к самому элементу, а к материалам документа; значения их параметров сравниваются напрямую, без фильтров Revit.
+
+```
+ILogicalFilter materialsRules = filterFactory.CreateAndFilter()
+    .AddContainsRule(BuiltInParameter.MATERIAL_NAME, "OSB")
+    .AddEqualsRule(BuiltInParameter.KEYNOTE_PARAM, "G20");
+
+MaterialsFilter materialsFilter = materialsRules.BuildMaterialsFilter(
+    doc,
+    new MaterialOptions { Tolerance = 1e-6, Inverted = false });
+
+var elements = new FilteredElementCollector(doc)
+    .WhereElementIsNotElementType()
+    .WherePasses(paramsFilter)
+    .PassesFilter(materialsFilter)
+    .ToArray();
+```
+
+Элемент проходит фильтр, если хотя бы один из отобранных материалов есть в `GetMaterialIds(false)` либо
+`GetMaterialIds(true)` (материалы краски граней).
+
 ## Bim4Everyone.RevitFiltration.Controls
 
 ### Необходимые зависимости
@@ -204,6 +229,26 @@ FilterProvider.FilterContextChanged += (sender, args) => {
     // args.OldContext, args.NewContext
 };
 ```
+
+Контрол `DynamicCategoriesFilterControl` умеет показывать произвольный контент справа снизу, под критериями
+фильтрации, в отдельном блоке — например, второй редактор правил для отдельной категории:
+
+```
+<filtration:DynamicCategoriesFilterControl
+    LanguageService="{Binding LanguageService}"
+    LogicalFilterProvider="{Binding FilterProvider}">
+    <filtration:DynamicCategoriesFilterControl.AdditionalContent>
+        <filtration:PresetCategoriesFilterControl
+            LanguageService="{Binding LanguageService}"
+            LogicalFilterProvider="{Binding MaterialsFilterProvider}" />
+    </filtration:DynamicCategoriesFilterControl.AdditionalContent>
+</filtration:DynamicCategoriesFilterControl>
+```
+
+Контенту передаётся `DataContext` самого контрола, поэтому привязки внутри работают против модели представления
+плагина — контент ведёт себя так, будто объявлен там же, где сам контрол. Заданный на контенте `DataContext`, как
+обычно, имеет приоритет. Блок растёт по содержимому, поэтому высоту крупного контента стоит ограничивать через
+`MaxHeight`. Если `AdditionalContent` не задан, блок не отображается.
 
 5. Подключить нужный контрол в xaml:
 
