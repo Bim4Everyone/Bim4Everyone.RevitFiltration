@@ -54,8 +54,25 @@
             <Grid.RowDefinitions>
                 <RowDefinition
                     Height="1*" />
-                <RowDefinition
-                    Height="1*" />
+                <RowDefinition>
+                    <RowDefinition.Style>
+                        <Style
+                            TargetType="RowDefinition">
+                            <Setter
+                                Property="Height"
+                                Value="1*" />
+                            <Style.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding AdditionalContent, ElementName=_this}"
+                                    Value="{x:Null}">
+                                    <Setter
+                                        Property="Height"
+                                        Value="0" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </RowDefinition.Style>
+                </RowDefinition>
             </Grid.RowDefinitions>
 
             <Border
